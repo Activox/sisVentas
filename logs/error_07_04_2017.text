@@ -1,0 +1,6 @@
+[2017-04-07 16:43:01] test.INFO: Undefined property: stdClass::$description in line 79 on file C:\xampp\htdocs\pventa\app\it\Controllers\articuloController.php [] []
+[2017-04-07 16:44:10] test.INFO: Undefined property: stdClass::$description in line 79 on file C:\xampp\htdocs\pventa\app\it\Controllers\articuloController.php [] []
+[2017-04-07 16:51:08] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\pventa\app\it\Controllers\articuloController.php [] []
+[2017-04-07 17:03:21] test.INFO: Undefined property: stdClass::$description in line 75 on file C:\xampp\htdocs\pventa\app\it\Controllers\PrecioController.php [] []
+[2017-04-07 19:30:32] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\pventa\app\it\Controllers\articuloController.php [] []
+[2017-04-07 19:31:45] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\pventa\app\it\Controllers\articuloController.php [] []

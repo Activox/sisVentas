@@ -1,0 +1,205 @@
+/**
+ * STABLE ASCYN STYLE
+ * 
+ * Created on : Jan 29, 2016, 10:49:37 AM
+ * Author     : Enmanuel Bisono Payamps <edbisono@uno.com.do>
+ */
+
+.STABLE_CLEAR { clear: both; }
+.STABLE_HIDEN { display: none; }
+.STABLE_SHOW  { display: block; }
+
+/**
+ * Parent container of all structure
+ */
+.STABLE_STRUCTURE {
+    width: 1200px;
+}
+
+.STABLE_STRUCTURE select:focus, .STABLE_STRUCTURE input:focus, .STABLE_STRUCTURE button:focus {
+    outline: none;
+}
+
+/**
+ *
+ */
+.STABLE_FILTERS {
+    width: inherit;
+}
+
+.STABLE_PAGINATION {
+    width: inherit;
+    margin: 10px 0;
+}
+
+.STABLE_SHOW_RCORDS, .STABLE_SEARCH_RCORDS {
+    width: 600px;
+}
+
+.STABLE_SHOW_RCORDS {
+    float: left;
+}
+
+.STABLE_SEARCH_RCORDS {
+    float:right;
+}
+
+.STABLE_SHOW_RCORDS > div, .STABLE_SEARCH_RCORDS > div, .STABLE_PAGINATION_INFO, .STABLE_PAGINATION_PAGES {
+    height: 34px;
+    border:2px solid #ddd;
+    line-height: 34px;
+    padding: 0 0 0 10px;
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.STABLE_SEARCH_RCORDS > div, .STABLE_PAGINATION_PAGES {
+    float:right;
+}
+
+.STABLE_SHOW_RCORDS > div select, .STABLE_SEARCH_RCORDS > div select {
+    height: 33px;
+    max-width: 320px;
+    min-width: 150px;
+    margin: 0;
+    border: none;
+}
+
+.STABLE_SEARCH_RCORDS > div select {
+    margin-right: 10px;
+}
+
+.STABLE_SEARCH_RCORDS > div input {
+    height: 33px;
+    width: 210px;
+    margin: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.STABLE_SEARCH_RCORDS > div button {
+    height: 33px;
+    border:none;
+    padding: 0 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.STABLE_PAGINATION_INFO {
+    padding: 0 10px;
+    color:#616161;
+    /*font-weight: bold;*/
+}
+
+.STABLE_PAGINATION_PAGES {
+    padding: 0;
+}
+
+.STABLE_PAGINATION_PAGES ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.STABLE_PAGINATION_PAGES ul li {
+    float: left;
+}
+
+.STABLE_PAGINATION_PAGES ul li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    color:#616161;
+    border-right:2px solid #ddd;
+}
+
+.STABLE_PAGINATION_PAGES ul li a.active {
+    background: #ddd;
+    color:#fff;
+}
+
+.STABLE_PAGINATION_PAGES > ul > li:last-child a {
+    border-right: none;
+}
+
+.STABLE_CONTENT {
+    border:2px solid #ddd;
+    margin: 20px 0;
+    border-radius: 5px;
+    position: relative;
+}
+.STABLE_CONTENT table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.STABLE_CONTENT table thead th {
+    border-bottom:2px solid #ddd;   
+    text-align: left;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.STABLE_CONTENT table tfoot th {
+    border-top:2px solid #ddd;   
+    text-align: left;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.STABLE_CONTENT table thead th a, .STABLE_CONTENT table tfoot th a{
+    color:#616161;
+    text-decoration: none;
+}
+
+.STABLE_CONTENT table tbody td, .STABLE_CONTENT table tbody th {
+    border-bottom: 1px solid #ccc;
+    color:#666;
+    padding: 10px;
+    text-align: left;
+}
+
+.STABLE_CONTENT table tbody tr:last-child td, .STABLE_CONTENT table tbody tr:last-child th {
+    border-bottom:none;
+}
+
+.STABLE_CONTENT table tbody tr:nth-child(even) {
+    background:#f5f5f5;
+}
+
+.STABLE_ACTTION_BUTTON {
+    cursor: pointer;
+}
+
+.STABLE_SELECT_FIELD_FILTER option {
+    text-transform: capitalize;
+}
+
+.STABLE_ERROR, .STABLE_LOADING {
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.STABLE_ERROR {
+    background-color: #ffcdd2;
+    border:2px solid #ef9a9a;
+    color:#d32f2f;
+}
+
+.STABLE_LOADING {
+    background-color: #bbdefb;
+    border:2px solid #90caf9;
+    color:#2196f3;
+}
+
+.STABLE_CONTENT .STABLE_LOADING {
+    width: 480px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -240px;
+}

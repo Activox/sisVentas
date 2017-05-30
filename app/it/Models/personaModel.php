@@ -1,0 +1,44 @@
+<?php
+
+namespace it\Models;
+
+use abstracts\ORM;
+
+//use abstracts\Model;
+
+class PersonaModel extends ORM {
+
+    private $session = null;
+
+    /**
+     *  Init class
+     * @param \stdClass $properties
+     */
+    public function __construct(\stdClass $properties = null) {
+        parent::__construct($properties);
+        $this->table = "persona";
+        $this->primary_key = "id_record";
+        $this->value = 0;
+        $this->find_by = "";
+        $this->alias = "ci";
+        $this->session = \Factory::getSession();
+    }
+
+    public function getPersona() {
+//        $this->param1 = "ci.id_record";
+//        $this->param2 = "ci.description";
+//        $this->param5 = "Case when ci.active = 1 THEN 'TRUE' ELSE 'FALSE' END active ";
+//        return $this->get()->
+//                        where(["ci.active" => ["operator" => "=", "value" => 1, "nextcondition"=>""]])->objectList();
+    }
+
+    /**
+     * Save records
+     * @return type
+     */
+    public function saveProp() {
+        $id_record = parent::save();
+        return $id_record;
+    }
+
+}
