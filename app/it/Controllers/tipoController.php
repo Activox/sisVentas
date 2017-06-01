@@ -66,14 +66,14 @@ class TipoController extends Controller {
 
         $html = "";
         foreach ($json as $key) {
-            $html .= "<tr>
+            $html .= "<tr class='center-align' >
                         <td>$key->id_record</td>
                         <td>$key->tipo</td>
                         <td>$key->description</td>
                         <td>$key->active</td>";
             $html.='<td data-id="' . $key->id_record . '" data-tipo="' . $key->tipo . '" data-descripcion="' . $key->description . '" data-active="' . $key->active . '" 
                             style="cursor:pointer" class="edit"> 
-                            <i class="mdi-editor-border-color tooltipped" data-position="bottom" data-delay="50" data-tooltipo="Update Record"></i></td>';
+                            <i class="mdi-editor-border-color tooltipped teal-text" data-position="bottom" data-delay="50" data-tooltipo="Update Record"></i></td>';
             $html.="</tr>";
         }
        

@@ -1,74 +1,90 @@
 <?php
 Route::getJs(array("scripttipo"), "it", array(), FALSE);
 $url = "{$_SERVER['REQUEST_URI']}";
-//language=sql
-$sql="
-
-";
 
 ?>
-
-<!--<p class="caption">A Simple Blank Page to use it for your custome design and elements.</p>-->
-<!--<div class="divider"></div>-->
-<!--<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
-
-<table class="display" cellspacing="0" width="100%" id="tabledetails">
-    <thead>
-    <tr>
-        <th data-field="id">#</th>
-        <th data-field="id">Tipo</th>
-        <th data-field="name">Description</th>
-        <th data-field="price">Active</th>
-        <th data-field="price">Option</th>
+<!--table-->
+<table class="display cell-border compact order-column mdl-data-table" cellspacing="0" width="100%" id="tabledetails">
+    <thead class="  red lighten-1 white-text" >
+    <tr >
+        <th >#</th>
+        <th >Tipo</th>
+        <th >Description</th>
+        <th >Active</th>
+        <th >Option</th>
     </tr>
     </thead>
     <tbody>
 
     </tbody>
 </table>
+<!-- / table-->
 
+<!--floting btn-->
+<div class="fixed-action-btn horizontal">
+    <!-- Modal Trigger -->
+    <a href="#modal1" class="waves-effect waves-light btn btn-floating btn-large teal modal-trigger">
+        <i class="mdi-content-add"></i>
+    </a>
+</div>
+<!--/ floting btn-->
 
-<div class="accordion" id="accordion1">
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
-                Collapsible Group #1
-            </a>
-        </div>
-        <div id="collapseOne" class="accordion-body collapse in">
-            <div class="accordion-inner">
-                This is a simple accordion inner content...
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
-                Collapsible Group #2 (With nested accordion inside)
-            </a>
-        </div>
-        <div id="collapseTwo" class="accordion-body collapse">
-            <div class="accordion-inner">
-                <!-- Here we insert another nested accordion -->
-                <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne"> Collapsible Inner Group Item #1 </a> </div>
-                        <div id="collapseInnerOne" class="accordion-body collapse in">
-                            <div class="accordion-inner"> Anim pariatur cliche... </div>
-                        </div>
+<!-- Modal Structure Save-->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Create Record</h4>
+        <div class="row">
+            <form class="col s12" id="records">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="tipo" type="text" class="validate">
+                        <label for="tipo">Tipo</label>
                     </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerTwo"> Collapsible Inner Group Item #2 </a>
-                        <div id="collapseInnerTwo" class="accordion-body collapse">
-                            <div class="accordion-inner"> Anim pariatur cliche... </div>
-                        </div>
+                    <div class="input-field col s6">
+                        <input id="description" type="text" class="validate">
+                        <label for="description">Descripcion</label>
                     </div>
                 </div>
-                <!-- Inner accordion ends here -->
-            </div>
+            </form>
         </div>
     </div>
+    <div class="modal-footer right-align">
+        <a class="waves-effect waves-light waves-green btn-flat" id="save">Save</a>
+        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+    </div>
 </div>
+<!--/ Modal Structure-->
 
+<!-- Modal Structure Edit-->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h4>Update Record</h4>
+        <div class="row">
+            <form class="col s12" id="records">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="tipo2" type="text" class="validate">
+                        <label for="tipo2">Tipo</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="description2" type="text" class="validate">
+                        <label for="description2">Descripcion</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <select  id="active">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="TRUE">TRUE</option>
+                            <option value="FALSE">FALSE</option>
+                        </select>
+                        <label>Active</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer right-align">
+        <a class="waves-effect waves-light waves-green btn-flat" id="update">Save</a>
+        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+    </div>
+</div>
+<!--/ Modal Structure-->

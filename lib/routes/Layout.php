@@ -24,7 +24,7 @@ class Layout
         "login"     => ["header" => "loginHeader", "footer" => "loginFooter"],
         "logout"    => ["header" => "loginHeader", "footer" => "loginFooter"],
 //        "test"      => ["header" => "rawHeader", "footer" => "rawFooter"],
-        "test"      => ["header" => "header2", "footer" => "footer2"],
+        "test"      => ["header" => "rawHeader", "footer" => "rawFooter"],
         "compra/[view]/[id_solicitud]"      => ["header" => "rawHeader", "footer" => "rawFooter"],
         "facturacion/[view]/[id_factura]"      => ["header" => "rawHeader", "footer" => "rawFooter"]
     );

@@ -49,7 +49,7 @@ list($module, $type, $app) = explode("-", $actual_url);
 <div class="fixed-action-btn horizontal">
     <!-- Modal Trigger -->
     <a data-target="modal1" class="waves-effect waves-light btn btn-floating btn-large accent-color">
-        <i class="large material-icons">add</i>
+        <i class="mdi-editor-border-color"></i>
     </a>
 </div>
 <!--/ floting btn-->

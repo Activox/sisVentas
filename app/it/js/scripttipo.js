@@ -9,12 +9,15 @@ $(document).ready(function () {
      * Initialization elements
      */
     $('.collapsible').collapsible();
-    // $('.modal').modal();
     $('.modal-content').css({'width': '155% !important'});
-    $('select').material_select();
+    $(".menuBtn").hide();
     $('.tooltipped').tooltip({delay: 50});
     var $tableDetails = $("#tabledetails");
-    $tableDetails.DataTable( );
+    $tableDetails.DataTable( {
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
 
     var id_record = 0;
 
@@ -32,7 +35,8 @@ $(document).ready(function () {
             success: function (response) {
                 $tableDetails.DataTable().destroy();
                 $("#tabledetails > tbody").html(response);
-                $tableDetails.DataTable();
+                $tableDetails.DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ] });
+                $('select').material_select();
             }
         });
     };
@@ -57,7 +61,7 @@ $(document).ready(function () {
             if (data) {
                 alertify.success('Save Succefully');
                 table();
-                $('#modal1').modal('close');
+                $('#modal1').closeModal();
                 $("#tipo").val('');
                 $("#description").val('');
             } else {
@@ -73,14 +77,14 @@ $(document).ready(function () {
         alertify.error('Trassation Abort');
         $("#tipo").val('');
         $("#description").val('');
-        $('#modal1').modal('close');
-        $('#modal2').modal('close');
+        $('#modal1').closeModal();
+        $('#modal2').closeModal();
     });
 
     /**
      * edit modals.
      */
-    $("#details").on('click', '.edit', function () {
+    $tableDetails.on('click', '.edit', function () {
         id_record = $(this).data('id');
         $("#modal2").css({'width': '75% !important', 'max-height': '100% !important', 'overflow-y': 'hidden !important'});
         $("#tipo2").val($(this).data('tipo'));
@@ -88,7 +92,7 @@ $(document).ready(function () {
         $("#active").val($(this).data('active'));
         Materialize.updateTextFields();
         $('select').material_select('update');
-        $('#modal2').modal('open');
+        $('#modal2').openModal();
     });
 
     /**
@@ -104,7 +108,7 @@ $(document).ready(function () {
             if (data) {
                 alertify.success('Update Succefully');
                 table();
-                $('#modal2').modal('close');
+                $('#modal2').closeModal();
             } else {
                 alertify.alert("Something was wrong. Please verify!");
             }
