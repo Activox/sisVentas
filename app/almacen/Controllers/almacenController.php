@@ -8,7 +8,7 @@ class AlmacenController extends Controller
 {
 
     /**
-     * execute parent contruct..
+     * execute parent contruct.
      */
     public function __construct()
     {
