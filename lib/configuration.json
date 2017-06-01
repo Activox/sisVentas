@@ -1,25 +1,25 @@
 {
-    "useDatabase"                                         :       true,
-    "appInDeveloping"                                    :       true,
-    "instanceDatabase"                                 :       "Mysqli",
+    "useDatabase"                :       true,
+    "appInDeveloping"            :       true,
+    "instanceDatabase"           :       "Mysqli",
     
-    "title"                                                         :       "Punto de Venta",
+    "title"                      :       "Punto de Venta",
     
-    "server"                                                    :       "http://localhost",
-    "defaultKeyRouting"                                 :       "login",
+    "server"                     :       "http://localhost",
+    "defaultKeyRouting"          :       "login",
     
-    "dirModules"                                             :       "app",
-    "dirLayouts"                                             :       "layouts",
-    "dirProject"                                               :       "pventa",
-    "dirLogs"                                                  :       "logs",
-    "dirMainFileJs"                                         :       "js",
-    "dirMainFileCss"                                      :       "css",
+    "dirModules"                 :       "app",
+    "dirLayouts"                 :       "layouts",
+    "dirProject"                 :       "sisVenta",
+    "dirLogs"                    :       "logs",
+    "dirMainFileJs"              :       "js",
+    "dirMainFileCss"             :       "css",
     
-    "fileLayoutError"                                       :       "error",
+    "fileLayoutError"            :       "error",
 
-    "useStorageSession"                               :       false,
-    "storageTable"                                          :       "sessions",
-    "primaryKeyField"                                     :       "record_id",
-    "storageIdField"                                         :       "session_id",
-    "StorageDataField"                                   :       "session_data"
+    "useStorageSession"          :       false,
+    "storageTable"               :       "sessions",
+    "primaryKeyField"            :       "record_id",
+    "storageIdField"             :       "session_id",
+    "StorageDataField"           :       "session_data"
 }
