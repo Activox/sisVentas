@@ -44,7 +44,7 @@ $baseroot = _HOST_ . _DIRECTORY_ . _DS_;
     Route::getLib(array("jquery-1.11.2.min"), "lib", "js", "", array("vendor", "plugins"), TRUE);
     Route::getLib(array("perfect-scrollbar.min"), "lib", "js", "", array("vendor", "plugins", "perfect-scrollbar"), TRUE);
     Route::getLib(array("jquery.dataTables.min"), "lib", "js", "", array("vendor", "plugins", "data-tables", "js"), TRUE);
-    //    Route::getLib(array("chartist.min"),"lib","js","",array("vendor","plugins","chartist-js"), TRUE);
+//        Route::getLib(array("chartist.min"),"lib","js","",array("vendor","plugins","chartist-js"), TRUE);
     Route::getLib(array("prism"), "lib", "js", "", array("vendor", "plugins", "prism"), TRUE);
     Route::getLib(array("jquery.dataTables.min"), "lib", "js", "", array("vendor", "plugins", "data-tables", "js"), TRUE);
 
@@ -71,12 +71,6 @@ $baseroot = _HOST_ . _DIRECTORY_ . _DS_;
             <div class="row">
                 <div class="col s12 m12 l12">
                     <h5 class="breadcrumbs-title">Blank Page</h5>
-                    <ol class="breadcrumbs">
-                        <li><a href="index.html">Dashboard</a></li>
-                        <li> <a href="<?php echo $module ?>" ><?php echo ucfirst($module); ?></a></li>
-                        <li> <a href="<?php echo $module ?>" ><?php echo ucfirst($type); ?></a></li>
-                        <li class="active"><?php echo $app; ?></li>
-                    </ol>
                 </div>
             </div>
         </div>
