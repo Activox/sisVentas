@@ -5,7 +5,7 @@ $url = "{$_SERVER['REQUEST_URI']}";
 ?>
 <!--table-->
 <table class="display cell-border compact order-column mdl-data-table" cellspacing="0" width="100%" id="tabledetails">
-    <thead class="  red lighten-1 white-text" >
+    <thead class="white-text" style="background-color: #D9534F;" >
     <tr >
         <th >#</th>
         <th >Tipo</th>
@@ -49,8 +49,8 @@ $url = "{$_SERVER['REQUEST_URI']}";
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light waves-green btn-flat" id="save">Save</a>
-        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light waves-green btn" id="save">Save</a>
+        <a class="waves-effect waves-light waves-red btn cancel" id="cancel">Cancel</a>
     </div>
 </div>
 <!--/ Modal Structure-->
@@ -83,8 +83,8 @@ $url = "{$_SERVER['REQUEST_URI']}";
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light waves-green btn-flat" id="update">Save</a>
-        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light waves-green btn-flat" id="update">Update</a>
+        <a class="waves-effect waves-light waves-red btn-flat cancel" id="cancel">Cancel</a>
     </div>
 </div>
 <!--/ Modal Structure-->
