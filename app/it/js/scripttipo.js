@@ -73,7 +73,7 @@ $(document).ready(function () {
     /**
      * Close modal and trigger alert.
      */
-    $(".cancel").on('click', function () {
+    $("#cancel,#cancel2").on('click', function () {
         alertify.error('Trassation Abort');
         $("#tipo").val('');
         $("#description").val('');

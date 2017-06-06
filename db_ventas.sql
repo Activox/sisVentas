@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2017 a las 08:10:29
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Jun 06, 2017 at 11:09 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_ventas`
+-- Database: `db_ventas`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `access`
+-- Table structure for table `access`
 --
 
 CREATE TABLE `access` (
@@ -39,7 +39,7 @@ CREATE TABLE `access` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `almacen`
+-- Table structure for table `almacen`
 --
 
 CREATE TABLE `almacen` (
@@ -52,7 +52,7 @@ CREATE TABLE `almacen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `almacen`
+-- Dumping data for table `almacen`
 --
 
 INSERT INTO `almacen` (`id_record`, `id_tercero`, `id_empleado`, `created_on`, `created_by`, `active`) VALUES
@@ -61,7 +61,33 @@ INSERT INTO `almacen` (`id_record`, `id_tercero`, `id_empleado`, `created_on`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `articulo`
+-- Table structure for table `app`
+--
+
+CREATE TABLE `app` (
+  `id_record` bigint(20) UNSIGNED NOT NULL,
+  `description` varchar(250) NOT NULL,
+  `icon` varchar(250) NOT NULL,
+  `url` varchar(250) NOT NULL,
+  `id_father` int(11) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `id_tipo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `app`
+--
+
+INSERT INTO `app` (`id_record`, `description`, `icon`, `url`, `id_father`, `created_on`, `created_by`, `active`, `id_tipo`) VALUES
+(1, 'dashboard', '<i class="mdi-action-dashboard"></i>', 'menu', 0, '2017-06-06 14:51:22', 1, 1, 31),
+(2, 'it', '<i class="mdi-hardware-computer"></i>      ', 'it', 1, '2017-06-06 14:51:22', 1, 1, 31);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articulo`
 --
 
 CREATE TABLE `articulo` (
@@ -76,7 +102,7 @@ CREATE TABLE `articulo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `articulo`
+-- Dumping data for table `articulo`
 --
 
 INSERT INTO `articulo` (`id_record`, `id_suplidor`, `id_subcategoria`, `codigo_barra`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -89,7 +115,7 @@ INSERT INTO `articulo` (`id_record`, `id_suplidor`, `id_subcategoria`, `codigo_b
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -101,7 +127,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Dumping data for table `categoria`
 --
 
 INSERT INTO `categoria` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -112,7 +138,7 @@ INSERT INTO `categoria` (`id_record`, `description`, `created_on`, `created_by`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ciudad`
+-- Table structure for table `ciudad`
 --
 
 CREATE TABLE `ciudad` (
@@ -125,7 +151,7 @@ CREATE TABLE `ciudad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `ciudad`
+-- Dumping data for table `ciudad`
 --
 
 INSERT INTO `ciudad` (`id_record`, `id_pais`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -135,7 +161,7 @@ INSERT INTO `ciudad` (`id_record`, `id_pais`, `description`, `created_on`, `crea
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -149,7 +175,7 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`id_record`, `id_persona`, `telefono`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -158,7 +184,7 @@ INSERT INTO `cliente` (`id_record`, `id_persona`, `telefono`, `id_tipo`, `create
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compra`
+-- Table structure for table `compra`
 --
 
 CREATE TABLE `compra` (
@@ -174,7 +200,7 @@ CREATE TABLE `compra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `compra`
+-- Dumping data for table `compra`
 --
 
 INSERT INTO `compra` (`id_record`, `id_solicitud`, `no_factura`, `requisition_date`, `status`, `tipo_pago`, `created_on`, `created_by`, `active`) VALUES
@@ -187,7 +213,7 @@ INSERT INTO `compra` (`id_record`, `id_solicitud`, `no_factura`, `requisition_da
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cuadre_terminal`
+-- Table structure for table `cuadre_terminal`
 --
 
 CREATE TABLE `cuadre_terminal` (
@@ -204,7 +230,7 @@ CREATE TABLE `cuadre_terminal` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `descuento`
+-- Table structure for table `descuento`
 --
 
 CREATE TABLE `descuento` (
@@ -218,7 +244,7 @@ CREATE TABLE `descuento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `descuento`
+-- Dumping data for table `descuento`
 --
 
 INSERT INTO `descuento` (`id_record`, `id_articulo`, `id_subcategoria`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -229,7 +255,7 @@ INSERT INTO `descuento` (`id_record`, `id_articulo`, `id_subcategoria`, `porcent
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_factura`
+-- Table structure for table `detalle_factura`
 --
 
 CREATE TABLE `detalle_factura` (
@@ -244,7 +270,7 @@ CREATE TABLE `detalle_factura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `detalle_factura`
+-- Dumping data for table `detalle_factura`
 --
 
 INSERT INTO `detalle_factura` (`id_record`, `id_factura`, `id_articulo`, `qty`, `precio`, `created_on`, `created_by`, `active`) VALUES
@@ -259,7 +285,7 @@ INSERT INTO `detalle_factura` (`id_record`, `id_factura`, `id_articulo`, `qty`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_factura_tmp`
+-- Table structure for table `detalle_factura_tmp`
 --
 
 CREATE TABLE `detalle_factura_tmp` (
@@ -273,7 +299,7 @@ CREATE TABLE `detalle_factura_tmp` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_solicitud`
+-- Table structure for table `detalle_solicitud`
 --
 
 CREATE TABLE `detalle_solicitud` (
@@ -288,7 +314,7 @@ CREATE TABLE `detalle_solicitud` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `detalle_solicitud`
+-- Dumping data for table `detalle_solicitud`
 --
 
 INSERT INTO `detalle_solicitud` (`id_record`, `id_solicitud`, `id_articulo`, `id_unidad`, `qty`, `created_on`, `created_by`, `active`) VALUES
@@ -319,7 +345,7 @@ INSERT INTO `detalle_solicitud` (`id_record`, `id_solicitud`, `id_articulo`, `id
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detalle_solicitud_tmp`
+-- Table structure for table `detalle_solicitud_tmp`
 --
 
 CREATE TABLE `detalle_solicitud_tmp` (
@@ -334,7 +360,7 @@ CREATE TABLE `detalle_solicitud_tmp` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `devolucion`
+-- Table structure for table `devolucion`
 --
 
 CREATE TABLE `devolucion` (
@@ -351,7 +377,7 @@ CREATE TABLE `devolucion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `direccion`
+-- Table structure for table `direccion`
 --
 
 CREATE TABLE `direccion` (
@@ -365,7 +391,7 @@ CREATE TABLE `direccion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `direccion`
+-- Dumping data for table `direccion`
 --
 
 INSERT INTO `direccion` (`id_record`, `id_tercero`, `id_sector`, `direccion`, `created_on`, `created_by`, `active`) VALUES
@@ -377,7 +403,7 @@ INSERT INTO `direccion` (`id_record`, `id_tercero`, `id_sector`, `direccion`, `c
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleado`
+-- Table structure for table `empleado`
 --
 
 CREATE TABLE `empleado` (
@@ -393,7 +419,7 @@ CREATE TABLE `empleado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `empleado`
+-- Dumping data for table `empleado`
 --
 
 INSERT INTO `empleado` (`id_record`, `id_persona`, `telefono`, `admission_date`, `estado_civil`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -402,7 +428,7 @@ INSERT INTO `empleado` (`id_record`, `id_persona`, `telefono`, `admission_date`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empresa`
+-- Table structure for table `empresa`
 --
 
 CREATE TABLE `empresa` (
@@ -417,7 +443,7 @@ CREATE TABLE `empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `empresa`
+-- Dumping data for table `empresa`
 --
 
 INSERT INTO `empresa` (`id_record`, `id_tercero`, `rnc`, `id_tipo`, `telefono`, `created_on`, `created_by`, `active`) VALUES
@@ -426,7 +452,7 @@ INSERT INTO `empresa` (`id_record`, `id_tercero`, `rnc`, `id_tipo`, `telefono`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `exception`
+-- Table structure for table `exception`
 --
 
 CREATE TABLE `exception` (
@@ -441,7 +467,7 @@ CREATE TABLE `exception` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `factura`
+-- Table structure for table `factura`
 --
 
 CREATE TABLE `factura` (
@@ -456,7 +482,7 @@ CREATE TABLE `factura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `factura`
+-- Dumping data for table `factura`
 --
 
 INSERT INTO `factura` (`id_record`, `id_cliente`, `monto`, `no_factura`, `created_on`, `created_by`, `active`, `descuento`) VALUES
@@ -468,7 +494,7 @@ INSERT INTO `factura` (`id_record`, `id_cliente`, `monto`, `no_factura`, `create
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `group`
+-- Table structure for table `group`
 --
 
 CREATE TABLE `group` (
@@ -482,7 +508,7 @@ CREATE TABLE `group` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `historial_usuario`
+-- Table structure for table `historial_usuario`
 --
 
 CREATE TABLE `historial_usuario` (
@@ -495,7 +521,7 @@ CREATE TABLE `historial_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `impuesto`
+-- Table structure for table `impuesto`
 --
 
 CREATE TABLE `impuesto` (
@@ -509,7 +535,7 @@ CREATE TABLE `impuesto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `impuesto`
+-- Dumping data for table `impuesto`
 --
 
 INSERT INTO `impuesto` (`id_record`, `id_subcategoria`, `id_articulo`, `porcentaje`, `created_on`, `created_by`, `active`) VALUES
@@ -521,7 +547,7 @@ INSERT INTO `impuesto` (`id_record`, `id_subcategoria`, `id_articulo`, `porcenta
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventario`
+-- Table structure for table `inventario`
 --
 
 CREATE TABLE `inventario` (
@@ -535,7 +561,7 @@ CREATE TABLE `inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `inventario`
+-- Dumping data for table `inventario`
 --
 
 INSERT INTO `inventario` (`id_record`, `id_articulo`, `id_almacen`, `qty`, `created_on`, `created_by`, `active`) VALUES
@@ -548,7 +574,7 @@ INSERT INTO `inventario` (`id_record`, `id_articulo`, `id_almacen`, `qty`, `crea
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `movimiento_inventario`
+-- Table structure for table `movimiento_inventario`
 --
 
 CREATE TABLE `movimiento_inventario` (
@@ -562,7 +588,7 @@ CREATE TABLE `movimiento_inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `movimiento_inventario`
+-- Dumping data for table `movimiento_inventario`
 --
 
 INSERT INTO `movimiento_inventario` (`id_record`, `id_inventario`, `qty`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -575,7 +601,7 @@ INSERT INTO `movimiento_inventario` (`id_record`, `id_inventario`, `qty`, `id_ti
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nacionalidad`
+-- Table structure for table `nacionalidad`
 --
 
 CREATE TABLE `nacionalidad` (
@@ -588,7 +614,7 @@ CREATE TABLE `nacionalidad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `nacionalidad`
+-- Dumping data for table `nacionalidad`
 --
 
 INSERT INTO `nacionalidad` (`id_record`, `id_pais`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -597,7 +623,7 @@ INSERT INTO `nacionalidad` (`id_record`, `id_pais`, `description`, `created_on`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pais`
+-- Table structure for table `pais`
 --
 
 CREATE TABLE `pais` (
@@ -609,7 +635,7 @@ CREATE TABLE `pais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `pais`
+-- Dumping data for table `pais`
 --
 
 INSERT INTO `pais` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -618,7 +644,7 @@ INSERT INTO `pais` (`id_record`, `description`, `created_on`, `created_by`, `act
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `persona`
+-- Table structure for table `persona`
 --
 
 CREATE TABLE `persona` (
@@ -634,7 +660,7 @@ CREATE TABLE `persona` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `persona`
+-- Dumping data for table `persona`
 --
 
 INSERT INTO `persona` (`id_record`, `id_tercero`, `apellidos`, `cedula`, `sexo`, `birthdate`, `created_on`, `created_by`, `active`) VALUES
@@ -654,7 +680,7 @@ INSERT INTO `persona` (`id_record`, `id_tercero`, `apellidos`, `cedula`, `sexo`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `porcentaje_ganancia`
+-- Table structure for table `porcentaje_ganancia`
 --
 
 CREATE TABLE `porcentaje_ganancia` (
@@ -668,7 +694,7 @@ CREATE TABLE `porcentaje_ganancia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `porcentaje_ganancia`
+-- Dumping data for table `porcentaje_ganancia`
 --
 
 INSERT INTO `porcentaje_ganancia` (`id_record`, `id_articulo`, `id_subcategoria`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -689,7 +715,7 @@ INSERT INTO `porcentaje_ganancia` (`id_record`, `id_articulo`, `id_subcategoria`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `precio_articulo`
+-- Table structure for table `precio_articulo`
 --
 
 CREATE TABLE `precio_articulo` (
@@ -703,7 +729,7 @@ CREATE TABLE `precio_articulo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `precio_articulo`
+-- Dumping data for table `precio_articulo`
 --
 
 INSERT INTO `precio_articulo` (`id_record`, `id_articulo`, `precio`, `id_suplidor`, `created_on`, `created_by`, `active`) VALUES
@@ -719,7 +745,7 @@ INSERT INTO `precio_articulo` (`id_record`, `id_articulo`, `precio`, `id_suplido
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sector`
+-- Table structure for table `sector`
 --
 
 CREATE TABLE `sector` (
@@ -732,7 +758,7 @@ CREATE TABLE `sector` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `sector`
+-- Dumping data for table `sector`
 --
 
 INSERT INTO `sector` (`id_record`, `id_ciudad`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -742,7 +768,7 @@ INSERT INTO `sector` (`id_record`, `id_ciudad`, `description`, `created_on`, `cr
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `solicitud_compra`
+-- Table structure for table `solicitud_compra`
 --
 
 CREATE TABLE `solicitud_compra` (
@@ -757,7 +783,7 @@ CREATE TABLE `solicitud_compra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `solicitud_compra`
+-- Dumping data for table `solicitud_compra`
 --
 
 INSERT INTO `solicitud_compra` (`id_record`, `id_suplidor`, `id_almacen`, `id_tipo`, `no_solicitud`, `created_on`, `created_by`, `active`) VALUES
@@ -771,7 +797,7 @@ INSERT INTO `solicitud_compra` (`id_record`, `id_suplidor`, `id_almacen`, `id_ti
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `subcategoria`
+-- Table structure for table `subcategoria`
 --
 
 CREATE TABLE `subcategoria` (
@@ -784,7 +810,7 @@ CREATE TABLE `subcategoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `subcategoria`
+-- Dumping data for table `subcategoria`
 --
 
 INSERT INTO `subcategoria` (`id_record`, `id_categoria`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -798,7 +824,7 @@ INSERT INTO `subcategoria` (`id_record`, `id_categoria`, `description`, `created
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `suplidor`
+-- Table structure for table `suplidor`
 --
 
 CREATE TABLE `suplidor` (
@@ -813,7 +839,7 @@ CREATE TABLE `suplidor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `suplidor`
+-- Dumping data for table `suplidor`
 --
 
 INSERT INTO `suplidor` (`id_record`, `id_persona`, `id_empresa`, `id_tipo`, `telefono`, `created_on`, `created_by`, `active`) VALUES
@@ -822,7 +848,7 @@ INSERT INTO `suplidor` (`id_record`, `id_persona`, `id_empresa`, `id_tipo`, `tel
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tercero`
+-- Table structure for table `tercero`
 --
 
 CREATE TABLE `tercero` (
@@ -834,7 +860,7 @@ CREATE TABLE `tercero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tercero`
+-- Dumping data for table `tercero`
 --
 
 INSERT INTO `tercero` (`id_record`, `id_nacionalidad`, `nombre`, `email`, `active`) VALUES
@@ -858,7 +884,7 @@ INSERT INTO `tercero` (`id_record`, `id_nacionalidad`, `nombre`, `email`, `activ
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `terminales`
+-- Table structure for table `terminales`
 --
 
 CREATE TABLE `terminales` (
@@ -870,7 +896,7 @@ CREATE TABLE `terminales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `terminales`
+-- Dumping data for table `terminales`
 --
 
 INSERT INTO `terminales` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -880,7 +906,7 @@ INSERT INTO `terminales` (`id_record`, `description`, `created_on`, `created_by`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo`
+-- Table structure for table `tipo`
 --
 
 CREATE TABLE `tipo` (
@@ -893,7 +919,7 @@ CREATE TABLE `tipo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tipo`
+-- Dumping data for table `tipo`
 --
 
 INSERT INTO `tipo` (`id_record`, `tipo`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -926,12 +952,15 @@ INSERT INTO `tipo` (`id_record`, `tipo`, `description`, `created_on`, `created_b
 (27, 'tipo_movimiento', 'salida', '2017-04-12 17:58:15', 1, 1),
 (28, 'tipo_descuento', 'al por mayor', '2017-04-13 20:30:24', 1, 1),
 (29, 'tipo_descuento', 'pago efectivo', '2017-04-13 20:30:26', 1, 1),
-(30, 'tipo_descuento', 'especial', '2017-04-13 20:30:23', 1, 1);
+(30, 'tipo_descuento', 'especial', '2017-04-13 20:30:23', 1, 1),
+(31, 'tipo_application', 'modulo', '2017-06-06 17:51:27', 1, 1),
+(32, 'tipo_application', 'section', '2017-06-06 17:51:45', 1, 1),
+(33, 'tipo_application', 'application', '2017-06-06 17:51:57', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_descuento`
+-- Table structure for table `tipo_descuento`
 --
 
 CREATE TABLE `tipo_descuento` (
@@ -944,7 +973,7 @@ CREATE TABLE `tipo_descuento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `tipo_descuento`
+-- Dumping data for table `tipo_descuento`
 --
 
 INSERT INTO `tipo_descuento` (`id_record`, `id_tipo`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -957,7 +986,7 @@ INSERT INTO `tipo_descuento` (`id_record`, `id_tipo`, `porcentaje`, `created_by`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `unidad`
+-- Table structure for table `unidad`
 --
 
 CREATE TABLE `unidad` (
@@ -971,7 +1000,7 @@ CREATE TABLE `unidad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `unidad`
+-- Dumping data for table `unidad`
 --
 
 INSERT INTO `unidad` (`id_record`, `description`, `created_on`, `qty`, `short`, `created_by`, `active`) VALUES
@@ -982,7 +1011,7 @@ INSERT INTO `unidad` (`id_record`, `description`, `created_on`, `qty`, `short`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `user_group`
+-- Table structure for table `user_group`
 --
 
 CREATE TABLE `user_group` (
@@ -997,7 +1026,7 @@ CREATE TABLE `user_group` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -1013,7 +1042,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `username`, `clave`, `created_on`, `created_by`, `active`) VALUES
@@ -1022,483 +1051,495 @@ INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `us
 (3, 1, 1, 3, 'pottenwalder3', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-30 03:26:25', 1, 1);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `access`
+-- Indexes for table `access`
 --
 ALTER TABLE `access`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `almacen`
+-- Indexes for table `almacen`
 --
 ALTER TABLE `almacen`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `articulo`
+-- Indexes for table `app`
+--
+ALTER TABLE `app`
+  ADD PRIMARY KEY (`id_record`),
+  ADD UNIQUE KEY `id_record` (`id_record`);
+
+--
+-- Indexes for table `articulo`
 --
 ALTER TABLE `articulo`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `ciudad`
+-- Indexes for table `ciudad`
 --
 ALTER TABLE `ciudad`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `compra`
+-- Indexes for table `compra`
 --
 ALTER TABLE `compra`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `cuadre_terminal`
+-- Indexes for table `cuadre_terminal`
 --
 ALTER TABLE `cuadre_terminal`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `descuento`
+-- Indexes for table `descuento`
 --
 ALTER TABLE `descuento`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `detalle_factura`
+-- Indexes for table `detalle_factura`
 --
 ALTER TABLE `detalle_factura`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `detalle_factura_tmp`
+-- Indexes for table `detalle_factura_tmp`
 --
 ALTER TABLE `detalle_factura_tmp`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `detalle_solicitud`
+-- Indexes for table `detalle_solicitud`
 --
 ALTER TABLE `detalle_solicitud`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `detalle_solicitud_tmp`
+-- Indexes for table `detalle_solicitud_tmp`
 --
 ALTER TABLE `detalle_solicitud_tmp`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `devolucion`
+-- Indexes for table `devolucion`
 --
 ALTER TABLE `devolucion`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `direccion`
+-- Indexes for table `direccion`
 --
 ALTER TABLE `direccion`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `empleado`
+-- Indexes for table `empleado`
 --
 ALTER TABLE `empleado`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `empresa`
+-- Indexes for table `empresa`
 --
 ALTER TABLE `empresa`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `exception`
+-- Indexes for table `exception`
 --
 ALTER TABLE `exception`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `factura`
+-- Indexes for table `factura`
 --
 ALTER TABLE `factura`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `group`
+-- Indexes for table `group`
 --
 ALTER TABLE `group`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `historial_usuario`
+-- Indexes for table `historial_usuario`
 --
 ALTER TABLE `historial_usuario`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `impuesto`
+-- Indexes for table `impuesto`
 --
 ALTER TABLE `impuesto`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `inventario`
+-- Indexes for table `inventario`
 --
 ALTER TABLE `inventario`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `movimiento_inventario`
+-- Indexes for table `movimiento_inventario`
 --
 ALTER TABLE `movimiento_inventario`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `nacionalidad`
+-- Indexes for table `nacionalidad`
 --
 ALTER TABLE `nacionalidad`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `pais`
+-- Indexes for table `pais`
 --
 ALTER TABLE `pais`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `persona`
+-- Indexes for table `persona`
 --
 ALTER TABLE `persona`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `porcentaje_ganancia`
+-- Indexes for table `porcentaje_ganancia`
 --
 ALTER TABLE `porcentaje_ganancia`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `precio_articulo`
+-- Indexes for table `precio_articulo`
 --
 ALTER TABLE `precio_articulo`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `sector`
+-- Indexes for table `sector`
 --
 ALTER TABLE `sector`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `solicitud_compra`
+-- Indexes for table `solicitud_compra`
 --
 ALTER TABLE `solicitud_compra`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `subcategoria`
+-- Indexes for table `subcategoria`
 --
 ALTER TABLE `subcategoria`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `suplidor`
+-- Indexes for table `suplidor`
 --
 ALTER TABLE `suplidor`
   ADD PRIMARY KEY (`id_record`);
 
 --
--- Indices de la tabla `tercero`
+-- Indexes for table `tercero`
 --
 ALTER TABLE `tercero`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `terminales`
+-- Indexes for table `terminales`
 --
 ALTER TABLE `terminales`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `tipo`
+-- Indexes for table `tipo`
 --
 ALTER TABLE `tipo`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `tipo_descuento`
+-- Indexes for table `tipo_descuento`
 --
 ALTER TABLE `tipo_descuento`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `unidad`
+-- Indexes for table `unidad`
 --
 ALTER TABLE `unidad`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `user_group`
+-- Indexes for table `user_group`
 --
 ALTER TABLE `user_group`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `access`
+-- AUTO_INCREMENT for table `access`
 --
 ALTER TABLE `access`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `almacen`
+-- AUTO_INCREMENT for table `almacen`
 --
 ALTER TABLE `almacen`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `articulo`
+-- AUTO_INCREMENT for table `app`
+--
+ALTER TABLE `app`
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `articulo`
 --
 ALTER TABLE `articulo`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `ciudad`
+-- AUTO_INCREMENT for table `ciudad`
 --
 ALTER TABLE `ciudad`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `compra`
+-- AUTO_INCREMENT for table `compra`
 --
 ALTER TABLE `compra`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `cuadre_terminal`
+-- AUTO_INCREMENT for table `cuadre_terminal`
 --
 ALTER TABLE `cuadre_terminal`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `descuento`
+-- AUTO_INCREMENT for table `descuento`
 --
 ALTER TABLE `descuento`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `detalle_factura`
+-- AUTO_INCREMENT for table `detalle_factura`
 --
 ALTER TABLE `detalle_factura`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT de la tabla `detalle_factura_tmp`
+-- AUTO_INCREMENT for table `detalle_factura_tmp`
 --
 ALTER TABLE `detalle_factura_tmp`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 --
--- AUTO_INCREMENT de la tabla `detalle_solicitud`
+-- AUTO_INCREMENT for table `detalle_solicitud`
 --
 ALTER TABLE `detalle_solicitud`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
--- AUTO_INCREMENT de la tabla `detalle_solicitud_tmp`
+-- AUTO_INCREMENT for table `detalle_solicitud_tmp`
 --
 ALTER TABLE `detalle_solicitud_tmp`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `devolucion`
+-- AUTO_INCREMENT for table `devolucion`
 --
 ALTER TABLE `devolucion`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `direccion`
+-- AUTO_INCREMENT for table `direccion`
 --
 ALTER TABLE `direccion`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `empleado`
+-- AUTO_INCREMENT for table `empleado`
 --
 ALTER TABLE `empleado`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `empresa`
+-- AUTO_INCREMENT for table `empresa`
 --
 ALTER TABLE `empresa`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `exception`
+-- AUTO_INCREMENT for table `exception`
 --
 ALTER TABLE `exception`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `factura`
+-- AUTO_INCREMENT for table `factura`
 --
 ALTER TABLE `factura`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `group`
+-- AUTO_INCREMENT for table `group`
 --
 ALTER TABLE `group`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `historial_usuario`
+-- AUTO_INCREMENT for table `historial_usuario`
 --
 ALTER TABLE `historial_usuario`
   MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `impuesto`
+-- AUTO_INCREMENT for table `impuesto`
 --
 ALTER TABLE `impuesto`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `inventario`
+-- AUTO_INCREMENT for table `inventario`
 --
 ALTER TABLE `inventario`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
--- AUTO_INCREMENT de la tabla `movimiento_inventario`
+-- AUTO_INCREMENT for table `movimiento_inventario`
 --
 ALTER TABLE `movimiento_inventario`
   MODIFY `id_record` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
--- AUTO_INCREMENT de la tabla `nacionalidad`
+-- AUTO_INCREMENT for table `nacionalidad`
 --
 ALTER TABLE `nacionalidad`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `pais`
+-- AUTO_INCREMENT for table `pais`
 --
 ALTER TABLE `pais`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `persona`
+-- AUTO_INCREMENT for table `persona`
 --
 ALTER TABLE `persona`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT de la tabla `porcentaje_ganancia`
+-- AUTO_INCREMENT for table `porcentaje_ganancia`
 --
 ALTER TABLE `porcentaje_ganancia`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
--- AUTO_INCREMENT de la tabla `precio_articulo`
+-- AUTO_INCREMENT for table `precio_articulo`
 --
 ALTER TABLE `precio_articulo`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `sector`
+-- AUTO_INCREMENT for table `sector`
 --
 ALTER TABLE `sector`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `solicitud_compra`
+-- AUTO_INCREMENT for table `solicitud_compra`
 --
 ALTER TABLE `solicitud_compra`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT de la tabla `subcategoria`
+-- AUTO_INCREMENT for table `subcategoria`
 --
 ALTER TABLE `subcategoria`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT de la tabla `suplidor`
+-- AUTO_INCREMENT for table `suplidor`
 --
 ALTER TABLE `suplidor`
   MODIFY `id_record` bigint(21) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `tercero`
+-- AUTO_INCREMENT for table `tercero`
 --
 ALTER TABLE `tercero`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
--- AUTO_INCREMENT de la tabla `terminales`
+-- AUTO_INCREMENT for table `terminales`
 --
 ALTER TABLE `terminales`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `tipo`
+-- AUTO_INCREMENT for table `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
--- AUTO_INCREMENT de la tabla `tipo_descuento`
+-- AUTO_INCREMENT for table `tipo_descuento`
 --
 ALTER TABLE `tipo_descuento`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `unidad`
+-- AUTO_INCREMENT for table `unidad`
 --
 ALTER TABLE `unidad`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `user_group`
+-- AUTO_INCREMENT for table `user_group`
 --
 ALTER TABLE `user_group`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

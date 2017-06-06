@@ -12,13 +12,19 @@ class Post
     public static $_rules = array(
 //        default
         "validateUser"                      =>          "Defaults@Default.validatedUser",
-        "test"                      =>          "Defaults@Default.test",
+        "test"                              =>          "Defaults@Default.test",
 //      -----------------------------------------------------------
 //      -----------------------------------------------------------
 //        It
         "getTipo"                           =>          "it@Tipo.getTipo", // Tipo
         "setTipo"                           =>          "it@Tipo.setTipo",
         "updateTipo"                        =>          "it@Tipo.updateTipo",
+//        ---------------------------------------------------------
+
+        "getAppTable"                       =>          "it@App.getAppTable", // App
+        "getApp"                            =>          "it@App.getApp",
+        "setApp"                            =>          "it@Tipo.setApp",
+        "updateApp"                         =>          "it@Tipo.updateApp",
 //        ---------------------------------------------------------
         "getCategoria"                      =>          "it@Categoria.getCategoria", // Categoria
         "setCategoria"                      =>          "it@Categoria.setCategoria",
