@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2017 a las 09:25:46
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 5.6.28
+-- Tiempo de generación: 06-06-2017 a las 08:10:29
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_ventas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `access`
+--
+
+CREATE TABLE `access` (
+  `id_record` bigint(20) UNSIGNED NOT NULL,
+  `id_group` int(11) NOT NULL,
+  `id_permission` int(11) NOT NULL,
+  `id_app` int(11) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -410,6 +426,21 @@ INSERT INTO `empresa` (`id_record`, `id_tercero`, `rnc`, `id_tipo`, `telefono`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `exception`
+--
+
+CREATE TABLE `exception` (
+  `id_record` bigint(20) UNSIGNED NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_permission` int(11) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `factura`
 --
 
@@ -433,6 +464,20 @@ INSERT INTO `factura` (`id_record`, `id_cliente`, `monto`, `no_factura`, `create
 (2, 16, '7896', '2', '2017-04-19 20:41:46', 1, 1, '3.00'),
 (3, 16, '457', '3', '2017-04-19 21:09:52', 1, 1, '3.00'),
 (5, 16, '6452', '4', '2017-04-20 03:59:43', 1, 1, '4.00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `group`
+--
+
+CREATE TABLE `group` (
+  `id_record` bigint(20) UNSIGNED NOT NULL,
+  `description` varchar(250) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -937,6 +982,21 @@ INSERT INTO `unidad` (`id_record`, `description`, `created_on`, `qty`, `short`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `user_group`
+--
+
+CREATE TABLE `user_group` (
+  `id_record` bigint(20) UNSIGNED NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_group` int(11) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -964,6 +1024,13 @@ INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `us
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `access`
+--
+ALTER TABLE `access`
+  ADD PRIMARY KEY (`id_record`),
+  ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
 -- Indices de la tabla `almacen`
@@ -1074,9 +1141,23 @@ ALTER TABLE `empresa`
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
+-- Indices de la tabla `exception`
+--
+ALTER TABLE `exception`
+  ADD PRIMARY KEY (`id_record`),
+  ADD UNIQUE KEY `id_record` (`id_record`);
+
+--
 -- Indices de la tabla `factura`
 --
 ALTER TABLE `factura`
+  ADD PRIMARY KEY (`id_record`),
+  ADD UNIQUE KEY `id_record` (`id_record`);
+
+--
+-- Indices de la tabla `group`
+--
+ALTER TABLE `group`
   ADD PRIMARY KEY (`id_record`),
   ADD UNIQUE KEY `id_record` (`id_record`);
 
@@ -1204,6 +1285,13 @@ ALTER TABLE `unidad`
   ADD UNIQUE KEY `id_record` (`id_record`);
 
 --
+-- Indices de la tabla `user_group`
+--
+ALTER TABLE `user_group`
+  ADD PRIMARY KEY (`id_record`),
+  ADD UNIQUE KEY `id_record` (`id_record`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -1214,6 +1302,11 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
+--
+-- AUTO_INCREMENT de la tabla `access`
+--
+ALTER TABLE `access`
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `almacen`
 --
@@ -1295,10 +1388,20 @@ ALTER TABLE `empleado`
 ALTER TABLE `empresa`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT de la tabla `exception`
+--
+ALTER TABLE `exception`
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `factura`
 --
 ALTER TABLE `factura`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `group`
+--
+ALTER TABLE `group`
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `historial_usuario`
 --
@@ -1389,6 +1492,11 @@ ALTER TABLE `tipo_descuento`
 --
 ALTER TABLE `unidad`
   MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `user_group`
+--
+ALTER TABLE `user_group`
+  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
