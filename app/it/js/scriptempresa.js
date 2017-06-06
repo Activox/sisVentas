@@ -12,6 +12,12 @@ $(document).ready(function () {
     $('.modal-content').css({'width': '155% !important'});
     $('select').material_select();
     $('.tooltipped').tooltip({delay: 50});
+    var $details = $("#details");
+    $details.DataTable({
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
     /**
      *
      * @type {number}
@@ -29,10 +35,19 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.DataTable().destroy();
+                $details.find('tbody').html(response);
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
+                $('select').material_select();
             }
         });
     };
+
     /**
      * Expand the colaps
      * @returns {undefined}
@@ -41,17 +56,18 @@ $(document).ready(function () {
         $(".collapsible-header").addClass("active");
         $(".collapsible").collapsible({accordion: false});
     }
+
     /**
      * Save records
      */
     $("#save").on('click', function () {
         data = new Object();
-        data.name               =       $("#name").val();
-        data.nacionalidad       =       $("#nacionalidad").val();
-        data.email              =       $("#email").val();
-        data.telefono           =       $("#telefono").val();
-        data.tipo               =       $("#tipo").val();
-        data.rnc                =       $("#rnc").val();
+        data.name = $("#name").val();
+        data.nacionalidad = $("#nacionalidad").val();
+        data.email = $("#email").val();
+        data.telefono = $("#telefono").val();
+        data.tipo = $("#tipo").val();
+        data.rnc = $("#rnc").val();
         $.post("setEmpresa", {content: 'text', data: data}, function (data) {
             if (data) {
                 alertify.success('Save Succefully');
@@ -70,7 +86,7 @@ $(document).ready(function () {
     /**
      * Close modal and trigger alert.
      */
-    $("#cancel").on('click', function () {
+    $("#cancel,#cancel2").on('click', function () {
         alertify.error('Trassation Abort');
         $("#name").val('');
         $("#nacionalidad").val('');
@@ -85,7 +101,11 @@ $(document).ready(function () {
      */
     $("#details").on('click', '.edit', function () {
         id_record = $(this).data('id');
-        $("#modal2").css({'width': '75% !important', 'max-height': '100% !important', 'overflow-y': 'hidden !important'});
+        $("#modal2").css({
+            'width': '75% !important',
+            'max-height': '100% !important',
+            'overflow-y': 'hidden !important'
+        });
         $("#description2").val($(this).data('descripcion'));
         $("#active").val($(this).data('active'));
         Materialize.updateTextFields();

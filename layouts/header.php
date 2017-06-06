@@ -18,8 +18,9 @@ $baseroot = _HOST_ . _DIRECTORY_ . _DS_;
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <?php
         Route::getCss(array("yaroa", "materialize", "custom", "alertify","font-awesome.min"), "", array(), TRUE);
-
         Route::getJs(array("jquery-3.1.1", "materialize.min", "script", "alertify","jquery.number"), "", array(), TRUE);
+        Route::getLib(array("jquery.dataTables.min"), "lib", "js", "", array("vendor", "plugins", "data-tables", "js"), TRUE);
+        Route::getLib(array("jquery.dataTables.min"), "lib", "css", "", array("vendor", "plugins", "data-tables", "css"), TRUE);
         ?>
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

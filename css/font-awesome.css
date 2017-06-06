@@ -67,17 +67,17 @@
 .fa-pull-left {
   float: left;
 }
-.fa-right-align {
+.fa-pull-right {
   float: right;
 }
 .fa.fa-pull-left {
   margin-right: .3em;
 }
-.fa.fa-right-align {
+.fa.fa-pull-right {
   margin-left: .3em;
 }
 /* Deprecated as of 4.4.0 */
-.right-align {
+.pull-right {
   float: right;
 }
 .pull-left {
@@ -86,7 +86,7 @@
 .fa.pull-left {
   margin-right: .3em;
 }
-.fa.right-align {
+.fa.pull-right {
   margin-left: .3em;
 }
 .fa-spin {

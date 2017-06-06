@@ -15,48 +15,48 @@
 </div>
 <hr>
 <div class="row ">
-    <div class="col s12 m4 l3">
+    <div class="col s12 m4 l3 center-align">
         <div class="card  blue-grey lighten-5 z-depth-3" onclick="window.location.href = 'it'"
              style="cursor: pointer !important;">
             <div class="card-content teal-text">
-                <center><i class="large material-icons">desktop_windows</i></center>
+                <i class="large material-icons">desktop_windows</i>
             </div>
             <div class="card-action">
-                <center><a href="it">IT</a></center>
+               <a href="it">IT</a>
             </div>
         </div>
     </div>
-    <div class="col s12 m4 l3">
+    <div class="col s12 m4 l3 center-align">
         <div class="card  blue-grey lighten-5 z-depth-3" onclick="window.location.href = 'compras'"
              style="cursor: pointer !important;">
             <div class="card-content teal-text">
-                <center><i class="large material-icons">shopping_cart</i></center>
+                <i class="large material-icons">shopping_cart</i>
             </div>
             <div class="card-action">
-                <center><a href="compras">Compras</a></center>
+               <a href="compras">Compras</a>
             </div>
         </div>
     </div>
-    <div class="col s12 m4 l3">
+    <div class="col s12 m4 l3 center-align">
         <div class="card  blue-grey lighten-5 z-depth-3" onclick="window.location.href = 'finanzas'"
              style="cursor: pointer !important;">
             <div class="card-content teal-text">
-                <center><i class="large material-icons">attach_money</i></center>
+                <i class="large material-icons">attach_money</i>
             </div>
             <div class="card-action">
-                <center><a href="finanzas">Finanzas</a></center>
+                <a href="finanzas">Finanzas</a>
             </div>
         </div>
     </div>
 
-    <div class="col s12 m4 l3">
+    <div class="col s12 m4 l3 center-align">
         <div class="card  blue-grey lighten-5 z-depth-3" onclick="window.location.href = 'almacen'"
              style="cursor: pointer !important;">
             <div class="card-content teal-text">
-                <center><i class="large material-icons">store</i></center>
+               <i class="large material-icons">store</i>
             </div>
             <div class="card-action">
-                <center><a href="almacen">Almacen</a></center>
+                <a href="almacen">Almacen</a>
             </div>
         </div>
     </div>

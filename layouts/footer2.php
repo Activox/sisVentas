@@ -1,7 +1,7 @@
 
 </div>
 <!-- Floating Action Button -->
-<div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+<div class="fixed-action-btn menuBtn" style="bottom: 50px; right: 19px;">
     <a class="btn-floating btn-large">
         <i class="mdi-action-stars"></i>
     </a>
@@ -25,9 +25,8 @@
 <!-- END MAIN -->
 
 <!-- //////////////////////////////////////////////////////////////////////////// -->
-<br><br><br><br>
 <!-- START FOOTER -->
-<footer class="page-footer">
+<footer class="page-footer" style="margin-top: 40%">
     <div class="footer-copyright">
         <div class="container">
             <span>Copyright © 2017 All rights reserved.</span>

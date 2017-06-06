@@ -4,7 +4,7 @@
         <h4 class="header"><span><i class="  material-icons teal-text" style="font-size: 40px">attach_money</i></span> Finanzas </h4>
 
     </div>
-    <div class="col s3 m3 l3 ">
+    <div class="col s3 m3 l3 right-align">
         <span class="right-align z-depth-2 return_button" onclick="window.location.href = 'menu'">
             <i class="tiny material-icons">keyboard_return</i> Return
         </span>
@@ -19,21 +19,21 @@
    
 
     <!--Aplicaciones-->
-    <div class="col s12 m12 l4">
+    <div class="col s12 m12 l4 center-align">
         <ul class="collection with-header z-depth-3">
-            <center>  <li href="#!" class="collection-header teal white-text"><h4>Aplicaciones</h4></li>
+             <li href="#!" class="collection-header teal white-text"><h4>Aplicaciones</h4></li>
                 <a href="finanzas-aplicaciones-facturacion" class="collection-item">Facturacion</a>
-                </center>
+
         </ul>
     </div>
     <!--/ Aplicaciones-->
     <!--Reportes-->
-    <div class="col s12 m12 l4">
+    <div class="col s12 m12 l4 center-align">
         <ul class="collection with-header z-depth-3">
-            <center>  <li href="#!" class="collection-header teal white-text"><h4>Reportes</h4></li>
+             <li href="#!" class="collection-header teal white-text"><h4>Reportes</h4></li>
                 <a href="finanzas-reportes-ventas" class="collection-item">Ventas</a>
                 <a  href="finanzas-reportes-CxC" class="collection-item">Cuentas por Cobrar</a>
-                <a  href="finanzas-reportes-CxP" class="collection-item">Cuentas por Pagar</a></center>
+                <a  href="finanzas-reportes-CxP" class="collection-item">Cuentas por Pagar</a>
         </ul>
     </div>
     <!--/ Reportes-->

@@ -43,7 +43,31 @@ class ClienteModel extends ORM {
                         inner("tercero ter", ["ter.id_record" => "per.id_tercero"])->
                         inner("nacionalidad na", ["na.id_record" => "ter.id_nacionalidad"])->
                         inner("tipo t", ["t.id_record" => "ci.id_tipo"])->
-                        where(["ci.active" => ["operator" => "=", "value" => 1, "nextcondition" => ""]])->objectList();
+                        where(
+                            ["ci.active" => ["operator" => "=", "value" => 1, "nextcondition" => ""]]
+            )->objectList();
+    }
+    public function getClienteById($id) {
+        $this->param1 = "ter.id_record";
+        $this->param2 = "ter.nombre";
+        $this->param3 = "ter.email";
+        $this->param4 = "na.description nacionalidad";
+        $this->param5 = "per.apellidos";
+        $this->param14 = "per.cedula";
+        $this->param6 = "ci.telefono";
+        $this->param7 = "per.sexo";
+        $this->param8 = "DATE_FORMAT(per.birthdate,'%M/%d/%Y') birthdate";
+        $this->param11 = "t.description tipo";
+        $this->param12 = "(Case when ci.active = 1 THEN 'TRUE' ELSE 'FALSE' END) active";
+        return $this->get()->
+                        inner("persona per", ["per.id_record" => "ci.id_persona"])->
+                        inner("tercero ter", ["ter.id_record" => "per.id_tercero"])->
+                        inner("nacionalidad na", ["na.id_record" => "ter.id_nacionalidad"])->
+                        inner("tipo t", ["t.id_record" => "ci.id_tipo"])->
+                        where(
+                            ["ci.active" => ["operator" => "=", "value" => 1, "nextcondition" => "and"],
+                                "ter.id_record" => ["operator" => "=", "value" => $id, "nextcondition" => ""]]
+            )->objectList();
     }
 
     /**

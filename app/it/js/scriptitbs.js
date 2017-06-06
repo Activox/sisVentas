@@ -5,6 +5,7 @@
  */
 $(document).ready(function () {
 
+
     /**
      * fill the table
      * @returns {undefined}
@@ -17,7 +18,14 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#" + $id + "").html(response);
+                $("#" + $id + "").find('tbody').html(response);
+                $("#" + $id + "").DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ]
+                    ,"searching":false,"bPaginate": true,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bInfo": false,
+                    "bAutoWidth": false});
+                $('select').material_select();
             }
         });
     };

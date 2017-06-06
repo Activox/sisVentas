@@ -151,14 +151,24 @@ class FacturacionController extends Controller
 
     public function getVenta()
     {
-        $getcolse = 'description';// value for collapse
-        $getdata = ['qty', 'compra', 'venta', 'ganancia'];//content of the table
-        $sumvalue = 'ganancia';
         $result = $this->getModel()->getVenta();
-        /**
-         * status. if you want to create total
-         */
-        $this->table->collapseTable($result, $getcolse, $getdata, $sumvalue, true);//call method
+        $html = "";
+        $tmp = 0;
+        $count=1;
+        $style = "style='text-align: center;'";
+        foreach ($result as $key) {
+            if ($tmp != $key->id_articulo) {
+                $html .= "
+                    <tr class='light-primary-color'>
+                        <td $style >".$count++."</td>
+                        <td $style colspan='4' >$key->description</td>                
+                    </tr>
+                ";
+                $tmp = $key->id_articulo;
+            }
+
+        }
+        echo $html;
     }
 
     public function printFactura($id)

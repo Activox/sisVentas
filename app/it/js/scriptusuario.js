@@ -12,6 +12,10 @@ $(document).ready(function () {
     $('.modal').modal();
     $('.modal-content').css({'width': '155% !important'});
     $('select').material_select();
+    var $details = $("#details");
+    $details.DataTable({
+        "columnDefs": [{"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}]
+    });
     $('.tooltipped').tooltip({delay: 50});
 
     var id_record = 0;
@@ -28,7 +32,10 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.DataTable().destroy();
+                $details.find('tbody').html(response);
+                $details.DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ] });
+                $('select').material_select();
             }
         });
     };
@@ -82,12 +89,12 @@ $(document).ready(function () {
      */
     $("#save").on('click', function () {
         data = new Object();
-        data.empleado       =       $("#empleado").val();
-        data.tipo           =       $("#tipo").val();
-        data.username       =       $("#username").val();
-        data.password       =       $("#password").val();
-        data.rpassword      =       $("#rpassword").val();
-        data.terminal       =       $("#terminal").val();
+        data.empleado = $("#empleado").val();
+        data.tipo = $("#tipo").val();
+        data.username = $("#username").val();
+        data.password = $("#password").val();
+        data.rpassword = $("#rpassword").val();
+        data.terminal = $("#terminal").val();
         if (data.password.length < 6) {
             alertify.alert("Alert", "The password must have 6 characters");
             return;
@@ -116,7 +123,7 @@ $(document).ready(function () {
     /**
      * Close modal and trigger alert.
      */
-    $("#cancel").on('click', function () {
+    $("#cancel,#cancel2").on('click', function () {
         alertify.error('Trassation Abort');
         $("#empleado").val('');
         $("#tipo").val('');
@@ -133,7 +140,11 @@ $(document).ready(function () {
      */
     $("#details").on('click', '.edit', function () {
         id_record = $(this).data('id');
-        $("#modal2").css({'width': '75% !important', 'max-height': '100% !important', 'overflow-y': 'hidden !important'});
+        $("#modal2").css({
+            'width': '75% !important',
+            'max-height': '100% !important',
+            'overflow-y': 'hidden !important'
+        });
         $("#description2").val($(this).data('descripcion'));
         $("#active").val($(this).data('active'));
         Materialize.updateTextFields();

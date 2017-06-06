@@ -17,6 +17,9 @@ class TableGenerator
         $cont1 = 1;
         $contint = 1;
         $sum = 0;
+        echo "<pre>";
+        print_r($result);
+        print_r($getdata);die;
         foreach ($result as $key => $value) {
             $sum += $value->$sumvalue;
             if ($validation != $value->$getcolse) {

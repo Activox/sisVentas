@@ -15,7 +15,18 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#" + $id + "").html(response);
+                $("#" + $id + "").find('tbody').html(response);
+                $("#" + $id + "").DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"
+                    }],
+                    "searching":false,"bPaginate": true,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bInfo": false,
+                    "bAutoWidth": false
+                });
+                $('select').material_select();
             }
         });
     };
@@ -92,7 +103,7 @@ $(document).ready(function () {
                 }
                 alertify.success('Save Succefully');
             } else {
-                alertify.alert("Error","Something was wrong. Please verify!");
+                alertify.alert("Error", "Something was wrong. Please verify!");
             }
 
         });

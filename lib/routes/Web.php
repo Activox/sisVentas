@@ -21,7 +21,7 @@ class Web
         "finanzas" => "Defaults@Default.display*finanzas",
         "facturacion" => "Defaults@Default.display*facturacion",
         "almacen" => "Defaults@Default.display*almacen",
-        "test" => "Defaults@Default.display*test",
+        "test-test-test" => "Defaults@Default.display*test",
 //      -----------------------------------------------------------
 //      It
 //      -----------------------------------------------------------// General
@@ -31,6 +31,7 @@ class Web
         "it-general-terminales" => "it@Terminal.display*terminal",
         "it-general-almacenes" => "it@Almacen.display*almacen",
         "it-general-impuestos" => "it@Itbs.display*itbs",
+        "it-mantenimientos-apps"                  => "it@App.display*app",
 //      ----------------------------------------------------------- // Productos
         "it-productos-categorias" => "it@Categoria.display*categoria",
         "it-productos-unidades" => "it@Unidad.display*unidad",

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
+    getTable('#table', 'tr.head');
     $.ajax({
         dataType: 'text',
         url: 'getVenta',
@@ -12,7 +13,6 @@ $(document).ready(function () {
         },
         success: function (response) {
             $("#table").html(response);
-            getTable('#table', 'tr.head');
         }
     });
 });

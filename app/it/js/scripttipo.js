@@ -34,7 +34,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 $tableDetails.DataTable().destroy();
-                $("#tabledetails > tbody").html(response);
+                $tableDetails.find('tbody').html(response);
                 $tableDetails.DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ] });
                 $('select').material_select();
             }
@@ -61,7 +61,7 @@ $(document).ready(function () {
             if (data) {
                 alertify.success('Save Succefully');
                 table();
-                $('#modal1').closeModal();
+                $('#modal1').modal('close');
                 $("#tipo").val('');
                 $("#description").val('');
             } else {
@@ -73,12 +73,12 @@ $(document).ready(function () {
     /**
      * Close modal and trigger alert.
      */
-    $(".cancel").on('click', function () {
+    $("#cancel,#cancel2").on('click', function () {
         alertify.error('Trassation Abort');
         $("#tipo").val('');
         $("#description").val('');
-        $('#modal1').closeModal();
-        $('#modal2').closeModal();
+        $('#modal1').modal('close');
+        $('#modal2').modal('close');
     });
 
     /**
@@ -92,7 +92,7 @@ $(document).ready(function () {
         $("#active").val($(this).data('active'));
         Materialize.updateTextFields();
         $('select').material_select('update');
-        $('#modal2').openModal();
+        $('#modal2').modal('open');
     });
 
     /**
@@ -108,7 +108,7 @@ $(document).ready(function () {
             if (data) {
                 alertify.success('Update Succefully');
                 table();
-                $('#modal2').closeModal();
+                $('#modal2').modal('close');
             } else {
                 alertify.alert("Something was wrong. Please verify!");
             }

@@ -23,46 +23,16 @@ list($module, $type, $app) = explode("-", $actual_url);
     <!-- /.col-lg-12 -->
 </div>
 <hr>
-
-<!--<div class="row container">-->
-<!--    <div class="input-field col s3">-->
-<!--        <select id="cliente">-->
-<!--            <option value="" disabled selected> Choose your option</option>-->
-<!--        </select>-->
-<!--        <label>Clientes</label>-->
-<!--    </div>-->
-<!--    <div class="input-field col s3">-->
-<!--        <select id="descuento">-->
-<!--            <option value="" disabled selected> Choose your option</option>-->
-<!--        </select>-->
-<!--        <label>Descuentos</label>-->
-<!--    </div>-->
-<!--    <div class="col s3 center-align">-->
-<!--        <br>-->
-<!--        <div class="switch">-->
-<!--            <label>-->
-<!--                Debito-->
-<!--                <input type="checkbox" id="pay_type">-->
-<!--                <span class="lever"></span>-->
-<!--                Credito-->
-<!--            </label>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="right-align">-->
-<!--        <br>-->
-<!--        <a class="waves-effect waves-light btn" id="btnfacturar"><i class="material-icons left">credit_card</i>Facturar</a>-->
-<!--    </div>-->
-<!--</div>-->
-<!--table-->
+<?php  $style = "style='text-align: center;'"; ?>
 <div class="row container">
-    <table>
+    <table class="bordered">
         <thead class="text-primary-color accent-color">
         <tr>
-            <th>#</th>
-            <th>Qty</th>
-            <th>Precio Compra</th>
-            <th>Precio Venta</th>
-            <th>Ganancia</th>
+            <th <?php echo $style ?> >#</th>
+            <th <?php echo $style ?> >Qty</th>
+            <th <?php echo $style ?> >Precio Compra</th>
+            <th <?php echo $style ?> >Precio Venta</th>
+            <th <?php echo $style ?> >Ganancia</th>
         </tr>
         </thead>
 

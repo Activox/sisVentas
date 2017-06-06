@@ -24,7 +24,9 @@ class Layout
         "login"     => ["header" => "loginHeader", "footer" => "loginFooter"],
         "logout"    => ["header" => "loginHeader", "footer" => "loginFooter"],
 //        "test"      => ["header" => "rawHeader", "footer" => "rawFooter"],
-        "test"      => ["header" => "rawHeader", "footer" => "rawFooter"],
+        "test-test-test"      => ["header" => "header2", "footer" => "footer2"],
+        "it-mantenimientos-apps"                 => ["header" => "rawHeader", "footer" => "rawFooter"],
+//        "it-general-tipos"                 => ["header" => "header2", "footer" => "footer2"],
         "compra/[view]/[id_solicitud]"      => ["header" => "rawHeader", "footer" => "rawFooter"],
         "facturacion/[view]/[id_factura]"      => ["header" => "rawHeader", "footer" => "rawFooter"]
     );

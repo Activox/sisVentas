@@ -14,6 +14,12 @@ $(document).ready(function () {
     $('select').material_select();
     $('.tooltipped').tooltip({delay: 50});
     var id_record = 0;
+    var $details = $('#details');
+    $details.DataTable( {
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
 
     /**
      * fill the table
@@ -27,7 +33,10 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.DataTable().destroy();
+                $details.find('tbody').html(response);
+                $details.DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ] });
+                $('select').material_select();
             }
         });
     };
@@ -162,7 +171,7 @@ $(document).ready(function () {
     /**
      * Close modal and trigger alert.
      */
-    $("#cancel").on('click', function () {
+    $("#cancel,#cancel2").on('click', function () {
         alertify.error('Trassation Abort');
         $("#almacen").val('');
         $("#empleado").val('');

@@ -118,8 +118,8 @@ class FacturacionModel extends ORM
     public function getVenta()
     {
         $sql = "
-        SELECT
-          
+        SELECT      
+            a.id_articulo,
           a.description,
           a.qty,
           a.precio                                                                  compra,

@@ -27,7 +27,7 @@ list($module, $type, $app) = explode("-", $actual_url);
 <!--table-->
 <div class="row container">
 
-    <table class="bordered striped highlight centered responsive-table">
+    <table class="display cell-border compact order-column mdl-data-table bordered" cellspacing="0" width="100%" id="details">
         <thead>
             <tr class="accent-color white-text">
                 <th data-field="id">#</th>
@@ -40,7 +40,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                 <th data-field="price">Option</th>
             </tr>
         </thead>
-        <tbody id="details">
+        <tbody>
 
         </tbody>
     </table>
@@ -101,8 +101,8 @@ list($module, $type, $app) = explode("-", $actual_url);
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light waves-green btn-flat" id="save">Save</a>
-        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn dark-primary-color" id="save">Save</a>
+        <a class="waves-effect waves-light btn red darking-1" id="cancel" style="margin-right: 1%;" >Cancel</a>
     </div>
 </div>
 <!--/ Modal Structure-->
@@ -131,8 +131,8 @@ list($module, $type, $app) = explode("-", $actual_url);
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light waves-green btn-flat" id="update">Save</a>
-        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn dark-primary-color" id="update">Save</a>
+        <a class="waves-effect waves-light btn red darken-1" id="cancel2" style="margin-right: 1%;" >Cancel</a>
     </div>
 </div>
 <!--/ Modal Structure-->

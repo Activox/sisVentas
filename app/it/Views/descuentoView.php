@@ -64,7 +64,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                     </div>
                     <div class="col s2">
                         <br>
-                        <a class="waves-effect waves-light waves-green btn" id="save">Save</a>
+                        <a class="waves-effect waves-light waves-green btn dark-primary-color" id="save">Save</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ list($module, $type, $app) = explode("-", $actual_url);
         <!--table-->
         <div class="row container">
 
-            <table class="bordered striped highlight centered responsive-table ">
+            <table class="display cell-border compact order-column mdl-data-table bordered"  cellspacing="0" width="100%" id="detail" >
                 <thead>
                 <tr class="accent-color white-text">
                     <th>#</th>
@@ -82,7 +82,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                     <th>Option</th>
                 </tr>
                 </thead>
-                <tbody id="detail">
+                <tbody >
 
                 </tbody>
             </table>
@@ -115,13 +115,13 @@ list($module, $type, $app) = explode("-", $actual_url);
                 </div>
                 <div class="col s2">
                     <br>
-                    <a class="waves-effect waves-light waves-green btn" id="save2">Save</a>
+                    <a class="waves-effect waves-light waves-green btn dark-primary-color" id="save2">Save</a>
                 </div>
             </div>
         </form>
         <!--table-->
         <div class="row container">
-            <table class="bordered striped highlight centered responsive-table ">
+            <table class="display cell-border compact order-column mdl-data-table bordered"  cellspacing="0" width="100%" id="details" >
                 <thead>
                 <tr class="accent-color white-text">
                     <th>#</th>
@@ -131,7 +131,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                     <th>Option</th>
                 </tr>
                 </thead>
-                <tbody id="details">
+                <tbody >
 
                 </tbody>
             </table>
@@ -158,13 +158,13 @@ list($module, $type, $app) = explode("-", $actual_url);
                 </div>
                 <div class="col s2">
                     <br>
-                    <a class="waves-effect waves-light waves-green btn" id="save3">Save</a>
+                    <a class="waves-effect waves-light waves-green btn dark-primary-color" id="save3">Save</a>
                 </div>
             </div>
         </form>
         <!--table-->
         <div class="row container">
-            <table class="bordered striped highlight centered responsive-table ">
+            <table class="display cell-border compact order-column mdl-data-table bordered"  cellspacing="0" width="100%" id="details2" >
                 <thead>
                 <tr class="accent-color white-text">
                     <th>#</th>
@@ -174,7 +174,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                     <th>Option</th>
                 </tr>
                 </thead>
-                <tbody id="details2">
+                <tbody >
 
                 </tbody>
             </table>
