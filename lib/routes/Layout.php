@@ -26,7 +26,11 @@ class Layout
 //        "test"      => ["header" => "rawHeader", "footer" => "rawFooter"],
         "test-test-test"      => ["header" => "header2", "footer" => "footer2"],
         "it-mantenimientos-apps"                 => ["header" => "rawHeader", "footer" => "rawFooter"],
+<<<<<<< HEAD
 //        "it-general-tipos"                 => ["header" => "header2", "footer" => "footer2"],
+=======
+        "it-general-tipos"                 => ["header" => "header2", "footer" => "footer2"],
+>>>>>>> 119369fe5f6fd4adf80bf715d1694aa42438da03
         "compra/[view]/[id_solicitud]"      => ["header" => "rawHeader", "footer" => "rawFooter"],
         "facturacion/[view]/[id_factura]"      => ["header" => "rawHeader", "footer" => "rawFooter"]
     );
