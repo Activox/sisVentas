@@ -11,7 +11,7 @@ use lib\Config;
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <?php
-        Route::getCss(array("materialize.min","custom", "alertify"), "", array(), TRUE);
+        Route::getCss(array("materialize","custom", "alertify"), "", array(), TRUE);
 
         Route::getJs(array("jquery-1.11.0.min", "bootstrap.min", "materialize.min", "script", "alertify"), "", array(), TRUE);
         ?>

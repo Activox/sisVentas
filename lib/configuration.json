@@ -10,7 +10,7 @@
     
     "dirModules"                 :       "app",
     "dirLayouts"                 :       "layouts",
-    "dirProject"                 :       "sisVenta",
+    "dirProject"                 :       "sisVentas",
     "dirLogs"                    :       "logs",
     "dirMainFileJs"              :       "js",
     "dirMainFileCss"             :       "css",

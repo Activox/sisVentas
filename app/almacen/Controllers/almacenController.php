@@ -142,8 +142,7 @@ class AlmacenController extends Controller
             $movimientoModel = $this->getModel('almacen/Movimiento');
             if ($count == 1) {
                 $html .= "
-                <tr class='text-center blue-grey lighten-4'>
-                   
+                <tr class='text-center blue-grey lighten-4'>                   
                     <td>Qty</td>
                     <td>Tipo</td>
                     <td>Creado en</td>

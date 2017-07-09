@@ -25,7 +25,7 @@ list($module, $type, $app) = explode("-", $actual_url);
 </div>
 <hr>
 <!--table-->
-<div class="row container">
+<div class="row ">
 
     <table class="bordered striped highlight centered responsive-table">
         <thead>

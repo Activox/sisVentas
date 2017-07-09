@@ -72,12 +72,9 @@ class TipoController extends Controller {
                         <td>$key->description</td>
                         <td>$key->active</td>";
             $html.='<td data-id="' . $key->id_record . '" data-tipo="' . $key->tipo . '" data-descripcion="' . $key->description . '" data-active="' . $key->active . '" 
-                            style="cursor:pointer" class="edit"> 
-<<<<<<< HEAD
-                            <i class="material-icons tooltipped blue-grey-text" data-position="bottom" data-delay="50" data-tooltipo="Update Record">edit</i></td>';
-=======
-                            <i class="mdi-editor-border-color tooltipped blue-grey-text" data-position="bottom" data-delay="50" data-tooltipo="Update Record"></i></td>';
->>>>>>> 119369fe5f6fd4adf80bf715d1694aa42438da03
+                            style="cursor:pointer" class="edit">
+            <i class="material-icons tooltipped blue-grey-text" data-position="bottom" data-delay="50" data-tooltipo="Update Record">edit</i></td>';
+
             $html.="</tr>";
         }
        

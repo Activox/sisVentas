@@ -61,7 +61,7 @@ list($module, $type, $app) = explode("-", $actual_url);
             </div>
         </form>
         <!--table-->
-        <div class="row container">
+        <div class="row ">
 
             <table class="display cell-border compact order-column mdl-data-table bordered"  cellspacing="0" width="100%" id="detail" >
                 <thead>
@@ -110,7 +110,7 @@ list($module, $type, $app) = explode("-", $actual_url);
             </div>
         </form>
         <!--table-->
-        <div class="row container">
+        <div class="row ">
             <table class="display cell-border compact order-column mdl-data-table bordered"  cellspacing="0" width="100%" id="details" >
                 <thead>
                 <tr class="accent-color white-text">

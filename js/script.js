@@ -5,10 +5,8 @@ $(document).ready(function () {
     /**
      * Initialization elements
      */
-<<<<<<< HEAD
+
     $('.modal').modal();
-=======
->>>>>>> 119369fe5f6fd4adf80bf715d1694aa42438da03
     $('.collapsible').collapsible();
     $('.modal-content').css({'width': '155% !important'});
     $('select').material_select();
@@ -34,7 +32,7 @@ $(document).ready(function () {
  * @param $post
  * @param $params
  */
-function ajax($id, $post, $params) {
+ajax = function($id, $post, $params) {
     $.ajax({
         dataType: 'json',
         url: '' + $post + '',
@@ -72,51 +70,49 @@ function values(value) {
  * convert form to object.
  * @returns object
  */
-<<<<<<< HEAD
+
 $.fn.serializeObject = function () {
     var o = {};
     var a = this.serializeArray();
     $.each(a, function () {
-=======
-$.fn.serializeObject = function() {
-    var o = {};
-    var a = this.serializeArray();
-    $.each(a, function() {
->>>>>>> 119369fe5f6fd4adf80bf715d1694aa42438da03
-        if (o[this.name]) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
-        }
+        $.fn.serializeObject = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
     });
-    return o;
 };
 
 function getTable(table, head) {
-<<<<<<< HEAD
+
     $(head).nextUntil(head).hide();//oculta todos los filas que no poseen la clase head
     $(table).on('click', '.head', function () {
         $(this).nextUntil(head).toggle();//muestra el colapso de las filas
     });
-
-=======
     // let n = 0;
     $(head).nextUntil(head).hide();//oculta todos los filas que no poseen la clase head
     $('table').addClass('bordered highlight centered responsive-table'); //se le agrega el estilo a la tabla
     $(table).on('click', '.head', function () {
         let n = $(this).data('status');
         if (n == 0) {
-            $(this).data('status',1)
+            $(this).data('status', 1)
             return $(this).nextUntil(head).show(); //muestra el colapso de las filas
         } else {
-            $(this).data('status',0)
+            $(this).data('status', 0)
             return $(this).nextUntil(head).hide(); //muestra el colapso de las filas
         }
     });
->>>>>>> 119369fe5f6fd4adf80bf715d1694aa42438da03
 }
 
 
