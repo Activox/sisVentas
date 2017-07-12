@@ -177,8 +177,8 @@ list($module, $type, $app) = explode("-", $actual_url);
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light btn dark-primary-color" id="save">Save</a>
-        <a class="waves-effect waves-light btn red darken-1" style="margin-right: 1%" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn red darken-1" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn dark-primary-color" style="margin-right: 1%" id="save">Save</a>
     </div>
 </div>
 

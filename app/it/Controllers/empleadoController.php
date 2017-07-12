@@ -4,7 +4,8 @@ namespace it\Controllers;
 
 use abstracts\Controller;
 
-class EmpleadoController extends Controller {
+class EmpleadoController extends Controller
+{
 
     private $model = null;
     private $input = null;
@@ -12,17 +13,19 @@ class EmpleadoController extends Controller {
     /**
      * execute parent contruct..
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct($this);
         $this->model = $this->getModel();
     }
 
     /**
-     * 
+     *
      * @param string $view
      * @return string
      */
-    public function display($view = '', array $params = array()) {
+    public function display($view = '', array $params = array())
+    {
 
         /**
          * set params to view
@@ -54,33 +57,57 @@ class EmpleadoController extends Controller {
      * @param stdClass $properties
      * @return object model
      */
-    public function getModel($model = '', $properties = null) {
+    public function getModel($model = '', $properties = null)
+    {
         return parent::getModel($model, $properties);
     }
 
     /**
-     * 
+     *
      */
-    public function getEmpleado() {
-        $json = $this->model->getEmpleado();
+    public function getEmpleado()
+    {
+        $id = \Factory::getInput("id");
         $html = "";
-        foreach ($json as $key) {
-            $direccion = $this->getModel('it/Direccion')->getDireccionPersona($key->id_record);
-            $html .= "<tr>
+        if (isset($id)) {
+            $direccion = $this->getModel('it/Direccion')->getDireccionPersona($id);
+            $result = $this->model->getEmpleado($id);
+            foreach ($result as $key) {
+                $html =
+                    "
+                     <div class=\"col m6 container \">
+                        <p><b>Nombre Completo:</b> $key->nombre $key->apellidos</p>
+                        <p><b>Email:</b> $key->email</p>
+                        <p><b>Direccion:</b> " . $direccion[0]->direccion . " </p>
+                        <p><b>Fecha de Entrada:</b> " . $key->admission_date . " </p>
+                        <p><b>Estado Civil:</b> " . $key->estado_civil . " </p>
+                    </div>
+                    <div class=\"col m6 container\">
+                        <p><b>Cedula:</b> $key->cedula</p>
+                        <p><b>Telefono:</b> $key->telefono</p>
+                        <p><b>Sexo:</b> $key->sexo</p>
+                        <p><b>Tipo de Cliente:</b> $key->tipo</p>
+                        <p><b>Fecha nacimiento:</b> $key->birthdate</p>
+                    </div>
+                ";
+            }
+        } else {
+            $json = $this->model->getEmpleado(0);
+            foreach ($json as $key) {
+                $html .= "<tr>
                         <td>$key->id_empleado</td>
                         <td>$key->nombre $key->apellidos</td>
                         <td>$key->email</td>
                         <td>$key->cedula</td>
-                        <td>$key->telefono</td>
-                        <td>$key->sexo</td>
-                        <td>" . $direccion[0]->direccion . "</td>
-                        <td>$key->birthdate</td>                        
-                        <td>$key->admission_date</td>
-                        <td>$key->estado_civil</td>
+                        <td>$key->telefono</td>                       
                         <td>$key->tipo</td>
                         <td>$key->active</td>
-                        <td data-id='$key->id_record' style='cursor:pointer;'><i class='material-icons teal-text'>edit</i></td>
+                        <td >
+                            <i class='material-icons teal-text edit' data-id='$key->id_record' style='cursor:pointer;' >edit</i>
+                            <i class='material-icons cyan-text info' data-id='$key->id_record' style='cursor:pointer;' >info</i>
+                        </td>
                     </tr>";
+            }
         }
         return $html;
     }
@@ -89,7 +116,8 @@ class EmpleadoController extends Controller {
      *  This function insert records
      * @return type
      */
-    public function setEmpleado() {
+    public function setEmpleado()
+    {
         $params = new \stdClass();
         $data = \Factory::getInput("data");
         $params->name = $data['name'];
@@ -111,7 +139,8 @@ class EmpleadoController extends Controller {
     /**
      * get the pais list
      */
-    public function getPais() {
+    public function getPais()
+    {
         $result = $this->getModel('it/Pais');
         echo '{"data": ' . json_encode($result->getPais()) . ' }';
     }
@@ -119,7 +148,8 @@ class EmpleadoController extends Controller {
     /**
      * get the nacionalidad list
      */
-    public function getNacionalidad() {
+    public function getNacionalidad()
+    {
         $result = $this->getModel('it/Nacionalidad');
         echo '{"data": ' . json_encode($result->getNacionalidad()) . ' }';
     }
@@ -127,7 +157,8 @@ class EmpleadoController extends Controller {
     /**
      *  get the ciudad list
      */
-    public function getCiudadByPais() {
+    public function getCiudadByPais()
+    {
         $result = $this->getModel('it/Ciudad');
         $id_pais = \Factory::getInput("id");
         echo '{"data": ' . json_encode($result->getCiudadByPais($id_pais)) . ' }';
@@ -136,7 +167,8 @@ class EmpleadoController extends Controller {
     /**
      * get the sector list
      */
-    public function getSectorByCiudad() {
+    public function getSectorByCiudad()
+    {
         $result = $this->getModel('it/Sector');
         $id_ciudad = \Factory::getInput("id");
         echo '{"data": ' . json_encode($result->getSectorByCiudad($id_ciudad)) . ' }';
@@ -145,7 +177,8 @@ class EmpleadoController extends Controller {
     /**
      * Get the type list
      */
-    public function getDescriptionByTipo() {
+    public function getDescriptionByTipo()
+    {
         $result = $this->getModel('it/Tipo');
         $tipo = \Factory::getInput("id");
         echo '{"data": ' . json_encode($result->getDescriptionByTipo($tipo)) . ' }';

@@ -8,6 +8,7 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.modal').modal();
     $('select').material_select();
+    var $details = $("#details");
     var table = function () {
         $.ajax({
             dataType: 'text',
@@ -16,7 +17,14 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.find('tbody').html(response);
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
+                $('select').material_select();
             }
         });
     };

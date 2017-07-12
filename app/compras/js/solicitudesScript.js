@@ -101,8 +101,9 @@ $(document).ready(function () {
         $("#suplidor").prop("disabled", false);
         $("#almacen").val('').focus();
         $("#suplidor").val('');
-        $("#articulo").val('');
+        $("#articulo").html('<option value="" disabled selected> Choose your option</option>');
         $("#qty").val('');
+        $("#list").html('');
         $('select').material_select();
     });
     /**

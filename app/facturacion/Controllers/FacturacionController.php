@@ -154,19 +154,26 @@ class FacturacionController extends Controller
         $result = $this->getModel()->getVenta();
         $html = "";
         $tmp = 0;
-        $count=1;
+        $count = 1;
         $style = "style='text-align: center;'";
         foreach ($result as $key) {
             if ($tmp != $key->id_articulo) {
                 $html .= "
-                    <tr class='light-primary-color'>
-                        <td $style >".$count++."</td>
-                        <td $style colspan='4' >$key->description</td>                
+                    <tr class='light-primary-color'>                        
+                        <td $style colspan='5' >$key->description</td>                
                     </tr>
                 ";
                 $tmp = $key->id_articulo;
             }
-
+            $html .= "
+            <tr>
+                <td $style >" . $count++ . "</td>
+                <td $style >" . $key->qty . "</td>
+                <td $style >" . $key->compra . "</td>
+                <td $style >" . $key->venta . "</td>
+                <td $style >" . $key->ganancia . "</td>
+            </tr>
+            ";
         }
         echo $html;
     }

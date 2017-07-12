@@ -37,7 +37,8 @@ class PaisModel extends ORM {
 
     /**
      * save records.
-     * @param \it\Models\stdClass $params
+     * @param stdClass|\stdClass $params
+     * @return bool
      */
     public function setPais(\stdClass $params) {
         $result = TRUE;
@@ -51,6 +52,7 @@ class PaisModel extends ORM {
         } else {
             $nacionalidadModel = new NacionalidadModel();
             $nacionalidadModel->description = $this->escape($params->nacionalidad);
+            $nacionalidadModel->id_pais = $this->escape($id_record);
             $id_nacionalidad = $nacionalidadModel->saveProp();
             if ($id_nacionalidad < 1) {
                 $this->rollback("", FALSE);

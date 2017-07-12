@@ -12,9 +12,9 @@ $(document).ready(function () {
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
-    
-    $('.picker').appendTo('body');
 
+    $('.picker').appendTo('body');
+    var $details = $("#details");
     var table = function () {
         $.ajax({
             dataType: 'text',
@@ -23,7 +23,14 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.find('tbody').html(response);
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
+                $('select').material_select();
             }
         });
     };
@@ -47,7 +54,7 @@ $(document).ready(function () {
     table();
     expandAll();
     /**
-     * 
+     *
      */
     $("#addRecord").on('click', function () {
         pais();
@@ -60,20 +67,20 @@ $(document).ready(function () {
 
     $("#save").on('click', function () {
         data = new Object();
-        data.name           =       $("#name").val();
-        data.last_name      =       $("#last_name").val();
-        data.cedula         =       $("#cedula").val();
-        data.date           =       $("#date").val();
-        data.sexo           =       $("#sexo").val();
-        data.email          =       $("#email").val();
-        data.phone          =       $("#phone").val();
-        data.pais           =       $("#pais").val();
-        data.nacionalidad   =       $("#nacionalidad").val();
-        data.empresa        =       $("#empresa").val();
-        data.ciudad         =       $("#ciudad").val();
-        data.sector         =       $("#sector").val();
-        data.tipo           =       $("#tipo").val();
-        data.direccion      =       $("#direccion").val();
+        data.name = $("#name").val();
+        data.last_name = $("#last_name").val();
+        data.cedula = $("#cedula").val();
+        data.date = $("#date").val();
+        data.sexo = $("#sexo").val();
+        data.email = $("#email").val();
+        data.phone = $("#phone").val();
+        data.pais = $("#pais").val();
+        data.nacionalidad = $("#nacionalidad").val();
+        data.empresa = $("#empresa").val();
+        data.ciudad = $("#ciudad").val();
+        data.sector = $("#sector").val();
+        data.tipo = $("#tipo").val();
+        data.direccion = $("#direccion").val();
         $.post("setSuplidor", {content: 'text', data: data}, function (data) {
             alertify.success('Save Succefully')
             table();
@@ -111,5 +118,15 @@ $(document).ready(function () {
         $("#tipo").val('');
         $("#direccion").val('');
         $('#modal1').modal('close');
+    });
+
+    /**
+     *
+     */
+    $details.on('click', '.info', function () {
+        $('#modal2').modal('open');
+        $.post('getSuplidor', {content: 'text', id: $(this).data('id')}, function (response) {
+            $('#info').html(response);
+        });
     });
 });

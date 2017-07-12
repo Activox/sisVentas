@@ -62,7 +62,7 @@ $baseroot = _HOST_ . _DIRECTORY_ . _DS_;
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo" data-activates="slide-out"><i class=" button-collapse small material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><?php echo "" . date("m/d/y h:i:sa") . "    "; ?></li>
+
                         <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="chip dark-primary-color text-primary-color">
                                 <img src="images/images.jpg" alt="Contact Person">
                                 <?php

@@ -15,6 +15,12 @@ $(document).ready(function () {
     $('.tooltipped').tooltip({delay: 50});
 
     var id_record = 0;
+    var $details = $("#details");
+    // $details.DataTable( {
+    //     "columnDefs": [
+    //         {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+    //     ]
+    // });
 
     /**
      * fill the table
@@ -28,7 +34,15 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.DataTable().destroy();
+                $details.find('tbody').html(response);
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
+                $('select').material_select();
             }
         });
     };

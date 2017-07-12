@@ -9,7 +9,7 @@ list($module, $type, $app) = explode("-", $actual_url);
 <!--Header-->
 <div class="row">
     <div class="col s4 m4 l4">
-        <h4><i class="small material-icons teal-text">list</i>&nbsp;Impuestos</h4>        
+        <h4><i class="fa fa-university teal-text" aria-hidden="true"></i>&nbsp;Impuestos</h4>
 
     </div>
     <div class="col s8 m8 l8">

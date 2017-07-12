@@ -24,7 +24,7 @@ class EmpleadoModel extends ORM {
         $this->session = \Factory::getSession();
     }
 
-    public function getEmpleado() {
+    public function getEmpleado($id) {
         $this->param1 = "ter.id_record";
         $this->param15 = "em.id_record id_empleado";
         $this->param2 = "ter.nombre";
@@ -44,7 +44,12 @@ class EmpleadoModel extends ORM {
                         inner("tercero ter", ["ter.id_record" => "per.id_tercero"])->
                         inner("nacionalidad na", ["na.id_record" => "ter.id_nacionalidad"])->
                         inner("tipo t", ["t.id_record" => "em.id_tipo"])->
-                        where(["em.active" => ["operator" => "=", "value" => 1, "nextcondition" => ""]])->objectList();
+                        where(
+                            [
+                              "em.active" => ["operator" => "=", "value" => 1, "nextcondition" => "AND"] ,
+                              "ter.id_record" => ["operator" => "=", "value" => $id, "nextcondition" => ""]
+                            ]
+        )->objectList();
     }
     
      public function getEmpleadoById($id) {

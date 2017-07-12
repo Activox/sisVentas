@@ -15,10 +15,10 @@ list($module, $type, $app) = explode("-", $actual_url);
     <div class="col s9 m9 l9">
         <div class="right-align">
              You Are In:
-            <a href="menu" >Dashboard</a> >
-            <a href="<?php echo $module ?>" ><?php echo ucfirst($module); ?></a> >
-            <a href="<?php echo $module ?>" ><?php echo ucfirst($type); ?></a> >
-            <a href="#!" class="teal-text text-darken-1"><?php echo $app; ?></a>
+            <a href="menu" >Dashboard</a> /
+            <a href="<?php echo $module ?>" ><?php echo ucfirst($module); ?></a> /
+            <a href="<?php echo $module ?>" ><?php echo ucfirst($type); ?></a> /
+            <a href="#!" class="teal-text text-darken-1"><?php echo ucfirst($app); ?></a>
         </div>
     </div>
     <!-- /.col-lg-12 -->
@@ -27,7 +27,8 @@ list($module, $type, $app) = explode("-", $actual_url);
 <!--table-->
 <div class="row ">
 
-    <table class="bordered striped highlight centered responsive-table">
+    <table class="display cell-border compact order-column mdl-data-table bordered" cellspacing="0" width="100%"
+           id="details">
         <thead>
             <tr class="accent-color white-text">
                 <th >#</th>
@@ -37,7 +38,7 @@ list($module, $type, $app) = explode("-", $actual_url);
                 <th >Option</th>
             </tr>
         </thead>
-        <tbody id="details">
+        <tbody >
 
         </tbody>
     </table>
@@ -48,8 +49,9 @@ list($module, $type, $app) = explode("-", $actual_url);
 <!--floting btn-->
 <div class="fixed-action-btn horizontal">
     <!-- Modal Trigger -->
-    <a data-target="modal1" class="waves-effect waves-light btn btn-floating btn-large teal" id="addRecord">
-        <i class="large material-icons">add</i>
+    <a data-target="modal1" class="waves-effect waves-light btn btn-floating btn-large dark-primary-color"
+       id="addRecord">
+        <i class="material-icons">add</i>
     </a>
 </div>
 <!--/ floting btn-->
@@ -76,8 +78,8 @@ list($module, $type, $app) = explode("-", $actual_url);
         </div>
     </div>
     <div class="modal-footer right-align">
-        <a class="waves-effect waves-light waves-green btn-flat" id="save">Save</a>
-        <a class="waves-effect waves-light waves-red btn-flat" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn red darken-1" id="cancel">Cancel</a>
+        <a class="waves-effect waves-light btn dark-primary-color" style="margin-right: 1%" id="save">Save</a>
     </div>
 </div>
 <!--/ Modal Structure-->

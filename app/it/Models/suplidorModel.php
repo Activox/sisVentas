@@ -26,9 +26,9 @@ class SuplidorModel extends ORM {
 
     /**
      * 
-     * @return type
+     * @return object
      */
-    public function getSuplidor() {
+    public function getSuplidor($id=0) {
         $this->param1 = "ter.id_record id_tercero";
         $this->param13 = "su.id_record";
         $this->param2 = "CONCAT(ter.nombre,' ',per.apellidos) description";
@@ -45,7 +45,10 @@ class SuplidorModel extends ORM {
                         inner("tercero ter", ["ter.id_record" => "per.id_tercero"])->
                         inner("nacionalidad na", ["na.id_record" => "ter.id_nacionalidad"])->
                         inner("tipo t", ["t.id_record" => "su.id_tipo"])->
-                        where(["su.active" => ["operator" => "=", "value" => 1, "nextcondition" => ""]])->objectList();
+                        where([
+                            "su.active" => ["operator" => "=", "value" => 1, "nextcondition" => "AND"],
+                            "ter.id_record" => ["operator" => "=", "value" => $id, "nextcondition" => ""]
+                        ])->objectList();
     }
 
     /**

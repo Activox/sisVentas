@@ -15,6 +15,7 @@ $(document).ready(function () {
         selectYears: 50 // Creates a dropdown of 15 years to control year
     });
     $('.picker').appendTo('body');
+    var $details = $("#details");
     /**
      *
      */
@@ -28,7 +29,14 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
-                $("#details").html(response);
+                $details.find('tbody').html(response);
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
+                $('select').material_select();
             }
         });
     };
@@ -214,4 +222,15 @@ $(document).ready(function () {
         $("#admission_date").val('');
         $('#modal1').modal('close');
     });
+
+    /**
+     *
+     */
+    $details.on('click', '.info', function () {
+        $('#modal2').modal('open');
+        $.post('getEmpleado', {content: 'text', id: $(this).data('id')}, function (response) {
+            $('#info').html(response);
+        });
+    });
+
 });
