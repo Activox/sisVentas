@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5978df84-8dcc-4afd-8efa-b4bb587ed4b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pventa.iml" afterPath="$PROJECT_DIR$/.idea/pventa.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptarticulo.js" afterPath="$PROJECT_DIR$/app/it/js/scriptarticulo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptcategoria.js" afterPath="$PROJECT_DIR$/app/it/js/scriptcategoria.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptciudad.js" afterPath="$PROJECT_DIR$/app/it/js/scriptciudad.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptcliente.js" afterPath="$PROJECT_DIR$/app/it/js/scriptcliente.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptdescuento.js" afterPath="$PROJECT_DIR$/app/it/js/scriptdescuento.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptempleado.js" afterPath="$PROJECT_DIR$/app/it/js/scriptempleado.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptitbs.js" afterPath="$PROJECT_DIR$/app/it/js/scriptitbs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptpais.js" afterPath="$PROJECT_DIR$/app/it/js/scriptpais.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptporcentaje.js" afterPath="$PROJECT_DIR$/app/it/js/scriptporcentaje.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptsector.js" afterPath="$PROJECT_DIR$/app/it/js/scriptsector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptsubcategoria.js" afterPath="$PROJECT_DIR$/app/it/js/scriptsubcategoria.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptsuplidor.js" afterPath="$PROJECT_DIR$/app/it/js/scriptsuplidor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptunidad.js" afterPath="$PROJECT_DIR$/app/it/js/scriptunidad.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/js/scriptusuario.js" afterPath="$PROJECT_DIR$/app/it/js/scriptusuario.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,7 +82,23 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="FacturacionModel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+              <folding>
+                <marker date="1498099320684" expanded="true" signature="3202:3279" ph="SELECT fac.n... factura" />
+                <marker date="1498099320684" expanded="true" signature="3412:4582" ph="SELECT a.id_... id_articulo" />
+                <marker date="1498099320684" expanded="true" signature="3712:4565" ph="SELECT df.id... factura" />
+                <marker date="1498099320684" expanded="true" signature="4775:5462" ph="SELECT 'Debi... factura" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -166,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/it/Controllers/tipoController.php" />
         <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/app/almacen/Controllers/almacenController.php" />
         <option value="$PROJECT_DIR$/app/it/Views/tipoView.php" />
@@ -217,6 +217,7 @@
         <option value="$PROJECT_DIR$/app/it/js/scriptunidad.js" />
         <option value="$PROJECT_DIR$/app/it/js/scriptusuario.js" />
         <option value="$PROJECT_DIR$/../domino/domino.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -309,6 +310,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facturacion" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="facturacion" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -458,7 +499,7 @@
       <workItem from="1499831934939" duration="4182000" />
       <workItem from="1500143519516" duration="1975000" />
       <workItem from="1500355266595" duration="2125000" />
-      <workItem from="1500434880989" duration="15000" />
+      <workItem from="1500434880989" duration="502000" />
     </task>
     <task id="LOCAL-00001" summary="changes some bugs">
       <created>1499835800930</created>
@@ -467,11 +508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499835800930</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changes some bugs">
+      <created>1500434907508</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1500434907508</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134962000" />
+    <option name="totallyTimeSpent" value="135449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,7 +533,7 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -553,24 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/it/Views/empleadoView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="27" column="82" lean-forward="false" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
-          <caret line="28" column="80" lean-forward="false" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
-          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Views/suplidorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="25" column="81" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <caret line="26" column="79" lean-forward="false" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/it/Controllers/empleadoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="787">
@@ -753,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="45" column="41" lean-forward="false" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/facturacion/Models/DetalleFacturaTmpModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -837,6 +860,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -937,6 +961,35 @@
         <state relative-caret-position="184">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Factory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="31" column="141" lean-forward="false" selection-start-line="31" selection-start-column="141" selection-end-line="31" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+          <folding>
+            <marker date="1498099320684" expanded="true" signature="3202:3279" ph="SELECT fac.n... factura" />
+            <marker date="1498099320684" expanded="true" signature="3412:4582" ph="SELECT a.id_... id_articulo" />
+            <marker date="1498099320684" expanded="true" signature="3712:4565" ph="SELECT df.id... factura" />
+            <marker date="1498099320684" expanded="true" signature="4775:5462" ph="SELECT 'Debi... factura" />
+          </folding>
         </state>
       </provider>
     </entry>
