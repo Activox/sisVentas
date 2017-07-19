@@ -68,6 +68,7 @@ $(document).ready(function () {
         obj.factura = $("#factura").val();
         obj.option = 3;
         petition(obj);
+        $("#modal2").modal("close");
     });
     /**
      *

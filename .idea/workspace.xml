@@ -3,7 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5978df84-8dcc-4afd-8efa-b4bb587ed4b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" afterPath="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" afterPath="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/compras/js/ordenesScript.js" afterPath="$PROJECT_DIR$/app/compras/js/ordenesScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" afterPath="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" afterPath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" afterPath="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" afterPath="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" afterPath="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/Models/articuloModel.php" afterPath="$PROJECT_DIR$/app/it/Models/articuloModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/rawFooter.php" afterPath="$PROJECT_DIR$/layouts/rawFooter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/rawHeader.php" afterPath="$PROJECT_DIR$/layouts/rawHeader.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -83,16 +93,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FacturacionModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php">
+      <file leaf-file-name="inventarioModel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/almacen/Models/inventarioModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+            <state relative-caret-position="133">
+              <caret line="220" column="51" lean-forward="true" selection-start-line="220" selection-start-column="51" selection-end-line="220" selection-end-column="51" />
               <folding>
-                <marker date="1498099320684" expanded="true" signature="3202:3279" ph="SELECT fac.n... factura" />
-                <marker date="1498099320684" expanded="true" signature="3412:4582" ph="SELECT a.id_... id_articulo" />
-                <marker date="1498099320684" expanded="true" signature="3712:4565" ph="SELECT df.id... factura" />
-                <marker date="1498099320684" expanded="true" signature="4775:5462" ph="SELECT 'Debi... factura" />
+                <element signature="e#1250#4079#0#PHP" expanded="false" />
+                <marker date="1500446090052" expanded="true" signature="7904:8002" ph="SELECT id_re... inventario" />
+                <marker date="1500446090052" expanded="true" signature="7904:8003" ph="SELECT * FRO... inventario" />
+                <marker date="1500446090052" expanded="true" signature="7904:8024" ph="SELECT inv.i... inventario" />
+                <marker date="1500446090052" expanded="true" signature="8286:8809" ph="SELECT ds.id... detalle_solicitud" />
+                <marker date="1500446090052" expanded="true" signature="9114:9858" ph="SELECT inv.i... inventario" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovimientoModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+              <folding>
+                <marker date="1500439628401" expanded="true" signature="914:2139" ph="SELECT CONCA... movimiento_inventario" />
               </folding>
             </state>
           </provider>
@@ -109,18 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \/\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>\&lt;div class\=\&quot;col s8 m8 l8\&quot;\&gt;\n        \&lt;div class\=\&quot;right\-align\&quot;\&gt;\n            You Are In\:\n            \&lt;a href\=\&quot;menu\&quot; \&gt;Dashboard\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$module\)\; \?\&gt;\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\&lt;\?php echo \$module \?\&gt;\&quot; \&gt;\&lt;\?php echo ucfirst\(\$type\)\; \?\&gt;\&lt;\/a\&gt; \&gt;\n            \&lt;a href\=\&quot;\#\!\&quot; class\=\&quot;teal\-text text\-darken\-1\&quot;\&gt;\&lt;\?php echo \$app\; \?\&gt;\&lt;\/a\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/div\&gt;</find>
-      <find>&lt;div class=&quot;col s8 m8 l8&quot;&gt;        &lt;div class=&quot;right-align&quot;&gt;            You Are In:            &lt;a href=&quot;menu&quot; &gt;Dashboard&lt;/a&gt; &gt;            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($module); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($type); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;#!&quot; class=&quot;teal-text text-darken-1&quot;&gt;&lt;?php echo $app; ?&gt;&lt;/a&gt;        &lt;/div&gt;    &lt;/div&gt;</find>
-      <find>&lt;table class=&quot;bordered highlight centered responsive-table &quot;&gt;</find>
-      <find>&lt;tr class=&quot;teal white-text&quot;&gt;</find>
       <find>table-xtra-condensed</find>
       <find>$this-&gt;data-&gt;listed</find>
       <find>listed</find>
@@ -134,11 +146,23 @@
       <find>getListActi</find>
       <find>list</find>
       <find>getSuplidor2</find>
-      <find>getVenta</find>
       <find>precio_articulo</find>
-      <find>setDetalleTmp</find>
-      <find>getInfoByBarcode</find>
       <find>Ficha(</find>
+      <find>getNo</find>
+      <find>getNoFactura</find>
+      <find>setFactura</find>
+      <find>update</find>
+      <find>printFactura</find>
+      <find>getMovements</find>
+      <find>btnadd</find>
+      <find>getInventory</find>
+      <find>getInventorio</find>
+      <find>getInfoByBarcode</find>
+      <find>scanArticulo</find>
+      <find>getventa</find>
+      <find>getVenta</find>
+      <find>setDetalleTmp</find>
+      <find>modal2</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;div class=&quot;right-align&quot;&gt;            You Are In:            &lt;a href=&quot;menu&quot; &gt;Dashboard&lt;/a&gt; \            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($module); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($type); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;#!&quot; class=&quot;teal-text text-darken-1&quot;&gt;&lt;?php echo $app; ?&gt;&lt;/a&gt;        &lt;/div&gt;</replace>
@@ -167,18 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/app/almacen/Controllers/almacenController.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/tipoView.php" />
-        <option value="$PROJECT_DIR$/layouts/footer.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/almacenView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/articuloView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/categoriaView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/empresaView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/PrecioView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/subcategoriaView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/porcentajeView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/terminalView.php" />
         <option value="$PROJECT_DIR$/app/it/Views/unidadView.php" />
         <option value="$PROJECT_DIR$/app/it/Views/usuarioView.php" />
         <option value="$PROJECT_DIR$/app/it/Views/descuentoView.php" />
@@ -197,9 +209,7 @@
         <option value="$PROJECT_DIR$/layouts/header.php" />
         <option value="$PROJECT_DIR$/app/it/Controllers/articuloController.php" />
         <option value="$PROJECT_DIR$/app/it/Models/suplidorModel.php" />
-        <option value="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" />
         <option value="C:/Program Files/MySQL/MySQL Workbench 6.3 CE/data/code_editor.xml" />
-        <option value="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/26d3ad25-f5fa-4d42-83a2-9b43e7306a39/console.sql" />
         <option value="$PROJECT_DIR$/app/it/js/scriptarticulo.js" />
         <option value="$PROJECT_DIR$/app/it/js/scriptcategoria.js" />
@@ -218,6 +228,20 @@
         <option value="$PROJECT_DIR$/app/it/js/scriptusuario.js" />
         <option value="$PROJECT_DIR$/../domino/domino.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/layouts/rawHeader.php" />
+        <option value="$PROJECT_DIR$/layouts/rawFooter.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/Views/invoiceView.php" />
+        <option value="$PROJECT_DIR$/app/it/Models/articuloModel.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
+        <option value="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" />
+        <option value="$PROJECT_DIR$/css/custom.css" />
+        <option value="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
+        <option value="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" />
+        <option value="$PROJECT_DIR$/app/compras/Models/solicitudModel.php" />
+        <option value="$PROJECT_DIR$/app/compras/js/ordenesScript.js" />
+        <option value="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" />
       </list>
     </option>
   </component>
@@ -309,6 +333,34 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -327,7 +379,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="facturacion" />
+              <option name="myItemId" value="compras" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,11 +397,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="facturacion" />
+              <option name="myItemId" value="compras" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,7 +551,7 @@
       <workItem from="1499831934939" duration="4182000" />
       <workItem from="1500143519516" duration="1975000" />
       <workItem from="1500355266595" duration="2125000" />
-      <workItem from="1500434880989" duration="502000" />
+      <workItem from="1500434880989" duration="11257000" />
     </task>
     <task id="LOCAL-00001" summary="changes some bugs">
       <created>1499835800930</created>
@@ -515,11 +567,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500434907508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="change https">
+      <created>1500435393751</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500435393752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135449000" />
+    <option name="totallyTimeSpent" value="146204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -533,12 +592,12 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -576,12 +635,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changes some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes some bugs" />
+    <MESSAGE value="change https" />
+    <option name="LAST_COMMIT_MESSAGE" value="change https" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,129 +671,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/it/Controllers/empleadoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="95" column="37" lean-forward="false" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Models/empleadoModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="49" column="107" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Controllers/suplidorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Models/clienteModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1541">
-          <caret line="67" column="104" lean-forward="true" selection-start-line="67" selection-start-column="104" selection-end-line="67" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Views/ciudadView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="79" column="83" lean-forward="true" selection-start-line="79" selection-start-column="83" selection-end-line="79" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Views/clienteView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="180" column="110" lean-forward="true" selection-start-line="179" selection-start-column="6" selection-end-line="180" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Views/sectorView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="81" column="110" lean-forward="false" selection-start-line="81" selection-start-column="110" selection-end-line="81" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Views/paisView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Controllers/paisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Models/paisModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="55" column="62" lean-forward="true" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="70" column="81" lean-forward="false" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Models/suplidorModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Controllers/articuloController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="134" column="60" lean-forward="false" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/Views/solicitudesView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="37" column="75" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/MySQL/MySQL Workbench 6.3 CE/data/code_editor.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/js/solicitudesScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="113" column="7" lean-forward="true" selection-start-line="113" selection-start-column="7" selection-end-line="113" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Views/ventaView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -748,13 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/Models/solicitudModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/compras/Models/compraModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -762,31 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2162">
-          <caret line="101" column="33" lean-forward="false" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Models/articuloModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2829">
-          <caret line="123" column="36" lean-forward="false" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/it/Controllers/PrecioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Models/DetalleFacturaTmpModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -980,15 +903,249 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Views/invoiceView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#!!top" expanded="false" />
+            <element signature="e#180#494#0#HTML" expanded="false" />
+            <marker date="1500436037922" expanded="true" signature="3991:4204" ph="..." />
+            <marker date="1500436037922" expanded="true" signature="4008:4079" ph="..." />
+            <marker date="1500436037922" expanded="true" signature="4105:4190" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Models/DetalleFacturaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/error_15_07_2017.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/rawFooter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/rawHeader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/it/Models/articuloModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="131" column="31" lean-forward="false" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+          <folding>
+            <marker date="1500437573020" expanded="true" signature="3820:6185" ph="SELECT a.id_... id_record" />
+            <marker date="1500437573020" expanded="true" signature="4132:6171" ph="SELECT ar.id... articulo" />
+            <marker date="1500437573020" expanded="true" signature="4504:4708" ph="SELECT COALE... descuento" />
+            <marker date="1500437573020" expanded="true" signature="4792:5000" ph="SELECT COALE... descuento" />
+            <marker date="1500437573020" expanded="true" signature="5085:5296" ph="SELECT COALE... porcentaje_ganancia" />
+            <marker date="1500437573020" expanded="true" signature="5380:5595" ph="SELECT COALE... porcentaje_ganancia" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/almacen/Controllers/almacenController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="153" column="52" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="52" />
+          <folding>
+            <marker date="1499578462422" expanded="true" signature="1702:1717" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="1805:1811" ph=" " />
+            <marker date="1499578462422" expanded="true" signature="1811:1817" ph=" " />
+            <marker date="1499578462422" expanded="true" signature="1861:1876" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="1959:2250" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="2527:2729" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="3653:3777" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="3981:4168" ph="..." />
+            <marker date="1499578462422" expanded="true" signature="4400:4593" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/js/facturacionscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/almacen/Models/almacenModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="130" column="89" lean-forward="false" selection-start-line="130" selection-start-column="81" selection-end-line="130" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/it/Controllers/clienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="108" column="128" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="128" />
+          <folding>
+            <marker date="1499578496843" expanded="true" signature="1593:1844" ph="..." />
+            <marker date="1499578496843" expanded="true" signature="1897:2238" ph="..." />
+            <marker date="1499578496843" expanded="true" signature="2455:3168" ph="..." />
+            <marker date="1499578496843" expanded="true" signature="2853:3142" ph="..." />
+            <marker date="1499578496843" expanded="false" signature="2958:2973" ph="..." />
+            <marker date="1499578496843" expanded="false" signature="3087:3102" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Models/DetalleFacturaTmpModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="56" column="51" lean-forward="true" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+          <folding>
+            <marker date="1496372267829" expanded="true" signature="741:3360" ph="SELECT a.id_... id_articulo" />
+            <marker date="1496372267829" expanded="true" signature="1289:3325" ph="SELECT dft.i... detalle_factura_tmp" />
+            <marker date="1496372267829" expanded="true" signature="1554:1753" ph="SELECT COALE... descuento" />
+            <marker date="1496372267829" expanded="true" signature="1834:2037" ph="SELECT COALE... descuento" />
+            <marker date="1496372267829" expanded="true" signature="2119:2325" ph="SELECT COALE... porcentaje_ganancia" />
+            <marker date="1496372267829" expanded="true" signature="2406:2616" ph="SELECT COALE... porcentaje_ganancia" />
+            <marker date="1496372267829" expanded="true" signature="2696:2787" ph="SELECT td.po... tipo_descuento" />
+            <marker date="1496372267829" expanded="true" signature="3482:3551" ph="SELECT id_re... detalle_factura_tmp" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+        <state relative-caret-position="625">
+          <caret line="154" column="42" lean-forward="false" selection-start-line="154" selection-start-column="42" selection-end-line="154" selection-end-column="42" />
           <folding>
-            <marker date="1498099320684" expanded="true" signature="3202:3279" ph="SELECT fac.n... factura" />
-            <marker date="1498099320684" expanded="true" signature="3412:4582" ph="SELECT a.id_... id_articulo" />
-            <marker date="1498099320684" expanded="true" signature="3712:4565" ph="SELECT df.id... factura" />
-            <marker date="1498099320684" expanded="true" signature="4775:5462" ph="SELECT 'Debi... factura" />
+            <marker date="1500444776194" expanded="true" signature="3209:3286" ph="SELECT fac.n... factura" />
+            <marker date="1500444776194" expanded="true" signature="3469:4488" ph="SELECT a.id_... id_articulo" />
+            <marker date="1500444776194" expanded="true" signature="3607:4471" ph="SELECT df.id... factura" />
+            <marker date="1500444776194" expanded="true" signature="4557:5141" ph="SELECT fac.*... factura" />
+            <marker date="1500444776194" expanded="true" signature="5335:6022" ph="SELECT 'Debi... factura" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Views/ventaView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="173" column="18" lean-forward="true" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="18" />
+          <folding>
+            <marker date="1500444940170" expanded="true" signature="2834:3110" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="4899:5092" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="4899:5093" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="4899:5224" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5455:6058" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5475:5655" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5673:6058" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5819:5972" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5819:6040" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5819:6041" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="6136:6297" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="6138:6297" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/compras/Models/solicitudModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+          <folding>
+            <marker date="1500445163344" expanded="true" signature="662:2270" ph="SELECT sc.id... solicitud_compra" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/compras/js/solicitudesScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/compras/js/ordenesScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/error_19_07_2017.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1696">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+          <folding>
+            <marker date="1500439628401" expanded="true" signature="914:2139" ph="SELECT CONCA... movimiento_inventario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/almacen/Models/inventarioModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="220" column="51" lean-forward="true" selection-start-line="220" selection-start-column="51" selection-end-line="220" selection-end-column="51" />
+          <folding>
+            <element signature="e#1250#4079#0#PHP" expanded="false" />
+            <marker date="1500446090052" expanded="true" signature="7904:8002" ph="SELECT id_re... inventario" />
+            <marker date="1500446090052" expanded="true" signature="7904:8003" ph="SELECT * FRO... inventario" />
+            <marker date="1500446090052" expanded="true" signature="7904:8024" ph="SELECT inv.i... inventario" />
+            <marker date="1500446090052" expanded="true" signature="8286:8809" ph="SELECT ds.id... detalle_solicitud" />
+            <marker date="1500446090052" expanded="true" signature="9114:9858" ph="SELECT inv.i... inventario" />
           </folding>
         </state>
       </provider>

@@ -31,7 +31,6 @@ $(document).ready(function () {
     })
     /**
      *
-     * @param e
      */
     function scanArticulo() {
         data.barcode = $("#barcode").val();
@@ -74,6 +73,8 @@ $(document).ready(function () {
         n = $(this).val() - data.total;
         if (n > 0) {
             $("#devuelta").html('<b>Devuelta:</b> DOP$ ' + $.number(n, 2));
+        } else {
+            $("#devuelta").html('<b>Dinero Insuficiente</b>');
         }
     });
     $("#print").on('click', function () {
@@ -83,6 +84,7 @@ $(document).ready(function () {
         } else {
             $.post("setFactura", {content: 'text', data: data}, function (data) {
                 window.open('facturacion/invoice/' + data + '');
+                window.location.reload();
             });
         }
     })

@@ -129,7 +129,7 @@ class ArticuloModel extends ORM
           a.description,
           a.precio,
           a.qty_inv,
-          a.qty,
+          COALESCE(a.qty,0) qty,
           COALESCE(COALESCE(a.des_categoria,a.des_articulo),0) descuento,
           COALESCE(COALESCE(a.por_categoria,a.por_articulo),0) ganancia
         FROM

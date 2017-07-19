@@ -28,14 +28,13 @@ list($module, $type, $app) = explode("-", $actual_url);
     <table class="bordered">
         <thead class="text-primary-color accent-color">
         <tr>
-            <th <?php echo $style ?> >#</th>
+            <th <?php echo $style ?> >No. Factura</th>
+            <th <?php echo $style ?> >Cliente</th>
             <th <?php echo $style ?> >Qty</th>
-            <th <?php echo $style ?> >Precio Compra</th>
-            <th <?php echo $style ?> >Precio Venta</th>
-            <th <?php echo $style ?> >Ganancia</th>
+            <th <?php echo $style ?> >Importe</th>
+            <th <?php echo $style ?> >Fecha Factura</th>
         </tr>
         </thead>
-
         <tbody id="table">
 
         </tbody>

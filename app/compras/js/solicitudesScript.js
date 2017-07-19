@@ -84,7 +84,7 @@ $(document).ready(function () {
                 if (option == 'tmp') {
                     table();
                 } else {
-                    location.reload();
+                    // location.reload();
                 }
                 table();
             } else {

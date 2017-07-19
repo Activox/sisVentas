@@ -83,6 +83,7 @@ class FacturacionController extends Controller
     public function scanArticulo()
     {
         $articuloModel = $this->getModel('it/Articulo');
+        $inventarioModel = $this->getModel('almacen/inventario');
         $params = new \stdClass();
         $data = new \stdClass();
         $data2 = \Factory::getInput('data');
@@ -92,9 +93,11 @@ class FacturacionController extends Controller
         $info = $articuloModel->getInfoByBarcode($data);
         if (count($info) > 0) {
             if ($info[0]->descuento > 0 || $info[0]->ganancia > 0) {
-                if ($info[0]->qty_inv >= ($info[0]->qty + 1)) {
+                if ($info[0]->qty_inv >= $data->qty) {
                     $data->id_record = $info[0]->id_record;
                     $result = $this->getModel()->setDetalleTmp($data);
+                    $data->qty = -1 * $data->qty;
+                    $inventarioModel->updateInventario($data);
                     $html = "";
                     $count = 1;
                     $precio = 0;
@@ -155,26 +158,46 @@ class FacturacionController extends Controller
         $html = "";
         $tmp = 0;
         $count = 1;
+        $monto_total = 0;
         $style = "style='text-align: center;'";
         foreach ($result as $key) {
-            if ($tmp != $key->id_articulo) {
+            if ($tmp != $key->no_factura) {
+                $monto = $key->qty * $key->monto;
                 $html .= "
-                    <tr class='light-primary-color'>                        
-                        <td $style colspan='5' >$key->description</td>                
+                    <tr class='light-primary-color '>                        
+                        <td>$key->no_factura</td>
+                        <td>$key->cliente</td>
+                        <td>$key->qty</td>
+                        <td>DOP$ " . number_format($monto, 2) . "</td>
+                        <td>$key->create_factura</td>          
                     </tr>
                 ";
                 $tmp = $key->id_articulo;
+                $monto_total += $monto;
             }
-            $html .= "
-            <tr>
-                <td $style >" . $count++ . "</td>
-                <td $style >" . $key->qty . "</td>
-                <td $style >" . $key->compra . "</td>
-                <td $style >" . $key->venta . "</td>
-                <td $style >" . $key->ganancia . "</td>
-            </tr>
-            ";
+            $style = "style='text-align: center !important; background-color:#dadada;'";
+            $html .= "   
+                <td>   <td></td>              
+                    <th $style >Articulo</th>
+                    <th $style >Qty</th>
+                    <th $style >Importe</th>
+                </td>
+                ";
+            $details = $this->getModel()->getVenta($key->no_factura);
+            foreach ($details as $value) {
+                $html .= " <tr> <td></td> <td></td><td  >" . $value->description . "</td>
+                            <td  >" . $value->qty . "</td>
+                            <td  >DOP$ " . number_format(($value->qty * $value->venta), 2) . "</td></tr>";
+            }
         }
+        $html.="
+        <tr class='blue-grey lighten-2 white-text'>
+            <td>TOTAL</td>
+             <td colspan='2'></td>
+            <td>DOP$ " . number_format($monto_total,2)."</td> 
+            <td></td>
+        </tr>   
+        ";
         echo $html;
     }
 

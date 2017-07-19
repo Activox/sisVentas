@@ -90,7 +90,7 @@ class FacturacionModel extends ORM
             $this->rollback('', FALSE);
         } else {
             $this->commit();
-            $result = getNoFactura($id_record)[0]->no_factura;
+            $result = $this->getNoFactura($id_record)[0]->no_factura;
         }
         return $result;
     }
@@ -115,22 +115,20 @@ class FacturacionModel extends ORM
         return $this->query($sql)->objectList();
     }
 
-    public function getVenta()
+    public function getVenta($id_factura = 0)
     {
-        $sql = "
-        SELECT      
+        if ($id_factura > 0) {
+            $sql = "
+        SELECT
             a.id_articulo,
           a.description,
           a.qty,
-          a.precio                                                                  compra,
-          a.monto,
-           a.precio_venta venta,
-          a.precio_venta- a.precio ganancia
+           a.precio_venta venta
         FROM (
-               SELECT       
+               SELECT
                  df.id_articulo,
                  CONCAT(CONCAT(ca.description, ' ', sc.description), ' ', ar.description) description,
-                 sum(df.qty)                                                    qty,
+                 df.qty                                                  qty,
                  df.precio precio_venta,
                  fac.monto,
                  pa.precio
@@ -140,11 +138,23 @@ class FacturacionModel extends ORM
                  INNER JOIN subcategoria sc ON sc.id_record = ar.id_subcategoria
                  INNER JOIN categoria ca ON ca.id_record = sc.id_categoria
                  INNER JOIN precio_articulo pa ON pa.id_articulo = ar.id_record
-                 WHERE fac.active = 1
-                 GROUP BY 1,2,4,5,6
+                 WHERE fac.active = 1 AND fac.no_factura = $id_factura
+                 GROUP BY 1
                  ORDER BY 2
              ) a
         ";
+        } else {
+            $sql = "
+                   SELECT fac.*, CONCAT(ter.nombre,' ',COALESCE(per.apellidos,'')) cliente, DATE_FORMAT(fac.created_on, '%d %M %Y %h:%i %p') create_factura,
+                    sum(df.qty) qty
+                    FROM factura fac
+                      INNER JOIN detalle_factura df ON df.id_factura = fac.id_record
+                      LEFT JOIN tercero ter ON ter.id_record = fac.id_cliente
+                      LEFT JOIN persona per ON per.id_tercero = ter.id_record
+                    WHERE fac.active = 1
+                    GROUP BY fac.id_record
+                    ORDER BY fac.created_on DESC";
+        }
         return $this->query($sql)->objectList();
     }
 

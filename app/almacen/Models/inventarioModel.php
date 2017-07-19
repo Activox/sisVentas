@@ -52,7 +52,7 @@ class InventarioModel extends ORM
                         $this->id_almacen = $params->id_almacen;
                         $id_record = parent::save(false);
                         if ($id_record < 1) {
-                            echo "inventario ".$key->id_articulo;
+                            echo "inventario " . $key->id_articulo;
                             $this->rollback('', FALSE);
                             $result = FALSE;
                         } else { // Insert Movements
@@ -63,7 +63,7 @@ class InventarioModel extends ORM
                             $movimientoModel->created_by = $this->session->id_record;
                             $id_movimiento = $movimientoModel->saveProp();
                             if ($id_movimiento < 1) {
-                                echo "rollback movimiento ".$key->id_articulo;
+                                echo "rollback movimiento " . $key->id_articulo;
                                 $this->rollback('', FALSE);
                                 $result = FALSE;
                                 break;
@@ -73,7 +73,7 @@ class InventarioModel extends ORM
                                 $compraModel->status = 25;
                                 $id_compra = $compraModel->updateProp();
                                 if ($id_compra < 0) {
-                                    echo "rollback compra ".$key->id_articulo;
+                                    echo "rollback compra " . $key->id_articulo;
                                     $this->rollback('', FALSE);
                                     $result = FALSE;
                                     break;
@@ -83,7 +83,7 @@ class InventarioModel extends ORM
                                     $solicitudModel->id_tipo = 25;
                                     $id_solicitud = $solicitudModel->updateProp();
                                     if ($id_solicitud < 0) {
-                                        echo "rollback solicitud ".$key->id_articulo;
+                                        echo "rollback solicitud " . $key->id_articulo;
                                         $this->rollback('', FALSE);
                                         $result = FALSE;
                                         break;
@@ -114,7 +114,7 @@ class InventarioModel extends ORM
                                 $result = FALSE;
                                 break;
                             } else { // update purchases order ...
-                                $compraModel->value = $params;
+                                $compraModel->value = $params->id_compra;
                                 $compraModel->status = 25;
                                 $id_compra = $compraModel->updateProp();
                                 if ($id_compra < 0) {
@@ -147,12 +147,56 @@ class InventarioModel extends ORM
         return $result;
     }
 
+    public function updateInventario($params)
+    {
+        $result = TRUE;
+        $id_inv = $this->getIdInventoriaByArticulo($params->id_record);
+        $this->value = $id_inv[0]->id_inv;
+        $this->qty = $id_inv[0]->qty + $params->qty;
+        $id_record = parent::update();
+        if ($id_record < 1) {
+            $this->rollback('', FALSE);
+            $result = FALSE;
+        } else { // insert movements ...
+            $movimientoModel = new MovimientoModel();
+            $movimientoModel->id_inventario = $id_inv[0]->id_inv;
+            $movimientoModel->qty = $params->qty;
+            $movimientoModel->id_tipo = 27;
+            $movimientoModel->created_by = $this->session->id_record;
+            $id_movimiento = $movimientoModel->saveProp();
+            if ($id_movimiento < 1) {
+                $this->rollback('', FALSE);
+                $result = FALSE;
+            } else {
+                $this->commit();
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * return id_inv search by id_articulo
+     * @param $id
+     * @return object
+     */
+    public
+    function getIdInventoriaByArticulo($id)
+    {
+        $sql = "
+        SELECT inv.id_record id_inv, inv.qty 
+        FROM inventario inv
+        WHERE inv.id_articulo = $id
+        GROUP BY 1";
+        return $this->query($sql)->objectList();
+    }
+
     /**
      * $this function get all products of purchase order
      * @param $params
      * @return object
      */
-    public function getDetalleSolicitud($params)
+    public
+    function getDetalleSolicitud($params)
     {
         $query = "
         SELECT
@@ -178,18 +222,20 @@ class InventarioModel extends ORM
      * @var integer $params
      * @return object
      */
-    public function getInventory($params)
+    public
+    function getInventory($params)
     {
         /** @var integer $params */
         $sql = "
             SELECT
               inv.id_record,
               CONCAT(CONCAT(ca.description, ' ', sc.description), ' ', ar.description) articulo,
-              sum(inv.qty)                                                             qty
+              sum(mi.qty)                                                             qty
             FROM inventario inv
               INNER JOIN articulo ar ON ar.id_record = inv.id_articulo AND ar.active = 1
               INNER JOIN subcategoria sc ON sc.id_record = ar.id_subcategoria AND sc.active = 1
               INNER JOIN categoria ca ON ca.id_record = sc.id_categoria AND ca.active = 1
+              INNER JOIN movimiento_inventario mi ON mi.id_inventario = inv.id_record
             WHERE inv.active = 1 AND (inv.id_almacen = $params OR  $params = 0 )
             GROUP BY 1,2
             ORDER BY 2

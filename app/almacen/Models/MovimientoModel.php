@@ -60,7 +60,7 @@ class MovimientoModel extends ORM
           INNER JOIN persona per ON per.id_record = emp.id_persona
           INNER JOIN tercero ter ON ter.id_record = per.id_tercero
         WHERE mi.active = 1 AND mi.id_inventario = $params
-        GROUP BY 1, 2, 3, 4
+        ORDER BY 4 desc
         ";
         return $this->query($sql)->objectList();
     }
