@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="yaroa" />
     <orderEntry type="module" module-name="dashboard" />
+    <orderEntry type="module" module-name="domino" />
   </component>
 </module>

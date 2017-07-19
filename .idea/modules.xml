@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../dashboard/.idea/dashboard.iml" filepath="$PROJECT_DIR$/../dashboard/.idea/dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../domino/.idea/domino.iml" filepath="$PROJECT_DIR$/../domino/.idea/domino.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pventa.iml" filepath="$PROJECT_DIR$/.idea/pventa.iml" />
       <module fileurl="file://C:\xampp\htdocs\yaroa\.idea\yaroa.iml" filepath="C:\xampp\htdocs\yaroa\.idea\yaroa.iml" />
     </modules>

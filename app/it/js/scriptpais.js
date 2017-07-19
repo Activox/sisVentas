@@ -16,11 +16,11 @@ $(document).ready(function () {
 
     var id_record = 0;
     var $details = $("#details");
-    // $details.DataTable( {
-    //     "columnDefs": [
-    //         {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
-    //     ]
-    // });
+    $details.DataTable( {
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
 
     /**
      * fill the table

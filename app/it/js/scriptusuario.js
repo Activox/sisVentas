@@ -19,7 +19,11 @@ $(document).ready(function () {
     $('.tooltipped').tooltip({delay: 50});
 
     var id_record = 0;
-
+    $details.DataTable( {
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
     /**
      * fill the table
      * @returns {undefined}

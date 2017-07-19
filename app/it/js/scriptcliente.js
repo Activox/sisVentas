@@ -13,7 +13,11 @@ $(document).ready(function () {
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
     var $details = $("#details");
-
+    $details.DataTable( {
+        "columnDefs": [
+            {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+        ]
+    });
     $('.picker').appendTo('body');
 
     var table = function () {
@@ -24,6 +28,7 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
+                $details.DataTable().destroy();
                 $details.find('tbody').html(response);
                 $details.DataTable({
                     "columnDefs": [{

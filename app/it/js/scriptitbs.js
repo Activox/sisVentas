@@ -11,6 +11,11 @@ $(document).ready(function () {
      * @returns {undefined}
      */
     var table = function ($post, $id) {
+        $("#" + $id + "").DataTable( {
+            "columnDefs": [
+                {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
+            ]
+        });
         $.ajax({
             dataType: 'text',
             url: "" + $post + "",
@@ -18,6 +23,7 @@ $(document).ready(function () {
                 content: 'text'
             },
             success: function (response) {
+                $("#" + $id + "").DataTable().destroy();
                 $("#" + $id + "").find('tbody').html(response);
                 $("#" + $id + "").DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ]
                     ,"searching":false,"bPaginate": true,
