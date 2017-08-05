@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5978df84-8dcc-4afd-8efa-b4bb587ed4b0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" afterPath="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" afterPath="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/compras/js/ordenesScript.js" afterPath="$PROJECT_DIR$/app/compras/js/ordenesScript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" afterPath="$PROJECT_DIR$/app/compras/js/solicitudesScript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" afterPath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" afterPath="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" afterPath="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Views/invoiceView.php" afterPath="$PROJECT_DIR$/app/facturacion/Views/invoiceView.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" afterPath="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/it/Models/articuloModel.php" afterPath="$PROJECT_DIR$/app/it/Models/articuloModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/rawFooter.php" afterPath="$PROJECT_DIR$/layouts/rawFooter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layouts/rawHeader.php" afterPath="$PROJECT_DIR$/layouts/rawHeader.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,28 +47,6 @@
       </PATH_ELEMENT>
     </PATH>
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="scriptarticulo.js" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/it/js/scriptarticulo.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="92">
-                    <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-                    <folding>
-                      <element signature="n#!!doc" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="pventa" />
@@ -92,37 +62,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="inventarioModel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/almacen/Models/inventarioModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="220" column="51" lean-forward="true" selection-start-line="220" selection-start-column="51" selection-end-line="220" selection-end-column="51" />
-              <folding>
-                <element signature="e#1250#4079#0#PHP" expanded="false" />
-                <marker date="1500446090052" expanded="true" signature="7904:8002" ph="SELECT id_re... inventario" />
-                <marker date="1500446090052" expanded="true" signature="7904:8003" ph="SELECT * FRO... inventario" />
-                <marker date="1500446090052" expanded="true" signature="7904:8024" ph="SELECT inv.i... inventario" />
-                <marker date="1500446090052" expanded="true" signature="8286:8809" ph="SELECT ds.id... detalle_solicitud" />
-                <marker date="1500446090052" expanded="true" signature="9114:9858" ph="SELECT inv.i... inventario" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovimientoModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-              <folding>
-                <marker date="1500439628401" expanded="true" signature="914:2139" ph="SELECT CONCA... movimiento_inventario" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -133,36 +73,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>table-xtra-condensed</find>
-      <find>$this-&gt;data-&gt;listed</find>
-      <find>listed</find>
-      <find>getListOfTeacherListed</find>
-      <find>list-teacher</find>
-      <find>getTotalListOfStudentAndFamily</find>
-      <find>getListOfMembers</find>
-      <find>getListActivityLog</find>
-      <find>getteacher</find>
-      <find>between</find>
-      <find>getListActi</find>
-      <find>list</find>
-      <find>getSuplidor2</find>
-      <find>precio_articulo</find>
-      <find>Ficha(</find>
-      <find>getNo</find>
-      <find>getNoFactura</find>
-      <find>setFactura</find>
+      <find>pageprofile/</find>
+      <find>page/profile/t</find>
+      <find>page/profile/te</find>
+      <find>page/profile/tea</find>
+      <find>page/profile/teac</find>
+      <find>page/profile/teach</find>
+      <find>page/profile/teacher</find>
+      <find>page/profile/teache</find>
+      <find>page/profile/</find>
+      <find>p</find>
+      <find>pag</find>
+      <find>pages</find>
+      <find>pages/</find>
+      <find>pages/p</find>
+      <find>pages/pr</find>
+      <find>pages/pro</find>
+      <find>pages/prof</find>
+      <find>pages/profi</find>
+      <find>pages/profil</find>
+      <find>pages/profile</find>
+      <find>pages/profile/</find>
+      <find>pages/profile/t</find>
+      <find>pages/profile/te</find>
+      <find>pages/profile/tea</find>
+      <find>pages/profile/teac</find>
+      <find>pages/profile/teache</find>
+      <find>pages/profile/teacher</find>
+      <find>profile</find>
       <find>update</find>
-      <find>printFactura</find>
-      <find>getMovements</find>
-      <find>btnadd</find>
-      <find>getInventory</find>
-      <find>getInventorio</find>
-      <find>getInfoByBarcode</find>
-      <find>scanArticulo</find>
-      <find>getventa</find>
-      <find>getVenta</find>
-      <find>setDetalleTmp</find>
-      <find>modal2</find>
+      <find>setFactura</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;div class=&quot;right-align&quot;&gt;            You Are In:            &lt;a href=&quot;menu&quot; &gt;Dashboard&lt;/a&gt; \            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($module); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($type); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;#!&quot; class=&quot;teal-text text-darken-1&quot;&gt;&lt;?php echo $app; ?&gt;&lt;/a&gt;        &lt;/div&gt;</replace>
@@ -191,24 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/it/Views/unidadView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/usuarioView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/descuentoView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/itbsView.php" />
-        <option value="$PROJECT_DIR$/app/it/Models/clienteModel.php" />
-        <option value="$PROJECT_DIR$/app/it/Models/empleadoModel.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/empleadoView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/suplidorView.php" />
-        <option value="$PROJECT_DIR$/app/it/Controllers/empleadoController.php" />
-        <option value="$PROJECT_DIR$/app/it/Controllers/suplidorController.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/ciudadView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/clienteView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/sectorView.php" />
-        <option value="$PROJECT_DIR$/app/it/Views/paisView.php" />
-        <option value="$PROJECT_DIR$/app/it/Models/paisModel.php" />
-        <option value="$PROJECT_DIR$/layouts/header.php" />
-        <option value="$PROJECT_DIR$/app/it/Controllers/articuloController.php" />
-        <option value="$PROJECT_DIR$/app/it/Models/suplidorModel.php" />
         <option value="C:/Program Files/MySQL/MySQL Workbench 6.3 CE/data/code_editor.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/26d3ad25-f5fa-4d42-83a2-9b43e7306a39/console.sql" />
         <option value="$PROJECT_DIR$/app/it/js/scriptarticulo.js" />
@@ -230,9 +152,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/layouts/rawHeader.php" />
         <option value="$PROJECT_DIR$/layouts/rawFooter.php" />
-        <option value="$PROJECT_DIR$/app/facturacion/Views/invoiceView.php" />
         <option value="$PROJECT_DIR$/app/it/Models/articuloModel.php" />
-        <option value="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
         <option value="$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php" />
         <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/app/facturacion/Models/FacturacionModel.php" />
@@ -242,6 +162,26 @@
         <option value="$PROJECT_DIR$/app/compras/Models/solicitudModel.php" />
         <option value="$PROJECT_DIR$/app/compras/js/ordenesScript.js" />
         <option value="$PROJECT_DIR$/app/almacen/Models/inventarioModel.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/pages/message/message-new.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/emails/new_message.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/block/message-box-modal.php" />
+        <option value="$PROJECT_DIR$/../dashboard/js/custom.js" />
+        <option value="$PROJECT_DIR$/../dashboard/application/controllers/Messages.php" />
+        <option value="$PROJECT_DIR$/../dashboard/js/wtscript.js" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/pages/message/messages-view.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/models/Getdata.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/pages/teacher/profile.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/pages/teacher/view-profile.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/controllers/Teacher.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/controllers/Profile.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/pages/profile/teacher.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/libraries/Libtablehtml.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/controllers/Teacherrequest.php" />
+        <option value="$PROJECT_DIR$/../dashboard/application/models/Setupdate.php" />
+        <option value="$PROJECT_DIR$/../dashboard/js/refreshData.js" />
+        <option value="$PROJECT_DIR$/../dashboard/application/views/block/header.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/Views/invoiceView.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
       </list>
     </option>
   </component>
@@ -310,7 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -333,34 +272,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sisVentas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sisVentas" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sisVentas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sisVentas" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -379,7 +290,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="compras" />
+              <option name="myItemId" value="facturacion" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -397,7 +308,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="compras" />
+              <option name="myItemId" value="facturacion" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -408,6 +319,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -551,7 +463,11 @@
       <workItem from="1499831934939" duration="4182000" />
       <workItem from="1500143519516" duration="1975000" />
       <workItem from="1500355266595" duration="2125000" />
-      <workItem from="1500434880989" duration="11257000" />
+      <workItem from="1500434880989" duration="11295000" />
+      <workItem from="1500773192678" duration="5853000" />
+      <workItem from="1501442398825" duration="6853000" />
+      <workItem from="1501734028857" duration="2423000" />
+      <workItem from="1501814306588" duration="927000" />
     </task>
     <task id="LOCAL-00001" summary="changes some bugs">
       <created>1499835800930</created>
@@ -574,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500435393752</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change factura,&#10;reporte ventas,&#10;some bugs.">
+      <created>1500446162696</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1500446162696</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146204000" />
+    <option name="totallyTimeSpent" value="162298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,18 +513,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1066" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32864583" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -651,7 +574,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changes some bugs" />
     <MESSAGE value="change https" />
-    <option name="LAST_COMMIT_MESSAGE" value="change https" />
+    <MESSAGE value="change factura,&#10;reporte ventas,&#10;some bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="change factura,&#10;reporte ventas,&#10;some bugs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -666,186 +590,15 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files/MySQL/MySQL Workbench 6.3 CE/data/code_editor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/26d3ad25-f5fa-4d42-83a2-9b43e7306a39/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/Controllers/compraController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="113" column="47" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/Models/detallesolicitudtmpModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1845">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/compras/Models/compraModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/Controllers/PrecioController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptapp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptalmacen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptcategoria.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptciudad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptcliente.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptdescuento.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptempleado.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptempresa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptitbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptpais.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptporcentaje.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptprecio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptsector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptsubcategoria.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptsuplidor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptterminal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/it/js/scripttipo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,9 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,19 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/it/js/scriptarticulo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,21 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="31" column="141" lean-forward="false" selection-start-line="31" selection-start-column="141" selection-end-line="31" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Views/invoiceView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#180#494#0#HTML" expanded="false" />
-            <marker date="1500436037922" expanded="true" signature="3991:4204" ph="..." />
-            <marker date="1500436037922" expanded="true" signature="4008:4079" ph="..." />
-            <marker date="1500436037922" expanded="true" signature="4105:4190" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,14 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="131" column="31" lean-forward="false" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-          <folding>
-            <marker date="1500437573020" expanded="true" signature="3820:6185" ph="SELECT a.id_... id_record" />
-            <marker date="1500437573020" expanded="true" signature="4132:6171" ph="SELECT ar.id... articulo" />
-            <marker date="1500437573020" expanded="true" signature="4504:4708" ph="SELECT COALE... descuento" />
-            <marker date="1500437573020" expanded="true" signature="4792:5000" ph="SELECT COALE... descuento" />
-            <marker date="1500437573020" expanded="true" signature="5085:5296" ph="SELECT COALE... porcentaje_ganancia" />
-            <marker date="1500437573020" expanded="true" signature="5380:5595" ph="SELECT COALE... porcentaje_ganancia" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -968,27 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="153" column="52" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="52" />
-          <folding>
-            <marker date="1499578462422" expanded="true" signature="1702:1717" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="1805:1811" ph=" " />
-            <marker date="1499578462422" expanded="true" signature="1811:1817" ph=" " />
-            <marker date="1499578462422" expanded="true" signature="1861:1876" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="1959:2250" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="2527:2729" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="3653:3777" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="3981:4168" ph="..." />
-            <marker date="1499578462422" expanded="true" signature="4400:4593" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/js/facturacionscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
           <caret line="130" column="89" lean-forward="false" selection-start-line="130" selection-start-column="81" selection-end-line="130" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1012,14 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="108" column="128" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="128" />
-          <folding>
-            <marker date="1499578496843" expanded="true" signature="1593:1844" ph="..." />
-            <marker date="1499578496843" expanded="true" signature="1897:2238" ph="..." />
-            <marker date="1499578496843" expanded="true" signature="2455:3168" ph="..." />
-            <marker date="1499578496843" expanded="true" signature="2853:3142" ph="..." />
-            <marker date="1499578496843" expanded="false" signature="2958:2973" ph="..." />
-            <marker date="1499578496843" expanded="false" signature="3087:3102" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1027,16 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="56" column="51" lean-forward="true" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
-          <folding>
-            <marker date="1496372267829" expanded="true" signature="741:3360" ph="SELECT a.id_... id_articulo" />
-            <marker date="1496372267829" expanded="true" signature="1289:3325" ph="SELECT dft.i... detalle_factura_tmp" />
-            <marker date="1496372267829" expanded="true" signature="1554:1753" ph="SELECT COALE... descuento" />
-            <marker date="1496372267829" expanded="true" signature="1834:2037" ph="SELECT COALE... descuento" />
-            <marker date="1496372267829" expanded="true" signature="2119:2325" ph="SELECT COALE... porcentaje_ganancia" />
-            <marker date="1496372267829" expanded="true" signature="2406:2616" ph="SELECT COALE... porcentaje_ganancia" />
-            <marker date="1496372267829" expanded="true" signature="2696:2787" ph="SELECT td.po... tipo_descuento" />
-            <marker date="1496372267829" expanded="true" signature="3482:3551" ph="SELECT id_re... detalle_factura_tmp" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,7 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="639">
           <caret line="101" column="55" lean-forward="false" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,13 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="154" column="42" lean-forward="false" selection-start-line="154" selection-start-column="42" selection-end-line="154" selection-end-column="42" />
-          <folding>
-            <marker date="1500444776194" expanded="true" signature="3209:3286" ph="SELECT fac.n... factura" />
-            <marker date="1500444776194" expanded="true" signature="3469:4488" ph="SELECT a.id_... id_articulo" />
-            <marker date="1500444776194" expanded="true" signature="3607:4471" ph="SELECT df.id... factura" />
-            <marker date="1500444776194" expanded="true" signature="4557:5141" ph="SELECT fac.*... factura" />
-            <marker date="1500444776194" expanded="true" signature="5335:6022" ph="SELECT 'Debi... factura" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,28 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
           <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="173" column="18" lean-forward="true" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="18" />
-          <folding>
-            <marker date="1500444940170" expanded="true" signature="2834:3110" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="4899:5092" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="4899:5093" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="4899:5224" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5455:6058" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5475:5655" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5673:6058" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5819:5972" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5819:6040" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="5819:6041" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="6136:6297" ph="..." />
-            <marker date="1500444940170" expanded="true" signature="6138:6297" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,9 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding>
-            <marker date="1500445163344" expanded="true" signature="662:2270" ph="SELECT sc.id... solicitud_compra" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
           <caret line="106" column="38" lean-forward="true" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,32 +753,214 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1696">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/almacen/Models/MovimientoModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="1081">
           <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-          <folding>
-            <marker date="1500439628401" expanded="true" signature="914:2139" ph="SELECT CONCA... movimiento_inventario" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/almacen/Models/inventarioModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="110">
           <caret line="220" column="51" lean-forward="true" selection-start-line="220" selection-start-column="51" selection-end-line="220" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/it/js/scriptarticulo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/emails/new_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2622">
+          <caret line="114" column="1" lean-forward="false" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/block/message-box-modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/message/message-new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1403">
+          <caret line="61" column="130" lean-forward="false" selection-start-line="61" selection-start-column="130" selection-end-line="61" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18699">
+          <caret line="813" column="60" lean-forward="false" selection-start-line="813" selection-start-column="60" selection-end-line="813" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/controllers/Messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3542">
+          <caret line="158" column="7" lean-forward="false" selection-start-line="158" selection-start-column="7" selection-end-line="158" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/js/wtscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12604">
+          <caret line="548" column="16" lean-forward="false" selection-start-line="548" selection-start-column="16" selection-end-line="548" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/message/messages-view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3496">
+          <caret line="152" column="38" lean-forward="false" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/teacher/view-profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="295" column="27" lean-forward="true" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/block/teacher-main-nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="96" lean-forward="true" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/teacher/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="641" column="50" lean-forward="true" selection-start-line="641" selection-start-column="50" selection-end-line="641" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/controllers/Dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="61" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/controllers/Teacher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="160" column="23" lean-forward="false" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/pages/profile/teacher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27899">
+          <caret line="1213" column="89" lean-forward="false" selection-start-line="1213" selection-start-column="89" selection-end-line="1213" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/controllers/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2185">
+          <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/libraries/Libtablehtml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15824">
+          <caret line="692" column="21" lean-forward="false" selection-start-line="692" selection-start-column="21" selection-end-line="692" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/controllers/Teacherrequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26381">
+          <caret line="1151" column="52" lean-forward="false" selection-start-line="1151" selection-start-column="52" selection-end-line="1151" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/js/refreshData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4761">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/views/block/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="75" lean-forward="false" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/models/Setupdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24012">
+          <caret line="1048" column="39" lean-forward="false" selection-start-line="1048" selection-start-column="39" selection-end-line="1048" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../dashboard/application/models/Getdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="3475" column="56" lean-forward="true" selection-start-line="3475" selection-start-column="56" selection-end-line="3475" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3450">
+          <caret line="151" column="44" lean-forward="false" selection-start-line="151" selection-start-column="34" selection-end-line="151" selection-end-column="44" />
           <folding>
-            <element signature="e#1250#4079#0#PHP" expanded="false" />
-            <marker date="1500446090052" expanded="true" signature="7904:8002" ph="SELECT id_re... inventario" />
-            <marker date="1500446090052" expanded="true" signature="7904:8003" ph="SELECT * FRO... inventario" />
-            <marker date="1500446090052" expanded="true" signature="7904:8024" ph="SELECT inv.i... inventario" />
-            <marker date="1500446090052" expanded="true" signature="8286:8809" ph="SELECT ds.id... detalle_solicitud" />
-            <marker date="1500446090052" expanded="true" signature="9114:9858" ph="SELECT inv.i... inventario" />
+            <marker date="1500444940170" expanded="true" signature="2834:3110" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="4899:5224" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="5819:6041" ph="..." />
+            <marker date="1500444940170" expanded="true" signature="6136:6297" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/Views/invoiceView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3887">
+          <caret line="169" column="31" lean-forward="false" selection-start-line="169" selection-start-column="31" selection-end-line="169" selection-end-column="31" />
+          <folding>
+            <marker date="1501736298404" expanded="true" signature="3977:4190" ph="..." />
+            <marker date="1501736298404" expanded="true" signature="3994:4065" ph="..." />
+            <marker date="1501736298404" expanded="true" signature="4091:4176" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/js/facturacionscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
-    var pay_type;
+    var pay_type, n = 0;
     $("#pay_type").on('click', function () {
         switch_Activate();
     })
@@ -68,26 +68,30 @@ $(document).ready(function () {
     });
     $("#barcode").focus();
     $("#dinero").on('keyup', function (e) {
-        let n = 0;
+
         console.log($(this).val())
         n = $(this).val() - data.total;
-        if (n > 0) {
+        if (n >= 0) {
             $("#devuelta").html('<b>Devuelta:</b> DOP$ ' + $.number(n, 2));
         } else {
             $("#devuelta").html('<b>Dinero Insuficiente</b>');
         }
     });
-    $("#print").on('click', function () {
 
+    $("#print").on('click', function () {
         if (data.tipo == 1 && data.cliente == null) {
             alertify.alert('Alert', 'You Must select a client.');
+            return false;
+        }
+        if (n <= 0) {
+            return false;
         } else {
-            $.post("setFactura", {content: 'text', data: data}, function (data) {
-                window.open('facturacion/invoice/' + data + '');
+            $.get("setFactura", {content: 'text', data: data}, function (data) {
+                window.open("facturacion/invoice/" + data);
                 window.location.reload();
             });
         }
-    })
+    });
 });
 
 

@@ -98,8 +98,8 @@ $records = Factory::get()->printFactura($params[1]);
                             <span class="primary-text-color" style="font-size: 24px !important;">Comprobante de Pago</span>
                         </td>
                         <td>
-                            #: <?php echo $a; ?><br>
-                            Created: <?php echo $hoy['mday'] . "/" . $hoy['mon'] . "/" . $hoy['year'] . "" ?>
+                            #: <?= $params[1] ?><br>
+                            Created: <?= $hoy['mday'] . "/" . $hoy['mon'] . "/" . $hoy['year'] . "" ?>
                         </td>
                     </tr>
                 </table>
@@ -132,7 +132,7 @@ $records = Factory::get()->printFactura($params[1]);
 
         <tr class="details">
             <td>
-                <?php echo ucfirst($records[0]->tipo_pago) ; ?>
+                <?= ucfirst($records[0]->tipo_pago) ; ?>
             </td>
 
             <td>
@@ -167,7 +167,7 @@ $records = Factory::get()->printFactura($params[1]);
         <tr class="total">
             <td></td>
             <td>
-                Total: DOP$ <?php echo number_format($total,2); ?>
+                Total: DOP$ <?= number_format($total,2); ?>
             </td>
         </tr>
     </table>
