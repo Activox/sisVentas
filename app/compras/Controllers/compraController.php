@@ -235,4 +235,5 @@ class CompraController extends Controller
     {
         return $this->getModel()->getDetalleOrder($id);
     }
+
 }

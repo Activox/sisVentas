@@ -2,6 +2,8 @@
 
 namespace compras\Models;
 
+
+use Facturacion\Models\CxpModel;
 use abstracts\ORM;
 
 //use abstracts\Model;
@@ -58,6 +60,15 @@ class CompraModel extends ORM
             $result = FALSE;
             $this->rollback("", FALSE);
         } else {
+            if ($params->tipo == 21) {
+                $cxpModel = new CxpModel();
+                $cxpModel->id_compra = $id_record;
+                $cxpModel->id_tipo = 32;
+                $id_cxp = $cxpModel->saveprop();
+                if ($id_cxp < 1) {
+                    $cxpModel->rollBackProp();
+                }
+            }
             $this->commit();
         }
         return $result;
@@ -106,8 +117,9 @@ class CompraModel extends ORM
         return parent::update();
     }
 
-    public function getDetalleOrder($id){
-        $sql="
+    public function getDetalleOrder($id)
+    {
+        $sql = "
        SELECT
           em.nombre                                                                   empresa,
           CONCAT(ter.nombre, ' ', per.apellidos)                                      persona,
