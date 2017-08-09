@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2017 a las 23:50:10
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 7.1.7
+-- Tiempo de generación: 09-08-2017 a las 06:49:19
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -777,6 +775,7 @@ CREATE TABLE IF NOT EXISTS `movimiento_cuenta` (
   `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_cuenta` bigint(20) DEFAULT NULL,
   `id_tipo` int(11) DEFAULT NULL,
+  `monto` decimal(10,2) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `active` tinyint(1) DEFAULT '1',
@@ -1386,7 +1385,6 @@ INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `us
 (1, 1, NULL, 1, 'pottenwalder', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-23 03:06:27', 1, 1),
 (2, 1, 0, 3, 'pottenwalder2', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-30 03:23:24', 0, 1),
 (3, 1, 1, 3, 'pottenwalder3', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-30 03:26:25', 1, 1);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

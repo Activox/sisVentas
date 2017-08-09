@@ -168,5 +168,28 @@ class AlmacenController extends Controller
         }
         echo $html;
     }
+    /**
+     * This function set the request.
+     */
+    public function setTransferencia()
+    {
+        $solicitud = $this->getModel('almacen/Transferencia');
+        $return = null;
+        $data = \Factory::getInput('data');
+        $option = \Factory::getInput('option');
+        $params = new \stdClass();
+        $params->id_articulo = $data['articulo'];
+        $params->qty = $data['qty'];
+        $params->id_unidad = $data['unidad'];
+        if ($option == 'tmp') {
+            $return = $solicitud->setDetalletmp($params);
+        } else {
+            $params->id_almacen = $data['almacen'];
+            $params->id_suplidor = $data['suplidor'];
+            $return = $solicitud->setTransferencia($params);
+        }
+        return $return;
+    }
+
 
 }
