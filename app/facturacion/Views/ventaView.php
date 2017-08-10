@@ -39,6 +39,5 @@ list($module, $type, $app) = explode("-", $actual_url);
 
         </tbody>
     </table>
-
 </div>
 <!--/ table-->

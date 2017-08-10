@@ -14,7 +14,14 @@ $(document).ready(function () {
     $('ul.tabs').tabs();
     // Initialize collapse button
     $(".brand-logo").sideNav();
-
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
     // Initialize collapsible (uncomment the line below if you use the dropdown variation)
     $('.brand-logo').sideNav({
         menuWidth: 300, // Default is 300
@@ -32,7 +39,7 @@ $(document).ready(function () {
  * @param $post
  * @param $params
  */
-ajax = function($id, $post, $params) {
+ajax = function ($id, $post, $params) {
     $.ajax({
         dataType: 'json',
         url: '' + $post + '',
