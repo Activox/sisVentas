@@ -1,0 +1,7 @@
+[2017-08-03 06:14:35] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\sisVentas\app\it\Controllers\articuloController.php [] []
+[2017-08-03 06:25:01] test.INFO: Undefined property: stdClass::$id_articulo in line 175 on file C:\xampp\htdocs\sisVentas\app\facturacion\Controllers\FacturacionController.php [] []
+[2017-08-03 06:33:07] test.INFO: Undefined property: stdClass::$id_articulo in line 175 on file C:\xampp\htdocs\sisVentas\app\facturacion\Controllers\FacturacionController.php [] []
+[2017-08-03 06:36:52] test.INFO: Undefined property: stdClass::$id_articulo in line 175 on file C:\xampp\htdocs\sisVentas\app\facturacion\Controllers\FacturacionController.php [] []
+[2017-08-03 06:42:10] test.INFO: Undefined property: stdClass::$id_articulo in line 175 on file C:\xampp\htdocs\sisVentas\app\facturacion\Controllers\FacturacionController.php [] []
+[2017-08-03 06:55:53] test.INFO: Trying to get property of non-object in line 135 on file C:\xampp\htdocs\sisVentas\app\facturacion\Views\invoiceView.php [] []
+[2017-08-03 06:56:01] test.INFO: Trying to get property of non-object in line 135 on file C:\xampp\htdocs\sisVentas\app\facturacion\Views\invoiceView.php [] []

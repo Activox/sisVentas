@@ -6,7 +6,7 @@ $(document).ready(function () {
      * Initialization elements
      */
 
-    $('.modal').modal();
+    // $('.modal').modal();
     $('.collapsible').collapsible();
     $('.modal-content').css({'width': '155% !important'});
     $('select').material_select();

@@ -1,0 +1,3 @@
+[2017-07-15 20:35:36] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\sisVentas\app\it\Controllers\articuloController.php [] []
+[2017-07-15 22:21:29] test.INFO: Undefined property: stdClass::$description in line 78 on file C:\xampp\htdocs\sisVentas\app\it\Controllers\articuloController.php [] []
+[2017-07-15 22:31:12] test.INFO: Undefined property: stdClass::$description in line 88 on file C:\xampp\htdocs\sisVentas\app\it\Controllers\PrecioController.php [] []
