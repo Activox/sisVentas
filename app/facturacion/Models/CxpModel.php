@@ -96,7 +96,7 @@ class CxpModel extends ORM
            INNER JOIN precio_articulo pa ON pa.id_suplidor = sc.id_suplidor AND pa.id_articulo = ds.id_articulo
         WHERE cxp.active = 1 AND com.tipo_pago = 21  $condition
         GROUP BY 1, 2, 3
-        ORDER BY cxp.created_on DESC 
+        ORDER BY cxp.created_on 
         ";
 //        echo $sql;die;
         return $this->query($sql)->objectList();

@@ -128,7 +128,9 @@ class Post
         "getClienteName"                    =>          "facturacion@Facturacion.getClienteName",
         "scanArticulo"                      =>          "facturacion@Facturacion.scanArticulo",
         "setFactura"                        =>          "facturacion@Facturacion.setFactura",
-        "getVenta"                          =>          "facturacion@Facturacion.getVenta"
+        "getVenta"                          =>          "facturacion@Facturacion.getVenta",
+        "getCxp"                            =>          "facturacion@Facturacion.getCxp",
+        "setPay"                            =>          "facturacion@Facturacion.setPay"
 
     );
 }

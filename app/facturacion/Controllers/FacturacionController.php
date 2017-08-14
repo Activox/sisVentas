@@ -8,6 +8,7 @@ use lib\vendor\TableGenerator;
 class FacturacionController extends Controller
 {
     private $table = null;
+    private $session = null;
 
     /**
      * execute parent contruct..
@@ -16,6 +17,7 @@ class FacturacionController extends Controller
     {
         parent::__construct($this);
         $this->table = new TableGenerator();
+        $this->session = \Factory::getSession();
     }
 
     /**
@@ -152,9 +154,17 @@ class FacturacionController extends Controller
         return $this->getModel()->setFactura($data);
     }
 
+    /**
+     *
+     */
     public function getVenta()
     {
-        $result = $this->getModel()->getVenta();
+        $input = \Factory::getInput('data');
+        $params = new \stdClass();
+        $params->id_almacen = $input["almacen"];
+        $params->from = $input["dateFrom"];
+        $params->to = $input["dateTo"];
+        $result = $this->getModel()->getVentas($params);
         $html = "";
         $tmp = 0;
         $count = 1;
@@ -190,19 +200,121 @@ class FacturacionController extends Controller
                             <td  >DOP$ " . number_format(($value->qty * $value->venta), 2) . "</td></tr>";
             }
         }
-        $html.="
+        $html .= "
         <tr class='blue-grey lighten-2 white-text'>
             <td>TOTAL</td>
              <td colspan='2'></td>
-            <td>DOP$ " . number_format($monto_total,2)."</td> 
+            <td>DOP$ " . number_format($monto_total, 2) . "</td> 
             <td></td>
         </tr>   
         ";
         echo $html;
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function printFactura($id)
     {
         return $this->getModel()->printFactura($id);
+    }
+
+    /**
+     *
+     */
+    public function getCxp()
+    {
+        $CxpModel = $this->getModel('facturacion/Cxp');
+        $input = \Factory::getInput('data');
+        $params = new \stdClass();
+        $params->id_suplidor = $input["suplidor"];
+        $params->id_almacen = $input["almacen"];
+        $params->estado = $input["estado"];
+        $params->from = $input["dateFrom"];
+        $params->to = $input["dateTo"];
+        $params->option = $input["option"];
+        $html = "";
+        $tmp = 0;
+        $monto_total = 0;
+        $result = $CxpModel->getcxp($params);
+        $style = "style='text-align: center;'";
+        if ($params->option == 0) {
+            $col = 4;
+        } else {
+            $col = 5;
+        }
+        foreach ($result as $key) {
+            $monto = ($key->qty * $key->monto) - $key->pagado;
+            if ($tmp != $key->id_suplidor) {
+                $html .= "
+                    <tr class='light-primary-color '>                        
+                        <td $style colspan=\"$col\" >$key->suplidor</td>                                  
+                    </tr>
+                ";
+                $tmp = $key->id_suplidor;
+            }
+            $monto_total += $monto;
+            $html .= " <tr> <td $style >" . $key->no_factura . "</td>
+                            <td $style >" . $key->qty . "</td>
+                            <td $style >DOP$ " . number_format(($key->qty * $key->monto) - $key->pagado, 2) . "</td>
+                           ";
+            $html .= "" . $params->option == 0 ? "" : " <td $style > " . $key->status . "</td >";
+            $html .= " <td $style > " . $key->created_on . "</td >
+                      </tr > ";
+        }
+        $html .= "
+        <tr class='blue-grey lighten-2 white-text' >
+            <td $style > TOTAL</td >
+             <td $style ></td >
+            <td $style > DOP$ " . number_format($monto_total, 2) . " </td > 
+             <td $style ></td >
+            ";
+        $html .= "" . $params->option == 0 ? "" : " <td $style ></td >";
+        $html .= "</tr >
+            ";
+        echo $html;
+    }
+
+    /**
+     *
+     */
+    public function setPay()
+    {
+        $input = \Factory::getInput('data');
+        $params = new \stdClass();
+        $params->id_suplidor = $input["suplidor"];
+        $params->from = "";
+        $params->id_almacen = 0;
+        $params->estado = "";
+        $params->monto = $input["monto"];
+        $CxpModel = $this->getModel('facturacion/Cxp');
+        $result = $CxpModel->getCxp($params);
+        foreach ($result as $key) {
+            $Cxp = $this->getModel('facturacion/Cxp');
+            if ($params->monto >= 1) {
+                $monto = ($key->qty * $key->monto) - $key->pagado;
+                $mc = $this->getModel('facturacion/MovimientoCuenta');
+                $Cxp->value = $key->id_recird;
+                if ($monto > $params->monto) {
+                    $mc->id_cuenta = $key->id_recird;
+                    $mc->id_tipo = 32;
+                    $mc->monto = $params->monto;
+                    $mc->created_by = $this->session->id_record;
+                    $mc->saveProp();
+                    $Cxp->id_tipo = 34;
+                    $Cxp->updateProp();
+                } else {
+                    $mc->id_cuenta = $key->id_recird;
+                    $mc->id_tipo = 32;
+                    $mc->monto = $monto;
+                    $mc->created_by = $this->session->id_record;
+                    $mc->saveProp();
+                    $Cxp->id_tipo = 33;
+                    $Cxp->updateProp();
+                }
+                $params->monto -= $monto;
+            }
+        }
     }
 }

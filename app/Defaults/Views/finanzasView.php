@@ -16,13 +16,14 @@
 <!--collections-->
 <div class="row">
 
-   
+
 
     <!--Aplicaciones-->
     <div class="col s12 m12 l4 center-align">
         <ul class="collection with-header z-depth-3">
-             <li href="#!" class="collection-header teal white-text"><h4>Aplicaciones</h4></li>
-                <a href="finanzas-aplicaciones-facturacion" class="collection-item">Facturacion</a>
+            <li href="#!" class="collection-header teal white-text"><h4>Aplicaciones</h4></li>
+            <a href="finanzas-aplicaciones-facturacion" class="collection-item">Facturacion</a>
+            <a href="finanzas-aplicaciones-pagoFacturas" class="collection-item">Pago Facturas CxP</a>
 
         </ul>
     </div>
@@ -30,10 +31,10 @@
     <!--Reportes-->
     <div class="col s12 m12 l4 center-align">
         <ul class="collection with-header z-depth-3">
-             <li href="#!" class="collection-header teal white-text"><h4>Reportes</h4></li>
-                <a href="finanzas-reportes-ventas" class="collection-item">Ventas</a>
-                <a  href="finanzas-reportes-CxC" class="collection-item">Cuentas por Cobrar</a>
-                <a  href="finanzas-reportes-CxP" class="collection-item">Cuentas por Pagar</a>
+            <li href="#!" class="collection-header teal white-text"><h4>Reportes</h4></li>
+            <a href="finanzas-reportes-ventas" class="collection-item">Ventas</a>
+            <!--                <a  href="finanzas-reportes-CxC" class="collection-item">Cuentas por Cobrar</a>-->
+            <a  href="finanzas-reportes-CxP" class="collection-item">Cuentas por Pagar</a>
         </ul>
     </div>
     <!--/ Reportes-->

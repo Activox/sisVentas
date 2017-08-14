@@ -67,7 +67,10 @@ class Web
 //      -----------------------------------------------------------
         "finanzas-aplicaciones-facturacion" => "facturacion@Facturacion.display*facturacion",
         "finanzas-reportes-ventas" => "facturacion@Facturacion.display*venta",
-        "facturacion/[view]/[id_factura]" => "facturacion@Facturacion.display*invoice"
+        "finanzas-reportes-CxC" => "facturacion@Facturacion.display*cxc",
+        "finanzas-reportes-CxP" => "facturacion@Facturacion.display*cxp",
+        "facturacion/[view]/[id_factura]" => "facturacion@Facturacion.display*invoice",
+        "finanzas-aplicaciones-pagoFacturas" => "facturacion@Facturacion.display*pagoCxp"
 //      -----------------------------------------------------------
 
     );
