@@ -1,5 +1,11 @@
 <?php
-Route::getJs(array("cxpscript"), "facturacion", array(), FALSE);
+/**
+ * Created by PhpStorm.
+ * User: paul9
+ * Date: 8/13/2017
+ * Time: 10:37 PM
+ */
+Route::getJs(array("pagocxpscript"), "facturacion", array(), FALSE);
 $url = "{$_SERVER['REQUEST_URI']}";
 $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 list($url2, $framework, $actual_url) = explode("/", $escaped_url);
@@ -8,7 +14,7 @@ list($module, $type, $app) = explode("-", $actual_url);
 <!--Header-->
 <div class="row">
     <div class="col s4 m4 l4">
-        <h4><i class="small material-icons teal-text">credit_card</i>&nbsp;Cuentas por Pagar</h4>
+        <h4><i class="small material-icons teal-text">credit_card</i>&nbsp;Pagos de Facturas</h4>
 
     </div>
     <div class="col s8 m8 l8">
@@ -26,42 +32,18 @@ list($module, $type, $app) = explode("-", $actual_url);
 <div class="row">
     <div class="col s12 m12">
         <from id="frmReport">
-            <div class="input-field col s2">
-                <select id="almacen" name="alamacen">
-                    <option value="" disabled selected>Choose your option</option>
-                </select>
-                <label>Almacen</label>
-            </div>
-            <div class="input-field col s2">
+            <div class="input-field col s3">
                 <select id="suplidor" name="suplidor">
                     <option value="" disabled selected>Choose your option</option>
                 </select>
                 <label>Suplidor</label>
             </div>
-            <div class="input-field col s2">
-                <select id="status" name="status">
-                    <option value="1" selected>Abiertas</option>
-                    <option value="0">Todas</option>
-                    <option value="33">Pagadas</option>
-                    <option value="34">Abonadas</option>
-                </select>
-                <label>Estado</label>
-            </div>
-            <div class="col s2">
-                <label>Date From</label>
-                <input type="text" class="datepicker" id="dateFrom" name="dateFrom">
-            </div>
-            <div class="col s2">
-                <label>Date To</label>
-                <input type="text" class="datepicker" id="dateTo" name="dateTo">
-            </div>
-            <br>
         </from>
+        <br>
         <div class="col s2">
             <a class="waves-effect waves-light btn" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i>
                 SEARCH</a>
         </div>
-
     </div>
 </div>
 <?php $style = "style='text-align: center;'"; ?>
@@ -72,7 +54,6 @@ list($module, $type, $app) = explode("-", $actual_url);
             <th <?= $style ?> >No. Factura</th>
             <th <?= $style ?> >Qty</th>
             <th <?= $style ?> >Monto</th>
-            <th <?= $style ?> >Estado</th>
             <th <?= $style ?> >Fecha Factura</th>
         </tr>
         </thead>
@@ -82,3 +63,10 @@ list($module, $type, $app) = explode("-", $actual_url);
     </table>
 </div>
 <!--/ table-->
+<div class="row">
+    <div class="col s12">
+        <div class="col s2 paybtn" style="margin-left: 77%;">
+
+        </div>
+    </div>
+</div>

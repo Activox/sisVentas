@@ -23,6 +23,23 @@ list($module, $type, $app) = explode("-", $actual_url);
     <!-- /.col-lg-12 -->
 </div>
 <hr>
+<div class="row">
+    <div class="col s12">
+        <div class="col s2">
+            <label>Date From</label>
+            <input type="text" class="datepicker" id="dateFrom" name="dateFrom">
+        </div>
+        <div class="col s2">
+            <label>Date To</label>
+            <input type="text" class="datepicker" id="dateTo" name="dateTo">
+        </div>
+        <br>
+        <div class="col s2">
+            <a class="waves-effect waves-light btn" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i>
+                SEARCH</a>
+        </div>
+    </div>
+</div>
 <?php  $style = "style='text-align: center;'"; ?>
 <div class="row container">
     <table class="bordered">
@@ -39,6 +56,5 @@ list($module, $type, $app) = explode("-", $actual_url);
 
         </tbody>
     </table>
-
 </div>
 <!--/ table-->

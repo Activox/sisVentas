@@ -158,6 +158,22 @@ class FacturacionModel extends ORM
         return $this->query($sql)->objectList();
     }
 
+    public function getVentas($params)
+    {
+        $condition = $params->from != "" ? " AND CAST(fac.created_on as date) BETWEEN '" . date_format(date_create($params->from), 'Y-m-d') . "' AND '" . ($params->to != "" ? date_format(date_create($params->to), 'Y-m-d') : date_format(date_create($params->from), 'Y-m-d')) . "' " : "";
+        $sql = "
+                   SELECT fac.*, CONCAT(ter.nombre,' ',COALESCE(per.apellidos,'')) cliente, DATE_FORMAT(fac.created_on, '%d %M %Y %h:%i %p') create_factura,
+                    sum(df.qty) qty
+                    FROM factura fac
+                      INNER JOIN detalle_factura df ON df.id_factura = fac.id_record
+                      LEFT JOIN tercero ter ON ter.id_record = fac.id_cliente
+                      LEFT JOIN persona per ON per.id_tercero = ter.id_record
+                    WHERE fac.active = 1 $condition
+                    GROUP BY fac.id_record
+                    ORDER BY fac.created_on DESC";
+        return $this->query($sql)->objectList();
+    }
+
     /**
      * @param $id
      * @return object
