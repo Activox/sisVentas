@@ -86,7 +86,7 @@ class CxpModel extends ORM
           DATE_FORMAT(cxp.created_on, '%d/%m/%Y') created_on
         FROM cuenta_por_pagar cxp
           INNER JOIN compra com ON com.id_record = cxp.id_compra
-          INNER JOIN solicitud_compra sc ON sc.id_record = com.id_solicitud AND sc.id_tipo = 3
+          INNER JOIN solicitud_compra sc ON sc.id_record = com.id_solicitud
           INNER JOIN detalle_solicitud ds ON ds.id_solicitud = sc.id_record
           INNER JOIN unidad uni ON uni.id_record = ds.id_unidad
           INNER JOIN suplidor sup ON sup.id_record = sc.id_suplidor

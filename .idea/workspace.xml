@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0c156318-e423-4e5e-9740-f12bbe85ff73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Defaults/Views/finanzasView.php" afterPath="$PROJECT_DIR$/app/Defaults/Views/finanzasView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" afterPath="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/facturacion/Models/CxpModel.php" afterPath="$PROJECT_DIR$/app/facturacion/Models/CxpModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script.js" afterPath="$PROJECT_DIR$/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes/Post.php" afterPath="$PROJECT_DIR$/lib/routes/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes/Web.php" afterPath="$PROJECT_DIR$/lib/routes/Web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/error_14_08_2017.text" afterPath="$PROJECT_DIR$/logs/error_14_08_2017.text" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,25 +35,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CxpModel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CxpModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/facturacion/Models/CxpModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+            <state relative-caret-position="744">
+              <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
               <folding>
-                <marker date="1502694323108" expanded="true" signature="1849:3346" ph="SELECT com.i... cuenta_por_pagar" />
-                <marker date="1502694323108" expanded="true" signature="2278:2397" ph="SELECT COALE... movimiento_cuenta" />
+                <marker date="1502695534695" expanded="true" signature="1849:3327" ph="SELECT com.i... cuenta_por_pagar" />
+                <marker date="1502695534695" expanded="true" signature="2278:2397" ph="SELECT COALE... movimiento_cuenta" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
-              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-691">
-              <caret line="227" column="55" lean-forward="true" selection-start-line="227" selection-start-column="55" selection-end-line="227" selection-end-column="55" />
+              <caret line="227" column="55" lean-forward="false" selection-start-line="227" selection-start-column="55" selection-end-line="227" selection-end-column="55" />
               <folding>
                 <marker date="1502693964425" expanded="true" signature="2912:3188" ph="..." />
                 <marker date="1502693964425" expanded="true" signature="5221:5546" ph="..." />
@@ -84,17 +70,17 @@
         <entry file="file://$PROJECT_DIR$/app/facturacion/js/cxpscript.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+              <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagocxpscript.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pagocxpscript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/facturacion/js/pagocxpscript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="208">
+              <caret line="31" column="84" lean-forward="true" selection-start-line="31" selection-start-column="84" selection-end-line="31" selection-end-column="84" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -113,13 +99,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$this-&gt;data-&gt;listed</find>
-      <find>listed</find>
-      <find>getListOfTeacherListed</find>
-      <find>list-teacher</find>
-      <find>getTotalListOfStudentAndFamily</find>
-      <find>getListOfMembers</find>
-      <find>getListActivityLog</find>
       <find>getteacher</find>
       <find>between</find>
       <find>getListActi</find>
@@ -139,10 +118,17 @@
       <find>getInfoByBarcode</find>
       <find>scanArticulo</find>
       <find>getventa</find>
-      <find>getVenta</find>
       <find>setDetalleTmp</find>
       <find>modal2</find>
       <find>create</find>
+      <find>getVenta</find>
+      <find>n</find>
+      <find>num</find>
+      <find>numbe</find>
+      <find>number</find>
+      <find>.number</find>
+      <find>$.number</find>
+      <find>$.number(</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;div class=&quot;right-align&quot;&gt;            You Are In:            &lt;a href=&quot;menu&quot; &gt;Dashboard&lt;/a&gt; \            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($module); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;&lt;?php echo $module ?&gt;&quot; &gt;&lt;?php echo ucfirst($type); ?&gt;&lt;/a&gt; &gt;            &lt;a href=&quot;#!&quot; class=&quot;teal-text text-darken-1&quot;&gt;&lt;?php echo $app; ?&gt;&lt;/a&gt;        &lt;/div&gt;</replace>
@@ -210,7 +196,6 @@
         <option value="$PROJECT_DIR$/app/facturacion/Views/cxpView.php" />
         <option value="$PROJECT_DIR$/app/facturacion/Views/ventaView.php" />
         <option value="$PROJECT_DIR$/app/facturacion/js/cxpscript.js" />
-        <option value="$PROJECT_DIR$/app/facturacion/js/pagocxpscript.js" />
         <option value="$PROJECT_DIR$/app/facturacion/js/facturacionscript.js" />
         <option value="$PROJECT_DIR$/app/facturacion/js/ventascript.js" />
         <option value="$PROJECT_DIR$/app/facturacion/Models/MovimientoCuentaModel.php" />
@@ -222,6 +207,7 @@
         <option value="$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php" />
         <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/app/facturacion/Models/CxpModel.php" />
+        <option value="$PROJECT_DIR$/app/facturacion/js/pagocxpscript.js" />
       </list>
     </option>
   </component>
@@ -352,12 +338,18 @@
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="facturacion" />
+              <option name="myItemId" value="sisVentas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sisVentas" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Views" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,7 +551,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147423000" />
+    <option name="totallyTimeSpent" value="148784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -909,10 +901,7 @@
         <state relative-caret-position="299">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#35#67#0#PHP" expanded="true" />
-            <marker date="1502693448605" expanded="true" signature="2210:3704" ph="SELECT sc.id... solicitud_compra" />
-            <marker date="1502693448605" expanded="true" signature="3987:5708" ph="SELECT em.no... compra" />
-            <marker date="1502693448605" expanded="true" signature="5346:5525" ph="SELECT emp.i... empresa" />
+            <element signature="e#35#67#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -922,7 +911,7 @@
         <state relative-caret-position="137">
           <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
           <folding>
-            <element signature="e#425#431#0#HTML" expanded="true" />
+            <element signature="e#425#431#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,7 +955,7 @@
         <state relative-caret-position="367">
           <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#6#87#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -976,8 +965,7 @@
         <state relative-caret-position="436">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding>
-            <element signature="e#513#519#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="e#513#519#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1021,25 +1009,7 @@
     <entry file="file://$PROJECT_DIR$/app/facturacion/js/cxpscript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/facturacion/js/pagocxpscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1047,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/app/facturacion/Controllers/FacturacionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-691">
-          <caret line="227" column="55" lean-forward="true" selection-start-line="227" selection-start-column="55" selection-end-line="227" selection-end-column="55" />
+          <caret line="227" column="55" lean-forward="false" selection-start-line="227" selection-start-column="55" selection-end-line="227" selection-end-column="55" />
           <folding>
             <marker date="1502693964425" expanded="true" signature="2912:3188" ph="..." />
             <marker date="1502693964425" expanded="true" signature="5221:5546" ph="..." />
@@ -1060,13 +1030,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/facturacion/Models/CxpModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+        <state relative-caret-position="744">
+          <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
           <folding>
-            <marker date="1502694323108" expanded="true" signature="1849:3346" ph="SELECT com.i... cuenta_por_pagar" />
-            <marker date="1502694323108" expanded="true" signature="2278:2397" ph="SELECT COALE... movimiento_cuenta" />
+            <marker date="1502695534695" expanded="true" signature="1849:3327" ph="SELECT com.i... cuenta_por_pagar" />
+            <marker date="1502695534695" expanded="true" signature="2278:2397" ph="SELECT COALE... movimiento_cuenta" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/facturacion/js/pagocxpscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="31" column="84" lean-forward="true" selection-start-line="31" selection-start-column="84" selection-end-line="31" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
