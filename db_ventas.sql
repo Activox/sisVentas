@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 06, 2017 at 11:09 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-08-2017 a las 06:49:19
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,42 +17,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_ventas`
+-- Base de datos: `db_ventas`
 --
+CREATE DATABASE IF NOT EXISTS `db_ventas` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `db_ventas`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `access`
+-- Estructura de tabla para la tabla `access`
 --
 
-CREATE TABLE `access` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `access`;
+CREATE TABLE IF NOT EXISTS `access` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_group` int(11) NOT NULL,
   `id_permission` int(11) NOT NULL,
   `id_app` int(11) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `almacen`
+-- Estructura de tabla para la tabla `almacen`
 --
 
-CREATE TABLE `almacen` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `almacen`;
+CREATE TABLE IF NOT EXISTS `almacen` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tercero` int(11) DEFAULT NULL,
   `id_empleado` int(11) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `almacen`
+-- Volcado de datos para la tabla `almacen`
 --
 
 INSERT INTO `almacen` (`id_record`, `id_tercero`, `id_empleado`, `created_on`, `created_by`, `active`) VALUES
@@ -61,48 +69,25 @@ INSERT INTO `almacen` (`id_record`, `id_tercero`, `id_empleado`, `created_on`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `app`
+-- Estructura de tabla para la tabla `articulo`
 --
 
-CREATE TABLE `app` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
-  `description` varchar(250) NOT NULL,
-  `icon` varchar(250) NOT NULL,
-  `url` varchar(250) NOT NULL,
-  `id_father` int(11) NOT NULL,
-  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1',
-  `id_tipo` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `app`
---
-
-INSERT INTO `app` (`id_record`, `description`, `icon`, `url`, `id_father`, `created_on`, `created_by`, `active`, `id_tipo`) VALUES
-(1, 'dashboard', '<i class="mdi-action-dashboard"></i>', 'menu', 0, '2017-06-06 14:51:22', 1, 1, 31),
-(2, 'it', '<i class="mdi-hardware-computer"></i>      ', 'it', 1, '2017-06-06 14:51:22', 1, 1, 31);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `articulo`
---
-
-CREATE TABLE `articulo` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `articulo`;
+CREATE TABLE IF NOT EXISTS `articulo` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_suplidor` int(11) DEFAULT NULL,
   `id_subcategoria` int(11) DEFAULT NULL,
   `codigo_barra` varchar(250) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `articulo`
+-- Volcado de datos para la tabla `articulo`
 --
 
 INSERT INTO `articulo` (`id_record`, `id_suplidor`, `id_subcategoria`, `codigo_barra`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -110,24 +95,28 @@ INSERT INTO `articulo` (`id_record`, `id_suplidor`, `id_subcategoria`, `codigo_b
 (3, 1, 6, '434345345', 'Plata', '2017-04-18 19:18:59', 1, 1),
 (4, 1, 7, '123123123123345', 'Cobre', '2017-04-18 15:33:48', 1, 1),
 (6, 1, 8, '564654651651651654', 'Plata', '2017-03-30 04:51:07', 1, 1),
-(7, 1, 4, '789689435', 'Planta Brillante', '2017-04-20 04:49:14', 1, 1);
+(7, 1, 4, '789689435', 'Planta Brillante', '2017-04-20 04:49:14', 1, 1),
+(8, 1, 8, '4987987WERIT', 'aretes de oro', '2017-07-15 20:21:29', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categoria`
+-- Estructura de tabla para la tabla `categoria`
 --
 
-CREATE TABLE `categoria` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categoria`
+-- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -138,20 +127,23 @@ INSERT INTO `categoria` (`id_record`, `description`, `created_on`, `created_by`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ciudad`
+-- Estructura de tabla para la tabla `ciudad`
 --
 
-CREATE TABLE `ciudad` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `ciudad`;
+CREATE TABLE IF NOT EXISTS `ciudad` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_pais` int(11) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ciudad`
+-- Volcado de datos para la tabla `ciudad`
 --
 
 INSERT INTO `ciudad` (`id_record`, `id_pais`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -161,21 +153,24 @@ INSERT INTO `ciudad` (`id_record`, `id_pais`, `description`, `created_on`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cliente`
+-- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `cliente` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `cliente`;
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_persona` int(11) NOT NULL,
   `telefono` varchar(250) NOT NULL,
   `id_tipo` int(11) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cliente`
+-- Volcado de datos para la tabla `cliente`
 --
 
 INSERT INTO `cliente` (`id_record`, `id_persona`, `telefono`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -184,11 +179,12 @@ INSERT INTO `cliente` (`id_record`, `id_persona`, `telefono`, `id_tipo`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compra`
+-- Estructura de tabla para la tabla `compra`
 --
 
-CREATE TABLE `compra` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `compra`;
+CREATE TABLE IF NOT EXISTS `compra` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_solicitud` int(11) DEFAULT NULL,
   `no_factura` varchar(50) DEFAULT NULL,
   `requisition_date` date DEFAULT NULL,
@@ -196,55 +192,106 @@ CREATE TABLE `compra` (
   `tipo_pago` int(11) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `compra`
+-- Volcado de datos para la tabla `compra`
 --
 
 INSERT INTO `compra` (`id_record`, `id_solicitud`, `no_factura`, `requisition_date`, `status`, `tipo_pago`, `created_on`, `created_by`, `active`) VALUES
 (1, 4, '132133', '2017-04-15', 25, 21, '2017-04-12 17:27:22', 1, 1),
-(2, 5, '', '2017-04-14', 2, 21, '2017-04-12 17:31:32', 1, 1),
+(2, 5, '56756734562436', '2017-04-14', 25, 21, '2017-07-19 06:30:27', 1, 1),
 (3, 10, '465465465464', '2017-04-21', 25, 21, '2017-04-20 05:48:21', 1, 1),
-(4, 8, NULL, '2017-04-20', 2, 21, '2017-04-20 06:00:57', 1, 1),
-(5, 9, NULL, '2017-04-20', 2, 21, '2017-04-20 06:01:15', 1, 1);
+(4, 8, '345345346346', '2017-04-20', 25, 21, '2017-07-19 06:30:28', 1, 1),
+(5, 9, '56756734562436', '2017-04-20', 25, 21, '2017-07-19 06:30:28', 1, 1),
+(6, 13, '45678782896387', '2017-07-27', 25, 21, '2017-07-19 06:30:29', 1, 1),
+(7, 14, '345345346346', '2017-07-29', 25, 21, '2017-07-19 06:30:29', 1, 1),
+(9, 16, NULL, '2017-08-09', 2, 21, '2017-08-06 06:40:35', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cuadre_terminal`
+-- Estructura de tabla para la tabla `cuadre_terminal`
 --
 
-CREATE TABLE `cuadre_terminal` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `cuadre_terminal`;
+CREATE TABLE IF NOT EXISTS `cuadre_terminal` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_terminal` int(11) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `current_amount` decimal(18,2) DEFAULT NULL,
   `amount` decimal(18,2) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(4) DEFAULT '1'
+  `active` tinyint(4) DEFAULT '1',
+  PRIMARY KEY (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `descuento`
+-- Estructura de tabla para la tabla `cuenta_por_cobrar`
 --
 
-CREATE TABLE `descuento` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `cuenta_por_cobrar`;
+CREATE TABLE IF NOT EXISTS `cuenta_por_cobrar` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_factura` int(11) DEFAULT NULL,
+  `id_tipo` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `cuenta_por_cobrar_id_record_uindex` (`id_record`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cuenta_por_pagar`
+--
+
+DROP TABLE IF EXISTS `cuenta_por_pagar`;
+CREATE TABLE IF NOT EXISTS `cuenta_por_pagar` (
+  `id_recird` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_compra` int(11) DEFAULT NULL,
+  `id_tipo` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_recird`),
+  UNIQUE KEY `cuenta_por_pagar_id_recird_uindex` (`id_recird`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cuenta_por_pagar`
+--
+
+INSERT INTO `cuenta_por_pagar` (`id_recird`, `id_compra`, `id_tipo`, `created_on`, `active`) VALUES
+(1, 9, 32, '2017-08-06 02:40:35', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `descuento`
+--
+
+DROP TABLE IF EXISTS `descuento`;
+CREATE TABLE IF NOT EXISTS `descuento` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) DEFAULT NULL,
   `id_subcategoria` int(11) DEFAULT NULL,
   `porcentaje` float DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `active` int(11) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` int(11) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `descuento`
+-- Volcado de datos para la tabla `descuento`
 --
 
 INSERT INTO `descuento` (`id_record`, `id_articulo`, `id_subcategoria`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -255,22 +302,25 @@ INSERT INTO `descuento` (`id_record`, `id_articulo`, `id_subcategoria`, `porcent
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detalle_factura`
+-- Estructura de tabla para la tabla `detalle_factura`
 --
 
-CREATE TABLE `detalle_factura` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `detalle_factura`;
+CREATE TABLE IF NOT EXISTS `detalle_factura` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_factura` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
   `precio` double(18,2) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detalle_factura`
+-- Volcado de datos para la tabla `detalle_factura`
 --
 
 INSERT INTO `detalle_factura` (`id_record`, `id_factura`, `id_articulo`, `qty`, `precio`, `created_on`, `created_by`, `active`) VALUES
@@ -280,41 +330,81 @@ INSERT INTO `detalle_factura` (`id_record`, `id_factura`, `id_articulo`, `qty`, 
 (4, 5, 1, 7, 880.74, '2017-04-20 04:22:01', 1, 1),
 (5, 5, 7, 7, 849.74, '2017-04-20 07:02:25', 1, 1),
 (6, 5, 3, 2, 537.76, '2017-04-20 03:59:43', 1, 1),
-(7, 5, 4, 2, 463.54, '2017-04-20 03:59:43', 1, 1);
+(7, 5, 4, 2, 463.54, '2017-04-20 03:59:43', 1, 1),
+(8, 6, 3, 3, 538.96, '2017-07-19 03:39:37', 1, 1),
+(9, 8, 1, 1, 851.42, '2017-07-19 03:42:48', 1, 1),
+(10, 10, 1, 2, 851.42, '2017-07-19 03:50:13', 1, 1),
+(11, 13, 1, 2, 851.42, '2017-07-19 03:54:45', 1, 1),
+(12, 14, 1, 3, 851.42, '2017-07-19 03:55:42', 1, 1),
+(13, 15, 3, 2, 538.96, '2017-07-19 04:15:46', 1, 1),
+(14, 16, 1, 6, 851.42, '2017-07-19 05:27:52', 1, 1),
+(15, 16, 6, 30, 900.00, '2017-07-19 05:31:15', 1, 1),
+(16, 17, 1, 2, 851.42, '2017-08-03 04:19:23', 1, 1),
+(17, 17, 7, 2, 0.00, '2017-08-03 04:19:23', 1, 1),
+(18, 18, 1, 1, 851.42, '2017-08-03 04:26:14', 1, 1),
+(19, 18, 7, 2, 0.00, '2017-08-03 04:26:14', 1, 1),
+(20, 19, 1, 1, 851.42, '2017-08-03 04:26:49', 1, 1),
+(21, 19, 7, 2, 0.00, '2017-08-03 04:26:49', 1, 1),
+(22, 22, 3, 2, 538.96, '2017-08-03 04:35:19', 1, 1),
+(23, 27, 4, 2, 379.96, '2017-08-03 04:41:24', 1, 1),
+(24, 27, 4, 2, 463.94, '2017-08-03 04:41:24', 1, 1),
+(25, 28, 4, 1, 379.96, '2017-08-03 04:43:01', 1, 1),
+(26, 28, 4, 1, 463.94, '2017-08-03 04:43:01', 1, 1),
+(27, 29, 4, 2, 379.96, '2017-08-03 04:45:55', 1, 1),
+(28, 29, 4, 2, 463.94, '2017-08-03 04:45:55', 1, 1),
+(29, 30, 4, 1, 379.96, '2017-08-03 04:47:40', 1, 1),
+(30, 30, 4, 1, 463.94, '2017-08-03 04:47:40', 1, 1),
+(31, 31, 4, 1, 379.96, '2017-08-03 04:48:24', 1, 1),
+(32, 31, 4, 1, 463.94, '2017-08-03 04:48:24', 1, 1),
+(33, 32, 4, 1, 379.96, '2017-08-03 04:49:00', 1, 1),
+(34, 32, 4, 1, 463.94, '2017-08-03 04:49:00', 1, 1),
+(35, 33, 4, 1, 379.96, '2017-08-03 04:50:21', 1, 1),
+(36, 33, 4, 1, 463.94, '2017-08-03 04:50:21', 1, 1),
+(37, 34, 4, 1, 379.96, '2017-08-03 04:54:29', 1, 1),
+(38, 34, 4, 1, 463.94, '2017-08-03 04:54:29', 1, 1),
+(39, 36, 4, 1, 379.96, '2017-08-03 04:58:50', 1, 1),
+(40, 36, 4, 1, 463.94, '2017-08-03 04:58:50', 1, 1),
+(41, 37, 4, 2, 379.96, '2017-08-03 05:01:24', 1, 1),
+(42, 37, 4, 2, 463.94, '2017-08-03 05:01:24', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detalle_factura_tmp`
+-- Estructura de tabla para la tabla `detalle_factura_tmp`
 --
 
-CREATE TABLE `detalle_factura_tmp` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `detalle_factura_tmp`;
+CREATE TABLE IF NOT EXISTS `detalle_factura_tmp` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  `date` date DEFAULT NULL
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detalle_solicitud`
+-- Estructura de tabla para la tabla `detalle_solicitud`
 --
 
-CREATE TABLE `detalle_solicitud` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `detalle_solicitud`;
+CREATE TABLE IF NOT EXISTS `detalle_solicitud` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_solicitud` int(11) NOT NULL,
   `id_articulo` int(11) NOT NULL,
   `id_unidad` int(11) NOT NULL,
   `qty` double NOT NULL DEFAULT '0',
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detalle_solicitud`
+-- Volcado de datos para la tabla `detalle_solicitud`
 --
 
 INSERT INTO `detalle_solicitud` (`id_record`, `id_solicitud`, `id_articulo`, `id_unidad`, `qty`, `created_on`, `created_by`, `active`) VALUES
@@ -340,58 +430,114 @@ INSERT INTO `detalle_solicitud` (`id_record`, `id_solicitud`, `id_articulo`, `id
 (23, 9, 3, 1, 1, '2017-04-12 14:23:04', 1, 1),
 (24, 9, 4, 1, 2, '2017-04-12 14:23:04', 1, 1),
 (25, 10, 7, 3, 10, '2017-04-20 04:51:00', 1, 1),
-(26, 10, 6, 4, 5, '2017-04-20 04:51:01', 1, 1);
+(26, 10, 6, 4, 5, '2017-04-20 04:51:01', 1, 1),
+(27, 11, 8, 1, 10, '2017-07-19 06:16:05', 1, 1),
+(28, 12, 8, 3, 10, '2017-07-19 06:16:37', 1, 1),
+(29, 13, 6, 1, 10, '2017-07-19 06:17:37', 1, 1),
+(30, 14, 4, 1, 10, '2017-07-19 06:18:01', 1, 1),
+(31, 15, 1, 3, 10, '2017-08-06 06:33:18', 1, 1),
+(32, 16, 1, 3, 12, '2017-08-06 06:37:29', 1, 1),
+(33, 16, 7, 3, 12, '2017-08-06 06:37:29', 1, 1),
+(34, 16, 3, 3, 12, '2017-08-06 06:37:29', 1, 1),
+(35, 16, 4, 3, 12, '2017-08-06 06:37:29', 1, 1),
+(36, 16, 4, 3, 12, '2017-08-06 06:37:29', 1, 1),
+(37, 16, 8, 3, 12, '2017-08-06 06:37:29', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detalle_solicitud_tmp`
+-- Estructura de tabla para la tabla `detalle_solicitud_tmp`
 --
 
-CREATE TABLE `detalle_solicitud_tmp` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `detalle_solicitud_tmp`;
+CREATE TABLE IF NOT EXISTS `detalle_solicitud_tmp` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) DEFAULT '0',
   `id_unidad` decimal(18,2) DEFAULT '0.00',
   `qty` decimal(18,2) DEFAULT '0.00',
   `id_user` decimal(18,2) DEFAULT '0.00',
-  `date` date DEFAULT NULL
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `devolucion`
+-- Estructura de tabla para la tabla `detalle_transferencia_mercancia`
 --
 
-CREATE TABLE `devolucion` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `detalle_transferencia_mercancia`;
+CREATE TABLE IF NOT EXISTS `detalle_transferencia_mercancia` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_articulo` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `id_transferencia` int(11) DEFAULT NULL,
+  `id_unidad` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `detalle_transferencia_mercancia_id_record_uindex` (`id_record`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_transferencia_mercancia_tmp`
+--
+
+DROP TABLE IF EXISTS `detalle_transferencia_mercancia_tmp`;
+CREATE TABLE IF NOT EXISTS `detalle_transferencia_mercancia_tmp` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_articulo` int(11) DEFAULT NULL,
+  `id_unidad` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `detalle_transferencia_mercancia_tmp_id_record_uindex` (`id_record`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `devolucion`
+--
+
+DROP TABLE IF EXISTS `devolucion`;
+CREATE TABLE IF NOT EXISTS `devolucion` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_factura` int(11) DEFAULT NULL,
   `id_articulo` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(4) DEFAULT '1'
+  `active` tinyint(4) DEFAULT '1',
+  PRIMARY KEY (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `direccion`
+-- Estructura de tabla para la tabla `direccion`
 --
 
-CREATE TABLE `direccion` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `direccion`;
+CREATE TABLE IF NOT EXISTS `direccion` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tercero` int(11) DEFAULT NULL,
   `id_sector` int(11) DEFAULT NULL,
   `direccion` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `direccion`
+-- Volcado de datos para la tabla `direccion`
 --
 
 INSERT INTO `direccion` (`id_record`, `id_tercero`, `id_sector`, `direccion`, `created_on`, `created_by`, `active`) VALUES
@@ -403,11 +549,12 @@ INSERT INTO `direccion` (`id_record`, `id_tercero`, `id_sector`, `direccion`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empleado`
+-- Estructura de tabla para la tabla `empleado`
 --
 
-CREATE TABLE `empleado` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `empleado`;
+CREATE TABLE IF NOT EXISTS `empleado` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_persona` int(11) NOT NULL,
   `telefono` varchar(250) NOT NULL,
   `admission_date` date NOT NULL,
@@ -415,11 +562,13 @@ CREATE TABLE `empleado` (
   `id_tipo` int(11) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `empleado`
+-- Volcado de datos para la tabla `empleado`
 --
 
 INSERT INTO `empleado` (`id_record`, `id_persona`, `telefono`, `admission_date`, `estado_civil`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -428,22 +577,25 @@ INSERT INTO `empleado` (`id_record`, `id_persona`, `telefono`, `admission_date`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresa`
+-- Estructura de tabla para la tabla `empresa`
 --
 
-CREATE TABLE `empresa` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `empresa`;
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tercero` int(11) NOT NULL,
   `rnc` varchar(100) NOT NULL,
   `id_tipo` int(11) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `empresa`
+-- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`id_record`, `id_tercero`, `rnc`, `id_tipo`, `telefono`, `created_on`, `created_by`, `active`) VALUES
@@ -452,90 +604,128 @@ INSERT INTO `empresa` (`id_record`, `id_tercero`, `rnc`, `id_tipo`, `telefono`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exception`
+-- Estructura de tabla para la tabla `exception`
 --
 
-CREATE TABLE `exception` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `exception`;
+CREATE TABLE IF NOT EXISTS `exception` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `id_permission` int(11) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `factura`
+-- Estructura de tabla para la tabla `factura`
 --
 
-CREATE TABLE `factura` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `factura`;
+CREATE TABLE IF NOT EXISTS `factura` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) DEFAULT '0',
   `monto` decimal(10,0) NOT NULL DEFAULT '0',
   `no_factura` varchar(50) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
   `active` tinyint(1) DEFAULT '1',
-  `descuento` decimal(18,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `descuento` decimal(18,2) DEFAULT NULL,
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `factura`
+-- Volcado de datos para la tabla `factura`
 --
 
 INSERT INTO `factura` (`id_record`, `id_cliente`, `monto`, `no_factura`, `created_on`, `created_by`, `active`, `descuento`) VALUES
 (1, 16, '4289', '1', '2017-04-19 20:02:43', 1, 1, '3.00'),
 (2, 16, '7896', '2', '2017-04-19 20:41:46', 1, 1, '3.00'),
 (3, 16, '457', '3', '2017-04-19 21:09:52', 1, 1, '3.00'),
-(5, 16, '6452', '4', '2017-04-20 03:59:43', 1, 1, '4.00');
+(5, 16, '6452', '4', '2017-04-20 03:59:43', 1, 1, '4.00'),
+(6, 16, '1617', '6', '2017-07-19 03:39:37', 1, 1, '0.00'),
+(7, 16, '1617', '7', '2017-07-19 03:39:41', 1, 1, '0.00'),
+(8, 16, '851', '8', '2017-07-19 03:42:48', 1, 1, '0.00'),
+(9, 16, '851', '9', '2017-07-19 03:43:23', 1, 1, '0.00'),
+(10, 16, '1703', '10', '2017-07-19 03:50:13', 1, 1, '0.00'),
+(11, 16, '1703', '11', '2017-07-19 03:50:21', 1, 1, '0.00'),
+(14, 16, '2554', '12', '2017-07-19 03:55:42', 1, 1, '0.00'),
+(15, 16, '1078', '15', '2017-07-19 04:15:46', 1, 1, '0.00'),
+(16, 16, '5109', '16', '2017-07-19 05:27:52', 1, 1, '0.00'),
+(17, 16, '1703', '17', '2017-08-03 04:19:23', 1, 1, '0.00'),
+(18, 16, '851', '18', '2017-08-03 04:26:14', 1, 1, '0.00'),
+(19, 16, '851', '19', '2017-08-03 04:26:49', 1, 1, '0.00'),
+(22, 16, '1078', '22', '2017-08-03 04:35:19', 1, 1, '0.00'),
+(27, 16, '1688', '23', '2017-08-03 04:41:24', 1, 1, '0.00'),
+(28, 16, '844', '28', '2017-08-03 04:43:01', 1, 1, '0.00'),
+(29, 16, '1688', '29', '2017-08-03 04:45:55', 1, 1, '0.00'),
+(30, 16, '844', '30', '2017-08-03 04:47:40', 1, 1, '0.00'),
+(31, 16, '844', '31', '2017-08-03 04:48:24', 1, 1, '0.00'),
+(32, 16, '844', '32', '2017-08-03 04:49:00', 1, 1, '0.00'),
+(33, 16, '844', '33', '2017-08-03 04:50:21', 1, 1, '0.00'),
+(34, 16, '844', '34', '2017-08-03 04:54:28', 1, 1, '0.00'),
+(35, 16, '844', '35', '2017-08-03 04:55:53', 1, 1, '0.00'),
+(36, 16, '844', '36', '2017-08-03 04:58:50', 1, 1, '0.00'),
+(37, 16, '1688', '37', '2017-08-03 05:01:24', 1, 1, '0.00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `group`
+-- Estructura de tabla para la tabla `group`
 --
 
-CREATE TABLE `group` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `group`;
+CREATE TABLE IF NOT EXISTS `group` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` varchar(250) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historial_usuario`
+-- Estructura de tabla para la tabla `historial_usuario`
 --
 
-CREATE TABLE `historial_usuario` (
-  `id_record` bigint(20) NOT NULL,
+DROP TABLE IF EXISTS `historial_usuario`;
+CREATE TABLE IF NOT EXISTS `historial_usuario` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) DEFAULT NULL,
   `login` datetime DEFAULT NULL,
-  `logout` datetime DEFAULT NULL
+  `logout` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `impuesto`
+-- Estructura de tabla para la tabla `impuesto`
 --
 
-CREATE TABLE `impuesto` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `impuesto`;
+CREATE TABLE IF NOT EXISTS `impuesto` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_subcategoria` varchar(250) DEFAULT NULL,
   `id_articulo` varchar(250) DEFAULT NULL,
   `porcentaje` float NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `impuesto`
+-- Volcado de datos para la tabla `impuesto`
 --
 
 INSERT INTO `impuesto` (`id_record`, `id_subcategoria`, `id_articulo`, `porcentaje`, `created_on`, `created_by`, `active`) VALUES
@@ -547,48 +737,72 @@ INSERT INTO `impuesto` (`id_record`, `id_subcategoria`, `id_articulo`, `porcenta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventario`
+-- Estructura de tabla para la tabla `inventario`
 --
 
-CREATE TABLE `inventario` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `inventario`;
+CREATE TABLE IF NOT EXISTS `inventario` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) DEFAULT NULL,
   `id_almacen` int(11) DEFAULT NULL,
   `qty` double DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `inventario`
+-- Volcado de datos para la tabla `inventario`
 --
 
 INSERT INTO `inventario` (`id_record`, `id_articulo`, `id_almacen`, `qty`, `created_on`, `created_by`, `active`) VALUES
-(15, 1, 1, 10, '2017-04-12 11:28:05', 1, 1),
-(16, 3, 1, 2, '2017-04-12 11:28:05', 1, 1),
-(17, 4, 1, 7, '2017-04-12 11:28:05', 1, 1),
-(41, 6, 1, 30, '2017-04-20 01:48:21', 1, 1),
-(42, 7, 1, 120, '2017-04-20 01:48:21', 1, 1);
+(15, 1, 1, 0, '2017-08-03 00:26:41', 1, 1),
+(16, 3, 1, 0, '2017-08-03 00:35:13', 1, 1),
+(17, 4, 1, 4, '2017-08-03 01:00:58', 1, 1),
+(41, 6, 1, 10, '2017-07-19 02:30:29', 1, 1),
+(42, 7, 1, 114, '2017-08-03 00:26:27', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movimiento_inventario`
+-- Estructura de tabla para la tabla `movimiento_cuenta`
 --
 
-CREATE TABLE `movimiento_inventario` (
-  `id_record` int(11) NOT NULL,
+DROP TABLE IF EXISTS `movimiento_cuenta`;
+CREATE TABLE IF NOT EXISTS `movimiento_cuenta` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_cuenta` bigint(20) DEFAULT NULL,
+  `id_tipo` int(11) DEFAULT NULL,
+  `monto` decimal(10,2) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `movimiento_cuenta_id_record_uindex` (`id_record`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `movimiento_inventario`
+--
+
+DROP TABLE IF EXISTS `movimiento_inventario`;
+CREATE TABLE IF NOT EXISTS `movimiento_inventario` (
+  `id_record` int(11) NOT NULL AUTO_INCREMENT,
   `id_inventario` int(11) NOT NULL,
   `qty` double NOT NULL,
   `id_tipo` int(11) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `movimiento_inventario`
+-- Volcado de datos para la tabla `movimiento_inventario`
 --
 
 INSERT INTO `movimiento_inventario` (`id_record`, `id_inventario`, `qty`, `id_tipo`, `created_on`, `created_by`, `active`) VALUES
@@ -596,59 +810,116 @@ INSERT INTO `movimiento_inventario` (`id_record`, `id_inventario`, `qty`, `id_ti
 (2, 16, 2, 26, '2017-04-12 18:11:20', 1, 1),
 (3, 17, 7, 26, '2017-04-12 18:11:35', 1, 1),
 (22, 41, 30, 26, '2017-04-20 05:48:21', 1, 1),
-(23, 42, 120, 26, '2017-04-20 05:48:21', 1, 1);
+(23, 42, 120, 26, '2017-04-20 05:48:21', 1, 1),
+(24, 15, -2, 27, '2017-07-19 04:34:21', 1, 1),
+(25, 15, -4, 27, '2017-07-19 04:35:41', 1, 1),
+(26, 41, -10, 27, '2017-07-19 04:38:58', 1, 1),
+(27, 41, -10, 27, '2017-07-19 04:39:02', 1, 1),
+(28, 41, -10, 27, '2017-07-19 04:41:29', 1, 1),
+(29, 15, 3, 26, '2017-07-19 06:23:56', 1, 1),
+(30, 15, 3, 26, '2017-07-19 06:24:48', 1, 1),
+(31, 15, 3, 26, '2017-07-19 06:30:07', 1, 1),
+(32, 15, 3, 26, '2017-07-19 06:30:27', 1, 1),
+(33, 16, 5, 26, '2017-07-19 06:30:27', 1, 1),
+(34, 15, 8, 26, '2017-07-19 06:30:28', 1, 1),
+(35, 16, 10, 26, '2017-07-19 06:30:28', 1, 1),
+(36, 15, 1, 26, '2017-07-19 06:30:28', 1, 1),
+(37, 16, 1, 26, '2017-07-19 06:30:28', 1, 1),
+(38, 41, 10, 26, '2017-07-19 06:30:29', 1, 1),
+(39, 17, 10, 26, '2017-07-19 06:30:29', 1, 1),
+(40, 15, -1, 27, '2017-08-03 04:18:30', 1, 1),
+(41, 15, -1, 27, '2017-08-03 04:18:34', 1, 1),
+(42, 42, -2, 27, '2017-08-03 04:18:58', 1, 1),
+(43, 15, -1, 27, '2017-08-03 04:25:15', 1, 1),
+(44, 42, -1, 27, '2017-08-03 04:25:22', 1, 1),
+(45, 42, -1, 27, '2017-08-03 04:25:25', 1, 1),
+(46, 42, -1, 27, '2017-08-03 04:26:25', 1, 1),
+(47, 42, -1, 27, '2017-08-03 04:26:27', 1, 1),
+(48, 15, -1, 27, '2017-08-03 04:26:41', 1, 1),
+(49, 16, -1, 27, '2017-08-03 04:35:11', 1, 1),
+(50, 16, -1, 27, '2017-08-03 04:35:13', 1, 1),
+(51, 17, -1, 27, '2017-08-03 04:40:34', 1, 1),
+(52, 17, -1, 27, '2017-08-03 04:40:39', 1, 1),
+(53, 17, -1, 27, '2017-08-03 04:42:51', 1, 1),
+(54, 17, -1, 27, '2017-08-03 04:45:35', 1, 1),
+(55, 17, -1, 27, '2017-08-03 04:45:45', 1, 1),
+(56, 17, -1, 27, '2017-08-03 04:47:35', 1, 1),
+(57, 17, -1, 27, '2017-08-03 04:48:18', 1, 1),
+(58, 17, -1, 27, '2017-08-03 04:48:57', 1, 1),
+(59, 17, -1, 27, '2017-08-03 04:50:03', 1, 1),
+(60, 17, -1, 27, '2017-08-03 04:54:21', 1, 1),
+(61, 17, -1, 27, '2017-08-03 04:58:40', 1, 1),
+(62, 17, -1, 27, '2017-08-03 05:00:33', 1, 1),
+(63, 17, -1, 27, '2017-08-03 05:00:58', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nacionalidad`
+-- Estructura de tabla para la tabla `nacionalidad`
 --
 
-CREATE TABLE `nacionalidad` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `nacionalidad`;
+CREATE TABLE IF NOT EXISTS `nacionalidad` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_pais` int(11) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `nacionalidad`
+-- Volcado de datos para la tabla `nacionalidad`
 --
 
 INSERT INTO `nacionalidad` (`id_record`, `id_pais`, `description`, `created_on`, `created_by`, `active`) VALUES
-(1, 2, 'Dominicana', '2017-03-22 14:08:14', 1, 1);
+(1, 2, 'Dominicana', '2017-03-22 14:08:14', 1, 1),
+(2, 3, 'Puerto RiqueÃ±o', '2017-07-09 20:43:23', 0, 1),
+(3, 4, 'Mexicano', '2017-07-09 20:44:52', 0, 1),
+(4, 5, 'BrazileÃ±o', '2017-07-09 20:45:17', 0, 1),
+(5, 6, 'Argentino', '2017-07-09 20:45:48', 0, 1),
+(6, 7, 'Canadience', '2017-07-09 20:46:02', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pais`
+-- Estructura de tabla para la tabla `pais`
 --
 
-CREATE TABLE `pais` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `pais`;
+CREATE TABLE IF NOT EXISTS `pais` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pais`
+-- Volcado de datos para la tabla `pais`
 --
 
 INSERT INTO `pais` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
-(2, 'Republica Dominicana', '2017-03-22 02:42:19', 1, 1);
+(2, 'Republica Dominicana', '2017-03-22 02:42:19', 1, 1),
+(3, 'Puerto Rico', '2017-07-09 20:43:23', 1, 1),
+(4, 'Mexico', '2017-07-09 20:44:52', 1, 1),
+(5, 'Brazil', '2017-07-09 20:45:17', 1, 1),
+(6, 'Argentina', '2017-07-09 20:45:48', 1, 1),
+(7, 'Canada', '2017-07-09 20:46:02', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persona`
+-- Estructura de tabla para la tabla `persona`
 --
 
-CREATE TABLE `persona` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `persona`;
+CREATE TABLE IF NOT EXISTS `persona` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tercero` int(11) NOT NULL,
   `apellidos` varchar(250) NOT NULL,
   `cedula` varchar(50) NOT NULL,
@@ -656,11 +927,13 @@ CREATE TABLE `persona` (
   `birthdate` date NOT NULL DEFAULT '0000-00-00',
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `persona`
+-- Volcado de datos para la tabla `persona`
 --
 
 INSERT INTO `persona` (`id_record`, `id_tercero`, `apellidos`, `cedula`, `sexo`, `birthdate`, `created_on`, `created_by`, `active`) VALUES
@@ -680,21 +953,24 @@ INSERT INTO `persona` (`id_record`, `id_tercero`, `apellidos`, `cedula`, `sexo`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `porcentaje_ganancia`
+-- Estructura de tabla para la tabla `porcentaje_ganancia`
 --
 
-CREATE TABLE `porcentaje_ganancia` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `porcentaje_ganancia`;
+CREATE TABLE IF NOT EXISTS `porcentaje_ganancia` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) NOT NULL,
   `id_subcategoria` int(11) NOT NULL,
   `porcentaje` int(11) NOT NULL,
   `created_by` int(11) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `porcentaje_ganancia`
+-- Volcado de datos para la tabla `porcentaje_ganancia`
 --
 
 INSERT INTO `porcentaje_ganancia` (`id_record`, `id_articulo`, `id_subcategoria`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -715,21 +991,24 @@ INSERT INTO `porcentaje_ganancia` (`id_record`, `id_articulo`, `id_subcategoria`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `precio_articulo`
+-- Estructura de tabla para la tabla `precio_articulo`
 --
 
-CREATE TABLE `precio_articulo` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `precio_articulo`;
+CREATE TABLE IF NOT EXISTS `precio_articulo` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_articulo` int(11) DEFAULT NULL,
   `precio` decimal(18,2) DEFAULT NULL,
   `id_suplidor` int(11) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `precio_articulo`
+-- Volcado de datos para la tabla `precio_articulo`
 --
 
 INSERT INTO `precio_articulo` (`id_record`, `id_articulo`, `precio`, `id_suplidor`, `created_on`, `created_by`, `active`) VALUES
@@ -745,20 +1024,23 @@ INSERT INTO `precio_articulo` (`id_record`, `id_articulo`, `precio`, `id_suplido
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sector`
+-- Estructura de tabla para la tabla `sector`
 --
 
-CREATE TABLE `sector` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `sector`;
+CREATE TABLE IF NOT EXISTS `sector` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_ciudad` int(11) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sector`
+-- Volcado de datos para la tabla `sector`
 --
 
 INSERT INTO `sector` (`id_record`, `id_ciudad`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -768,49 +1050,61 @@ INSERT INTO `sector` (`id_record`, `id_ciudad`, `description`, `created_on`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `solicitud_compra`
+-- Estructura de tabla para la tabla `solicitud_compra`
 --
 
-CREATE TABLE `solicitud_compra` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `solicitud_compra`;
+CREATE TABLE IF NOT EXISTS `solicitud_compra` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_suplidor` int(11) UNSIGNED NOT NULL,
   `id_almacen` int(11) UNSIGNED NOT NULL,
   `id_tipo` int(11) UNSIGNED NOT NULL,
   `no_solicitud` bigint(20) UNSIGNED NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) UNSIGNED NOT NULL,
-  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `solicitud_compra`
+-- Volcado de datos para la tabla `solicitud_compra`
 --
 
 INSERT INTO `solicitud_compra` (`id_record`, `id_suplidor`, `id_almacen`, `id_tipo`, `no_solicitud`, `created_on`, `created_by`, `active`) VALUES
 (4, 1, 1, 3, 4789, '2017-04-05 03:39:13', 1, 1),
-(5, 1, 1, 2, 5772, '2017-04-05 03:40:07', 1, 1),
+(5, 1, 1, 25, 5772, '2017-07-19 06:30:27', 1, 1),
 (7, 1, 1, 1, 6307, '2017-04-04 17:43:57', 1, 1),
-(8, 1, 1, 2, 8376, '2017-04-20 06:00:57', 1, 1),
-(9, 1, 1, 2, 9935, '2017-04-20 06:01:15', 1, 1),
-(10, 1, 1, 25, 10523, '2017-04-20 05:48:21', 1, 1);
+(8, 1, 1, 25, 8376, '2017-07-19 06:30:28', 1, 1),
+(9, 1, 1, 25, 9935, '2017-07-19 06:30:28', 1, 1),
+(10, 1, 1, 25, 10523, '2017-04-20 05:48:21', 1, 1),
+(11, 1, 1, 1, 11924, '2017-07-19 06:16:05', 1, 1),
+(12, 1, 1, 1, 12794, '2017-07-19 06:16:37', 1, 1),
+(13, 1, 1, 25, 13791, '2017-07-19 06:30:29', 1, 1),
+(14, 1, 1, 25, 14783, '2017-07-19 06:30:29', 1, 1),
+(15, 1, 1, 3, 15283, '2017-08-06 06:36:50', 1, 1),
+(16, 1, 1, 2, 16670, '2017-08-06 06:40:35', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subcategoria`
+-- Estructura de tabla para la tabla `subcategoria`
 --
 
-CREATE TABLE `subcategoria` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `subcategoria`;
+CREATE TABLE IF NOT EXISTS `subcategoria` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_categoria` int(11) NOT NULL,
   `description` varchar(250) NOT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `subcategoria`
+-- Volcado de datos para la tabla `subcategoria`
 --
 
 INSERT INTO `subcategoria` (`id_record`, `id_categoria`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -824,22 +1118,24 @@ INSERT INTO `subcategoria` (`id_record`, `id_categoria`, `description`, `created
 -- --------------------------------------------------------
 
 --
--- Table structure for table `suplidor`
+-- Estructura de tabla para la tabla `suplidor`
 --
 
-CREATE TABLE `suplidor` (
-  `id_record` bigint(21) NOT NULL,
+DROP TABLE IF EXISTS `suplidor`;
+CREATE TABLE IF NOT EXISTS `suplidor` (
+  `id_record` bigint(21) NOT NULL AUTO_INCREMENT,
   `id_persona` int(11) DEFAULT NULL,
   `id_empresa` int(11) DEFAULT NULL,
   `id_tipo` int(11) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `suplidor`
+-- Volcado de datos para la tabla `suplidor`
 --
 
 INSERT INTO `suplidor` (`id_record`, `id_persona`, `id_empresa`, `id_tipo`, `telefono`, `created_on`, `created_by`, `active`) VALUES
@@ -848,19 +1144,22 @@ INSERT INTO `suplidor` (`id_record`, `id_persona`, `id_empresa`, `id_tipo`, `tel
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tercero`
+-- Estructura de tabla para la tabla `tercero`
 --
 
-CREATE TABLE `tercero` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `tercero`;
+CREATE TABLE IF NOT EXISTS `tercero` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_nacionalidad` int(11) DEFAULT NULL,
   `nombre` varchar(250) NOT NULL,
   `email` varchar(517) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tercero`
+-- Volcado de datos para la tabla `tercero`
 --
 
 INSERT INTO `tercero` (`id_record`, `id_nacionalidad`, `nombre`, `email`, `active`) VALUES
@@ -884,19 +1183,22 @@ INSERT INTO `tercero` (`id_record`, `id_nacionalidad`, `nombre`, `email`, `activ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `terminales`
+-- Estructura de tabla para la tabla `terminales`
 --
 
-CREATE TABLE `terminales` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `terminales`;
+CREATE TABLE IF NOT EXISTS `terminales` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` varchar(250) DEFAULT NULL,
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) DEFAULT NULL,
-  `active` int(11) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` int(11) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `terminales`
+-- Volcado de datos para la tabla `terminales`
 --
 
 INSERT INTO `terminales` (`id_record`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -906,20 +1208,23 @@ INSERT INTO `terminales` (`id_record`, `description`, `created_on`, `created_by`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo`
+-- Estructura de tabla para la tabla `tipo`
 --
 
-CREATE TABLE `tipo` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `tipo`;
+CREATE TABLE IF NOT EXISTS `tipo` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `tipo` varchar(250) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tipo`
+-- Volcado de datos para la tabla `tipo`
 --
 
 INSERT INTO `tipo` (`id_record`, `tipo`, `description`, `created_on`, `created_by`, `active`) VALUES
@@ -953,27 +1258,29 @@ INSERT INTO `tipo` (`id_record`, `tipo`, `description`, `created_on`, `created_b
 (28, 'tipo_descuento', 'al por mayor', '2017-04-13 20:30:24', 1, 1),
 (29, 'tipo_descuento', 'pago efectivo', '2017-04-13 20:30:26', 1, 1),
 (30, 'tipo_descuento', 'especial', '2017-04-13 20:30:23', 1, 1),
-(31, 'tipo_application', 'modulo', '2017-06-06 17:51:27', 1, 1),
-(32, 'tipo_application', 'section', '2017-06-06 17:51:45', 1, 1),
-(33, 'tipo_application', 'application', '2017-06-06 17:51:57', 1, 1);
+(31, 'tipo_movimiento_cuenta', 'cxc', '2017-08-06 06:13:35', 1, 1),
+(32, 'tipo_movimiento_cuenta', 'cxp', '2017-08-06 06:14:25', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_descuento`
+-- Estructura de tabla para la tabla `tipo_descuento`
 --
 
-CREATE TABLE `tipo_descuento` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `tipo_descuento`;
+CREATE TABLE IF NOT EXISTS `tipo_descuento` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_tipo` int(11) DEFAULT NULL,
   `porcentaje` float DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `active` int(11) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` int(11) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tipo_descuento`
+-- Volcado de datos para la tabla `tipo_descuento`
 --
 
 INSERT INTO `tipo_descuento` (`id_record`, `id_tipo`, `porcentaje`, `created_by`, `created_on`, `active`) VALUES
@@ -986,21 +1293,44 @@ INSERT INTO `tipo_descuento` (`id_record`, `id_tipo`, `porcentaje`, `created_by`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `unidad`
+-- Estructura de tabla para la tabla `transferencia_mercancia`
 --
 
-CREATE TABLE `unidad` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `transferencia_mercancia`;
+CREATE TABLE IF NOT EXISTS `transferencia_mercancia` (
+  `id_record` bigint(20) NOT NULL AUTO_INCREMENT,
+  `no_transferencia` bigint(20) DEFAULT NULL,
+  `id_almacen_suplidor` int(11) DEFAULT NULL,
+  `id_almacen_solicitud` int(11) DEFAULT NULL,
+  `id_tipo` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `transferencia_mercancia_id_record_uindex` (`id_record`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `unidad`
+--
+
+DROP TABLE IF EXISTS `unidad`;
+CREATE TABLE IF NOT EXISTS `unidad` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` varchar(250) DEFAULT NULL,
   `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `qty` double(18,2) DEFAULT NULL,
   `short` varchar(50) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `active` tinyint(1) DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `unidad`
+-- Volcado de datos para la tabla `unidad`
 --
 
 INSERT INTO `unidad` (`id_record`, `description`, `created_on`, `qty`, `short`, `created_by`, `active`) VALUES
@@ -1011,26 +1341,30 @@ INSERT INTO `unidad` (`id_record`, `description`, `created_on`, `qty`, `short`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_group`
+-- Estructura de tabla para la tabla `user_group`
 --
 
-CREATE TABLE `user_group` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `user_group`;
+CREATE TABLE IF NOT EXISTS `user_group` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `id_group` int(11) NOT NULL,
   `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_record` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empleado` int(11) NOT NULL,
   `id_terminal` int(11) DEFAULT '0',
   `id_tipo` int(11) NOT NULL,
@@ -1038,11 +1372,13 @@ CREATE TABLE `usuario` (
   `clave` varchar(50) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_by` int(11) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id_record`),
+  UNIQUE KEY `id_record` (`id_record`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `username`, `clave`, `created_on`, `created_by`, `active`) VALUES
@@ -1050,499 +1386,6 @@ INSERT INTO `usuario` (`id_record`, `id_empleado`, `id_terminal`, `id_tipo`, `us
 (2, 1, 0, 3, 'pottenwalder2', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-30 03:23:24', 0, 1),
 (3, 1, 1, 3, 'pottenwalder3', 'e10adc3949ba59abbe56e057f20f883e', '2017-03-30 03:26:25', 1, 1);
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `access`
---
-ALTER TABLE `access`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `almacen`
---
-ALTER TABLE `almacen`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `app`
---
-ALTER TABLE `app`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `articulo`
---
-ALTER TABLE `articulo`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `ciudad`
---
-ALTER TABLE `ciudad`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `compra`
---
-ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `cuadre_terminal`
---
-ALTER TABLE `cuadre_terminal`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `descuento`
---
-ALTER TABLE `descuento`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `detalle_factura`
---
-ALTER TABLE `detalle_factura`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `detalle_factura_tmp`
---
-ALTER TABLE `detalle_factura_tmp`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `detalle_solicitud`
---
-ALTER TABLE `detalle_solicitud`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `detalle_solicitud_tmp`
---
-ALTER TABLE `detalle_solicitud_tmp`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `devolucion`
---
-ALTER TABLE `devolucion`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `direccion`
---
-ALTER TABLE `direccion`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `empleado`
---
-ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `empresa`
---
-ALTER TABLE `empresa`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `exception`
---
-ALTER TABLE `exception`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `factura`
---
-ALTER TABLE `factura`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `group`
---
-ALTER TABLE `group`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `historial_usuario`
---
-ALTER TABLE `historial_usuario`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `impuesto`
---
-ALTER TABLE `impuesto`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `inventario`
---
-ALTER TABLE `inventario`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `movimiento_inventario`
---
-ALTER TABLE `movimiento_inventario`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `nacionalidad`
---
-ALTER TABLE `nacionalidad`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `pais`
---
-ALTER TABLE `pais`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `persona`
---
-ALTER TABLE `persona`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `porcentaje_ganancia`
---
-ALTER TABLE `porcentaje_ganancia`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `precio_articulo`
---
-ALTER TABLE `precio_articulo`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `sector`
---
-ALTER TABLE `sector`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `solicitud_compra`
---
-ALTER TABLE `solicitud_compra`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `subcategoria`
---
-ALTER TABLE `subcategoria`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `suplidor`
---
-ALTER TABLE `suplidor`
-  ADD PRIMARY KEY (`id_record`);
-
---
--- Indexes for table `tercero`
---
-ALTER TABLE `tercero`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `terminales`
---
-ALTER TABLE `terminales`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `tipo`
---
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `tipo_descuento`
---
-ALTER TABLE `tipo_descuento`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `unidad`
---
-ALTER TABLE `unidad`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `user_group`
---
-ALTER TABLE `user_group`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_record`),
-  ADD UNIQUE KEY `id_record` (`id_record`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `access`
---
-ALTER TABLE `access`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `almacen`
---
-ALTER TABLE `almacen`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `app`
---
-ALTER TABLE `app`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `articulo`
---
-ALTER TABLE `articulo`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `ciudad`
---
-ALTER TABLE `ciudad`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `compra`
---
-ALTER TABLE `compra`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `cuadre_terminal`
---
-ALTER TABLE `cuadre_terminal`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `descuento`
---
-ALTER TABLE `descuento`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `detalle_factura`
---
-ALTER TABLE `detalle_factura`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `detalle_factura_tmp`
---
-ALTER TABLE `detalle_factura_tmp`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
---
--- AUTO_INCREMENT for table `detalle_solicitud`
---
-ALTER TABLE `detalle_solicitud`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
---
--- AUTO_INCREMENT for table `detalle_solicitud_tmp`
---
-ALTER TABLE `detalle_solicitud_tmp`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `devolucion`
---
-ALTER TABLE `devolucion`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `direccion`
---
-ALTER TABLE `direccion`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `empleado`
---
-ALTER TABLE `empleado`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `empresa`
---
-ALTER TABLE `empresa`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `exception`
---
-ALTER TABLE `exception`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `factura`
---
-ALTER TABLE `factura`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `group`
---
-ALTER TABLE `group`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `historial_usuario`
---
-ALTER TABLE `historial_usuario`
-  MODIFY `id_record` bigint(20) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `impuesto`
---
-ALTER TABLE `impuesto`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `inventario`
---
-ALTER TABLE `inventario`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
---
--- AUTO_INCREMENT for table `movimiento_inventario`
---
-ALTER TABLE `movimiento_inventario`
-  MODIFY `id_record` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `nacionalidad`
---
-ALTER TABLE `nacionalidad`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `pais`
---
-ALTER TABLE `pais`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `persona`
---
-ALTER TABLE `persona`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `porcentaje_ganancia`
---
-ALTER TABLE `porcentaje_ganancia`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `precio_articulo`
---
-ALTER TABLE `precio_articulo`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `sector`
---
-ALTER TABLE `sector`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `solicitud_compra`
---
-ALTER TABLE `solicitud_compra`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `subcategoria`
---
-ALTER TABLE `subcategoria`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `suplidor`
---
-ALTER TABLE `suplidor`
-  MODIFY `id_record` bigint(21) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tercero`
---
-ALTER TABLE `tercero`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `terminales`
---
-ALTER TABLE `terminales`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `tipo`
---
-ALTER TABLE `tipo`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
---
--- AUTO_INCREMENT for table `tipo_descuento`
---
-ALTER TABLE `tipo_descuento`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `unidad`
---
-ALTER TABLE `unidad`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `user_group`
---
-ALTER TABLE `user_group`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_record` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

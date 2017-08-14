@@ -3,6 +3,7 @@ $a = mt_rand(100000, 999999);
 $hoy = getdate();
 $params = Factory::getParametersView();
 $records = Factory::get()->getDetalleOrder($params[1]);
+
 ?>
 <br>
 <style>
