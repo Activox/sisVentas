@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
     $('.picker').appendTo('body');
     var $details = $("#details");
-    $details.DataTable( {
+    $details.DataTable({
         "columnDefs": [
             {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
         ]
@@ -140,13 +140,13 @@ $(document).ready(function () {
     table();
     expandAll();
     /**
-     * 
+     *
      */
     $("#addRecord").on('click', function () {
         pais();
         nacionalidad();
         Tipo();
-
+        $("#modal1").modal('open');
     });
     /**
      *
@@ -160,6 +160,7 @@ $(document).ready(function () {
     $("#ciudad").on('change', function () {
         Sector($(this).val());
     });
+
     /**
      *
      */
@@ -167,25 +168,26 @@ $(document).ready(function () {
         $(".collapsible-header").addClass("active");
         $(".collapsible").collapsible({accordion: false});
     }
+
     /**
      *
      */
     $("#save").on('click', function () {
         data = new Object();
-        data.name               =       $("#name").val();
-        data.last_name          =       $("#last_name").val();
-        data.cedula             =       $("#cedula").val();
-        data.date               =       $("#date").val();
-        data.sexo               =       $("#sexo").val();
-        data.email              =       $("#email").val();
-        data.phone              =       $("#phone").val();
-        data.admission_date     =       $("#admission_date").val();
-        data.estado_civil       =       $("#estado_civil").val();
-        data.pais               =       $("#pais").val();
-        data.nacionalidad       =       $("#nacionalidad").val();
-        data.ciudad             =       $("#ciudad").val();
-        data.sector             =       $("#sector").val();
-        data.tipo               =       $("#tipo").val();
+        data.name = $("#name").val();
+        data.last_name = $("#last_name").val();
+        data.cedula = $("#cedula").val();
+        data.date = $("#date").val();
+        data.sexo = $("#sexo").val();
+        data.email = $("#email").val();
+        data.phone = $("#phone").val();
+        data.admission_date = $("#admission_date").val();
+        data.estado_civil = $("#estado_civil").val();
+        data.pais = $("#pais").val();
+        data.nacionalidad = $("#nacionalidad").val();
+        data.ciudad = $("#ciudad").val();
+        data.sector = $("#sector").val();
+        data.tipo = $("#tipo").val();
         data.direccion = $("#direccion").val();
         $.post("setEmpleado", {content: 'text', data: data}, function (data) {
             alertify.success('Save Succefully')

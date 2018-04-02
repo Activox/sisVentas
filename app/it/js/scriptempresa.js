@@ -47,6 +47,9 @@ $(document).ready(function () {
             }
         });
     };
+    $(".btn-large").on('click', function () {
+        $("#modal1").modal('open');
+    });
 
     /**
      * Expand the colaps

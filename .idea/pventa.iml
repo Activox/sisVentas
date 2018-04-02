@@ -5,7 +5,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="yaroa" />
-    <orderEntry type="module" module-name="dashboard" />
-    <orderEntry type="module" module-name="domino" />
+    <orderEntry type="module" module-name="yaroa_git" />
+    <orderEntry type="module" module-name="yaroa_git" />
+    <orderEntry type="module" module-name="yaroa_git" />
+    <orderEntry type="module" module-name="yaroa_git" />
   </component>
 </module>

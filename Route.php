@@ -183,7 +183,7 @@ class Route
         
         $std    =   new stdClass();
         
-        $std->controller    =   $ns -> namespaceController . $reference . "Controller";
+        $std->controller    =   $ns -> namespaceController . $reference . "Controllers";
         $std->model         =   $ns -> namespaceModel . $reference . "Model";
         $std->view          =   $reference . "View";
         $std->otherview     =   $setView;

@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     $('.picker').appendTo('body');
     var $details = $("#details");
-    $details.DataTable( {
+    $details.DataTable({
         "columnDefs": [
             {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
         ]
@@ -64,8 +64,9 @@ $(document).ready(function () {
      */
     $("#addRecord").on('click', function () {
         pais();
-
+        $('#modal1').modal('open');
     });
+
     function expandAll() {
         $(".collapsible-header").addClass("active");
         $(".collapsible").collapsible({accordion: false});

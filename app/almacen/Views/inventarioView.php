@@ -42,7 +42,6 @@ list($module, $type, $app) = explode("-", $actual_url);
     <table class="bordered highlight centered responsive-table ">
         <thead>
         <tr class="accent-color white-text">
-
             <th colspan="3" > Articulo</th>
             <th>Qty</th>
         </tr>

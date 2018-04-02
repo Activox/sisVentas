@@ -59,7 +59,9 @@ $(document).ready(function () {
             }
         });
     });
-
+    $("#add").on('click', function () {
+        $("#modal1").modal('open');
+    });
     /**
      * Close modal and trigger alert.
      */

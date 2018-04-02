@@ -14,7 +14,7 @@ $(document).ready(function () {
     $('select').material_select();
     $('.tooltipped').tooltip({delay: 50});
     var id_record = 0, $details = $('#details');
-    $details.DataTable( {
+    $details.DataTable({
         "columnDefs": [
             {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
         ]
@@ -33,7 +33,12 @@ $(document).ready(function () {
             success: function (response) {
                 $details.DataTable().destroy();
                 $details.find('tbody').html(response);
-                $details.DataTable({ "columnDefs": [ {"className": "mdl-data-table__cell--non-numeric dt-center", "targets": "_all"} ] });
+                $details.DataTable({
+                    "columnDefs": [{
+                        "className": "mdl-data-table__cell--non-numeric dt-center",
+                        "targets": "_all"
+                    }]
+                });
                 $('select').material_select();
             }
         });
@@ -65,8 +70,9 @@ $(document).ready(function () {
      * fill comboBox.
      */
     $("#add").on('click', function () {
-        ajax('categoria', 'getCategoria2',0);
+        ajax('categoria', 'getCategoria2', 0);
         ajax('suplidor', 'getSuplidor2', 0);
+        $("#modal1").modal('open');
     });
     /**
      * Get Subcategory

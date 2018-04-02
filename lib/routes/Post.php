@@ -56,6 +56,7 @@ class Post
         "getCiudadByPais"                   =>          "it@Empleado.getCiudadByPais",
         "getSectorByCiudad"                 =>          "it@Empleado.getSectorByCiudad",
         "getDescriptionByTipo"              =>          "it@Empleado.getDescriptionByTipo",
+        "setEmpleado"                       =>          "it@Empleado.setEmpleado",
 //      -----------------------------------------------------------
         "getCliente"                        =>          "it@Cliente.getCliente", // Cliente
         "setCliente"                        =>          "it@Cliente.setCliente",

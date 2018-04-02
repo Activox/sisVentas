@@ -554,7 +554,7 @@ function svgEnabled() {
  * @param string selector   CSS Selector for the parent element for the chart
  * @param object options    Optional. See `defaults` for options
  *
- * Examples:
+ * app:
  *    var data = {
  *        "main": [
  *          {

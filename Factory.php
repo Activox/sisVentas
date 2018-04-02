@@ -40,7 +40,7 @@ class Factory
         $model = "";
         //control just module + reference        
         if( count($split) == 2 ) {
-            $application =  $split[0] . '\\Controllers\\' . $split[1] . 'Controller';
+            $application =  $split[0] . '\\Controllers\\' . $split[1] . 'Controllers';
             $model =  $split[0] . '\\Models\\' . $split[1] . 'Model';            
         }
         

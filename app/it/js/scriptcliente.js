@@ -13,7 +13,7 @@ $(document).ready(function () {
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
     var $details = $("#details");
-    $details.DataTable( {
+    $details.DataTable({
         "columnDefs": [
             {"className": "mdl-data-table__cell--non-numeric dt-center ", "targets": "_all"}
         ]
@@ -64,8 +64,9 @@ $(document).ready(function () {
      */
     $("#addRecord").on('click', function () {
         pais();
-
+        $("#modal1").modal('open');
     });
+
     function expandAll() {
         $(".collapsible-header").addClass("active");
         $(".collapsible").collapsible({accordion: false});
